@@ -1,0 +1,49 @@
+order: 1
+title: Pages
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field: common.title
+      -
+        handle: cover
+        field: common.cover
+      -
+        handle: intro
+        field: common.intro
+      -
+        import: prose
+  seo:
+    display: SEO
+    fields:
+      -
+        import: seo
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: is_hidden
+        field: common.is_hidden
+      -
+        handle: menu_label
+        field: common.menu_label
+      -
+        handle: slug
+        field:
+          type: slug
+          required: true
+          localizable: true
+          validate:
+            - required
+            - 'unique_entry_value:{collection},{id},{site}'
+      -
+        handle: parent
+        field:
+          type: entries
+          collections:
+            - pages
+          max_items: 1
+          listable: false
+          localizable: true

@@ -1,0 +1,22 @@
+.cookies
+	position fixed
+	bottom 0
+	z-index $zindex-overlay
+	display flex
+	flex-direction column
+	align-items center
+	gap $px-24
+	max-width 48rem
+	margin $px-12
+	background-color v(tone-700)
+	border-radius $radius-sm
+	box-shadow $shadow-lg
+	padding $px-16 $px-24
+
+	@media sm
+		flex-direction row
+		.prose
+			flex 1
+
+
+			

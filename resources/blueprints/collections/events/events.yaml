@@ -1,0 +1,84 @@
+title: Events
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field: common.title
+        config:
+          required: true
+      -
+        handle: cover
+        field: common.cover
+      -
+        handle: event_date
+        field:
+          mode: single
+          time_enabled: true
+          time_required: false
+          earliest_date: '1900-01-01'
+          full_width: false
+          inline: false
+          columns: 1
+          rows: 1
+          display: Date
+          type: date
+          icon: date
+          width: 33
+          listable: hidden
+          validate:
+            - required
+      -
+        handle: location
+        field:
+          input_type: text
+          character_limit: 100
+          antlers: false
+          display: Location
+          type: text
+          icon: text
+          localizable: true
+          width: 33
+          listable: hidden
+      -
+        handle: info
+        field:
+          input_type: text
+          character_limit: 100
+          antlers: false
+          display: Info
+          type: text
+          icon: text
+          instructions: 'Eg: Face mask compulsory'
+          localizable: true
+          listable: hidden
+          width: 33
+      -
+        import: buttons
+        config:
+          max_items: 1
+          display: Booking link
+      -
+        handle: intro
+        field: common.intro
+      -
+        import: prose
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          required: true
+          localizable: true
+          listable: hidden
+          validate:
+            - required
+            - 'unique_entry_value:{collection},{id},{site}'
+  seo:
+    display: SEO
+    fields:
+      -
+        import: seo

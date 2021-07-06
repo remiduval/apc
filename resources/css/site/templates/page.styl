@@ -1,0 +1,73 @@
+$dog-size-min = $px-80
+$dog-size-max = $px-128
+
+.page
+	flex 1
+	display flex
+	flex-direction column
+	width 100%
+	row-gap $px-48
+	fluid(padding-top,		$dog-size-min - $px-24, $dog-size-max - $px-24)
+	fluid(padding-bottom,	$px-24, $px-48)
+
+	main
+		flex 1
+		background white
+		box-shadow $shadow-md
+		wrapper-x()
+		fluid(padding-top,		$padding-main-y-min, $padding-main-y-max)
+		fluid(padding-bottom,	$padding-main-y-min, $padding-main-y-max)
+		fluid(padding-left,		$wrapper-x-min, $px-32)
+		fluid(padding-right,	$wrapper-x-min, $px-32)
+		position relative
+
+		// &::before
+		// 	content ""
+		// 	position absolute
+		// 	fluid(top, -($dog-size-min), -($dog-size-max))
+		// 	fluid(right, $wrapper-x-min, $px-32)
+		// 	background-image url('/svg/dog.svg')
+		// 	background-size 100%
+		// 	fluid(width, $dog-size-min, $dog-size-max)
+		// 	fluid(height, $dog-size-min, $dog-size-max)
+		// 	transform translateY(7.5%)
+
+		// &.friend--girl::before
+		// 	background-image url('/svg/girl.svg')
+
+		// &.friend--boy::before
+		// 	background-image url('/svg/boy.svg')
+
+	.sidebar
+		display flex
+		flex-direction column
+		row-gap $px-48
+		wrapper-x()	
+
+	@media lg
+		wrapper-x()
+		flex-direction row
+		justify-content flex-end
+		align-items flex-start
+		fluid(column-gap, $px-32, $px-48)
+		//position relative
+
+		main
+			unwrapper-x()
+			fluid(padding-left,		$wrapper-x-min, $px-32)
+			fluid(padding-right,	$wrapper-x-min, $px-32)
+			border-radius $radius-xl
+
+		.sidebar
+			unwrapper-x()
+			position sticky
+			fluid(top, $padding-main-y-min, $padding-main-y-max)
+			width 300px
+
+	@media xl
+		.sidebar
+			fluid(margin-bottom, 240px, 300px)
+
+	@media xxl			
+		.sidebar
+			width 400px

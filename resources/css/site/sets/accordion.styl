@@ -1,0 +1,53 @@
+.accordion
+
+	.link--accordion
+		width 100%
+		display flex
+		align-items center
+		column-gap $px-12
+		fluid(padding-left,		$px-16, $px-24)
+		fluid(padding-right,	4px, $px-12)
+		border-radius $radius-lg
+		color v(tone-600)
+		background-color v(tone-025)
+
+		&:hover
+			background-color v(tone-050)
+
+		.label
+			flex 1
+			font-weight 600
+			margin $px-12 0
+			text-align left
+			fluid(font-size, $text-16, $text-18)
+			line-height $leading-snug
+
+		.icon
+			order 1
+			display grid
+			place-items center
+			width $px-48
+			height $px-48
+
+			svg
+				transition ease-in-out $duration-300
+				width $px-24
+				height $px-24
+
+	.accordion__content
+		transition max-height $duration-300
+		max-height 0
+		overflow hidden
+
+	.prose
+		fluid(padding, $px-16, $px-32)
+		border: solid 2px v(tone-025)
+		border-radius: 0 0 $radius-lg $radius-lg
+
+
+	&.accordion--active
+		.link--accordion 
+			border-radius $radius-lg $radius-lg 0 0
+
+			svg
+				transform rotate(180deg)

@@ -1,0 +1,35 @@
+title: 'Google Form'
+fields:
+  -
+    handle: embed
+    field:
+      theme: material
+      mode: htmlmixed
+      indent_type: tabs
+      indent_size: 4
+      key_map: default
+      line_numbers: true
+      line_wrapping: true
+      display: 'Embed code'
+      type: code
+      icon: code
+      listable: hidden
+      instructions: 'Set width and height to 100%'
+      validate:
+        - required
+  -
+    handle: drawing
+    field: common.drawing
+  -
+    handle: label
+    field:
+      placeholder: 'Open form'
+      input_type: text
+      antlers: false
+      display: 'Button label'
+      type: text
+      icon: text
+      listable: hidden
+      validate:
+        - required
+      width: 50

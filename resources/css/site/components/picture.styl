@@ -1,0 +1,31 @@
+.picture
+	display block
+	height 100%
+	background-color transparent
+	transition background-color $duration-500
+
+	img
+		opacity 1
+		transition opacity $duration-500
+
+	&:not(.picture--loaded)
+		background-color var(--tone-800)
+		
+		img
+			opacity 0
+
+	&.picture--fit
+		position relative
+		height 100%
+		min-height inherit // https://stackoverflow.com/a/43669966
+
+		img
+			position absolute
+			top 0
+			bottom 0
+			left 0
+			right 0
+			height 100%
+			width 100%
+			object-fit cover
+			object-position center

@@ -1,0 +1,27 @@
+.button-faux
+	display inline-flex
+	align-items center
+	fluid(column-gap, $px-12, $px-20)
+
+	.drawing
+		fluid(width, $px-32, $px-48)
+		fluid(height, $px-32, $px-48)
+
+	.prose
+		flex 1
+		color v(tone-700)
+		font-family $font-display
+		line-height $leading-tight
+		fluid(font-size, $text-16, $text-18)
+
+		a
+			display inline-block
+			color v(tone-700)
+			text-decoration none
+
+			&:hover
+				color v(tone-900)
+
+			&:not(:last-child)
+				margin-bottom $px-4
+

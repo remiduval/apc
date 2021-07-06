@@ -1,0 +1,86 @@
+<header>
+	<div class="wrapper">
+		{{ partial:components/emblem }}
+
+		<div class="header__menu">
+			<ul>
+				{{ nav_excluding_hidden include_home="true" }}
+					<li x-data="{ active: false }">
+						{{ 
+							partial:components/nav
+							primary="true"
+							main="true"
+	
+							{{ if (children | count) > 0 }}
+								click="active = !active"
+							{{ /if }}
+						}}
+	
+						{{ if children }}
+							<ul
+								class="header__dropdown"
+								x-cloak 
+								x-show="active"
+								@click.away="active = false"
+								x-transition:enter="slide-up-enter"
+								x-transition:enter-start="slide-up-enter-start"
+								x-transition:enter-end="slide-up-enter-end"
+								x-transition:leave="slide-up-leave"
+								x-transition:leave-end="slide-up-leave-end"
+							>
+								{{ if blueprint == "pages" }} {{# If parent is a real page, show it in submenu as href is disabled to allow dropdown #}}
+									<li>
+										{{ 
+											partial:components/nav
+											primary="true" 
+											inverted="true"
+										}}
+									</li>
+								{{ /if }}
+								{{ children }}
+									<li>
+										{{ partial:components/nav }}
+									</li>
+								{{ /children }}
+							</ul>
+						{{ /if }}
+	
+					</li>
+				{{ /nav_excluding_hidden }}
+			</ul>
+		</div>
+	
+		<div class="header__topbar">
+			<div class="links">
+				{{ topbar:links }}
+					{{ partial:components/link shape="sock" }}
+				{{ /topbar:links}}
+			</div>
+					
+			<div class="languages">
+				{{ locales }}
+					{{ unless locale.key == current }}
+						{{ 
+							partial:components/link
+							shape="control"
+							link_type="url"
+							label="{locale:name}"
+							icon="lang/{locale:short}"
+						}}
+					{{ /unless}}
+				{{ /locales }}
+			</div>
+		</div>
+	
+		<div class="header__toggle">
+			{{ 
+				partial:components/link
+				shape="control"
+				click="modal = true" 
+				icon="menu"
+				label="Menu"
+				{{# tag="button" bug ios #}}
+			}}
+		</div>
+	</div>	
+</header>

@@ -1,0 +1,27 @@
+.entry
+
+	a
+		display flex
+		flex-direction column
+		gap $px-8 $px-16
+		border-radius $radius-lg
+		background-color v(tone-025)
+		fluid(padding-top,      $px-12,  $px-20)
+		fluid(padding-bottom,   $px-12,  $px-20)
+		fluid(padding-left,     $px-16,  $px-24)
+		fluid(padding-right,    $px-16,  $px-24)
+
+		&:hover
+			background-color v(tone-050)
+
+	.title
+		//flex 1
+		font-weight 600
+		line-height $leading-snug
+		color v(tone-600)
+		fluid(font-size, $text-16, $text-18)
+
+	&.entry--inline
+		a
+			flex-direction row
+			align-items center

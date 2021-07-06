@@ -1,0 +1,16 @@
+<footer>
+	<div class="wrapper">
+		<div class="group1">
+			{{ partial:components/emblem size='large' }}
+			{{ svg src="giraffe" class="giraffe" }}
+		</div>
+
+		<div class="items">
+			{{ footer:items }}
+				{{ partial:components/button-faux }}
+			{{ /footer:items }}
+		</div>
+
+		<div class="footer__legal">{{ footer:legal }}</div>
+	</div>
+</footer>

@@ -1,0 +1,101 @@
+[x-cloak]
+	display none !important
+
+
+v($var)
+	unquote('var(--' + $var + ')')
+
+$bunting-shape = polygon(
+    0 0, 
+
+    83% 0%, 
+    85% 0.5%, 
+    86% 1.5%, 
+    87% 3%, 
+    87% 5%, 
+    85.5% 7%, 
+    84% 8%, 
+    
+    0 50%, 
+    
+    84% 92%, 
+    85.5% 93%, 
+    87% 95%, 
+    87% 97%, 
+    86% 98.5%, 
+    85% 99.5%, 
+    83% 100%, 
+    
+    0 100%
+)
+
+$wrapper-x-min = 16px
+$wrapper-x-max = 48px
+$padding-main-y-min = $px-32
+$padding-main-y-max = $px-48
+wrapper-x(max-width = $breakpoints.xxl, padding-x-min = $wrapper-x-min, padding-x-max = $wrapper-x-max)
+	width 100%
+	max-width max-width
+	margin-left auto
+	margin-right auto
+	fluid(padding-left,		padding-x-min, padding-x-max)
+	fluid(padding-right,	padding-x-min, padding-x-max)
+
+unwrapper-x()
+	width initial
+	max-width initial
+	margin-left initial
+	margin-right initial
+	padding-left initial
+	padding-right initial
+
+
+space-x(space)
+	& > * + *
+		margin-left space
+
+space-y(space)
+	& > * + *
+		margin-top space
+
+
+.visually-hidden 
+	border 0
+	clip rect(0 0 0 0)
+	height 1px
+	margin -1px
+	overflow hidden
+	padding 0
+	position absolute
+	white-space nowrap
+	width 1px
+
+
+fluid($property, $min-value, $max-value, $min-vw = $breakpoints.sm, $max-vw = $breakpoints.xl)
+	// Converting px to rem
+	$min-value = pxToRem($min-value)
+	$max-value = pxToRem($max-value)
+		
+	$factor = 1 / ($max-vw - $min-vw) * ($max-value - $min-value)
+	//$calc-value = '' +  ($min-value - ($min-vw * $factor)) + ' + ' + (100vw * $factor)
+	$calc-value = s('(%s - %s) + %s', $min-value, $min-vw * $factor, 100vw * $factor);
+
+	// Swaping min and max values if necessary - must be done AFTER factor calculation
+	if $min-value > $max-value
+		$min-value-store = $min-value
+		$min-value = $max-value
+		$max-value = $min-value-store
+
+	// Clamp property with 2 fallbacks
+	//{$property}: $min-value
+	{$property}: unquote('max(' + $min-value + ', min(' + $calc-value + ', ' + $max-value + '))') /*Older browsers*/
+	//{$property}: clamp( $min-value, unquote($calc-value), $max-value) // Switch to this when more browsers support it
+
+
+pxToRem(value)
+	u = unit(value)
+	
+	if (u is 'px')
+		return unit(value/16, 'rem')
+	else
+		return unit(value, u)

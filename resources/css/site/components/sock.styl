@@ -1,0 +1,29 @@
+$sock-after-width = $px-20
+
+.link--sock
+	display inline-flex
+	justify-content flex-end
+	position relative
+	margin-right $sock-after-width
+
+	.label
+		fluid(font-size, $text-16, $text-18)
+		font-family $font-display
+		text-transform lowercase
+		color white
+		background-color v(tone-600)
+		border-radius $radius-full 0 0 $radius-full
+		padding 0.4em 0.8em
+
+	&::after
+		content ""
+		position absolute
+		left 100%
+		width $sock-after-width
+		height 100%
+		background-color v(tone-600)
+		clip-path $bunting-shape
+
+	&:hover
+		.label, &::after
+			background-color v(tone-800)

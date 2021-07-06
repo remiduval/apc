@@ -1,0 +1,13 @@
+{{ collection:news breaking:is="true" limit="1" sort="date:desc" as="breakings" }}
+
+	{{ breakings }}
+		{{ scope:single }}
+			<aside class="breaking">
+				<div class="wrapper">
+					{{ partial:components/entry inline="true" }}
+				</div>
+			</aside>
+		{{ /scope:single }}
+	{{ /breakings }}
+
+{{ /collection:news }}

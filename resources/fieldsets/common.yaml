@@ -1,0 +1,262 @@
+title: Common
+fields:
+  -
+    handle: drawing
+    field:
+      options:
+        books: Books
+        cloud: Cloud
+        cubes: Cubes
+        document: Document
+        light: 'Light bulb'
+        map: Map
+        phone: Phone
+        speech: Speech
+        tree: Tree
+      multiple: false
+      max_items: 1
+      clearable: false
+      searchable: false
+      taggable: false
+      push_tags: false
+      cast_booleans: false
+      display: Drawing
+      type: select
+      icon: select
+      listable: hidden
+      width: 25
+      localizable: true
+  -
+    handle: color
+    field:
+      options:
+        blue: Blue
+        green: Green
+        orange: Orange
+        purple: Purple
+        red: Red
+        yellow: Yellow
+      multiple: false
+      max_items: 1
+      clearable: false
+      searchable: false
+      taggable: false
+      push_tags: false
+      cast_booleans: false
+      display: Color
+      type: select
+      icon: select
+      listable: hidden
+      width: 25
+  -
+    handle: size
+    field:
+      options:
+        sm: SM
+        md: MD
+        lg: LG
+        xl: XL
+      type: button_group
+      localizable: true
+      default: md
+      listable: hidden
+      display: Size
+  -
+    handle: cover
+    field:
+      mode: grid
+      container: assets
+      folder: covers
+      restrict: false
+      allow_uploads: true
+      max_files: 1
+      display: Cover
+      type: assets
+      icon: assets
+      localizable: true
+      listable: hidden
+      width: 25
+  -
+    handle: document
+    field:
+      mode: grid
+      container: assets
+      folder: documents
+      restrict: false
+      allow_uploads: true
+      max_files: 1
+      display: Document
+      type: assets
+      icon: assets
+      localizable: true
+      listable: hidden
+  -
+    handle: image
+    field:
+      mode: list
+      container: assets
+      restrict: false
+      allow_uploads: true
+      max_files: 1
+      type: assets
+      localizable: true
+      listable: hidden
+      display: Image
+      folder: images
+  -
+    handle: logo
+    field:
+      mode: grid
+      container: assets
+      folder: logos
+      restrict: false
+      allow_uploads: true
+      max_files: 1
+      display: Logo
+      type: assets
+      icon: assets
+      localizable: true
+      listable: hidden
+  -
+    handle: portrait
+    field:
+      mode: grid
+      container: assets
+      folder: portraits
+      restrict: false
+      allow_uploads: true
+      max_files: 1
+      display: Portrait
+      type: assets
+      icon: assets
+      localizable: true
+      listable: hidden
+  -
+    handle: paragraph
+    field:
+      always_show_set_button: false
+      buttons:
+        - bold
+        - italic
+        - unorderedlist
+        - orderedlist
+        - removeformat
+        - anchor
+      save_html: false
+      toolbar_mode: fixed
+      link_noopener: false
+      link_noreferrer: false
+      target_blank: false
+      reading_time: false
+      fullscreen: false
+      allow_source: false
+      display: Paragraph
+      type: bard
+      icon: bard
+      localizable: true
+      listable: hidden
+  -
+    handle: intro
+    field:
+      always_show_set_button: false
+      buttons:
+        - bold
+        - italic
+        - removeformat
+        - anchor
+      save_html: false
+      toolbar_mode: fixed
+      link_noopener: false
+      link_noreferrer: false
+      target_blank: false
+      reading_time: false
+      fullscreen: false
+      allow_source: false
+      enable_input_rules: false
+      enable_paste_rules: false
+      display: Intro
+      type: bard
+      icon: bard
+      localizable: true
+      listable: hidden
+      validate:
+        - 'max:500'
+  -
+    handle: title
+    field:
+      input_type: text
+      character_limit: 50
+      antlers: false
+      display: Title
+      type: text
+      icon: text
+      localizable: true
+      listable: hidden
+      width: 75
+      validate:
+        - required
+  -
+    handle: is_hidden
+    field:
+      display: 'Hide from navigation'
+      type: toggle
+      icon: toggle
+      localizable: true
+      listable: hidden
+  -
+    handle: menu_label
+    field:
+      input_type: text
+      character_limit: 50
+      antlers: false
+      display: 'Menu label'
+      type: text
+      icon: text
+      instructions: 'Overrides title in menu'
+      localizable: true
+      listable: hidden
+  -
+    handle: date
+    field:
+      mode: single
+      time_enabled: false
+      time_required: false
+      earliest_date: '1900-01-01'
+      full_width: false
+      inline: false
+      columns: 1
+      rows: 1
+      display: 'Publish on'
+      type: date
+      icon: date
+      localizable: true
+      listable: hidden
+      validate:
+        - required
+  -
+    handle: pinned
+    field:
+      display: Pinned
+      type: toggle
+      icon: toggle
+      instructions: 'Stays at the top of the list'
+      localizable: true
+      width: 33
+      listable: hidden
+  -
+    handle: expiration
+    field:
+      mode: single
+      time_enabled: false
+      time_required: false
+      earliest_date: '1900-01-01'
+      full_width: false
+      inline: false
+      columns: 1
+      rows: 1
+      display: 'Expires on'
+      type: date
+      icon: date
+      instructions: 'Unlist after that date'
+      localizable: true
+      listable: hidden

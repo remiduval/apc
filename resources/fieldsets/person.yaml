@@ -1,0 +1,35 @@
+title: Person
+fields:
+  -
+    handle: portrait
+    field: common.portrait
+    config:
+      width: 50
+      validate:
+        - required
+  -
+    handle: name
+    field:
+      input_type: text
+      antlers: false
+      display: Name
+      type: text
+      icon: text
+      localizable: true
+      width: 50
+      listable: hidden
+      validate:
+        - required
+  -
+    handle: biography
+    field: common.paragraph
+    config:
+      buttons:
+        - bold
+        - italic
+        - unorderedlist
+        - orderedlist
+        - removeformat
+        - anchor
+      display: Biography
+      width: 100

@@ -1,0 +1,19 @@
+.link--button
+	display inline-flex
+	align-items center
+	column-gap $px-20
+
+	.label
+		font-weight 600
+		line-height $leading-snug
+		flex 1
+		fluid(font-size, $text-16, $text-18)
+
+	&:hover
+		.drawing
+			svg
+				transform rotate(-15deg)
+			&:before
+
+				width 100%
+				height 100%

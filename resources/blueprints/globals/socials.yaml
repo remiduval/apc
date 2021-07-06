@@ -1,0 +1,43 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: socials
+        field:
+          fields:
+            -
+              handle: name
+              field:
+                options:
+                  facebook: Facebook
+                  twitter: Twitter
+                  instagram: Instagram
+                  linkedin: LinkedIn
+                  youtube: YouTube
+                clearable: false
+                multiple: false
+                searchable: false
+                taggable: false
+                push_tags: false
+                cast_booleans: false
+                type: select
+                listable: hidden
+                display: Name
+                width: 50
+            -
+              handle: url
+              field:
+                character_limit: 0
+                type: text
+                display: URL
+                input_type: url
+                listable: hidden
+                antlers: false
+                width: 50
+          mode: table
+          add_row: 'Add social network'
+          reorderable: true
+          type: grid
+          display: 'Social networks'
+          listable: hidden

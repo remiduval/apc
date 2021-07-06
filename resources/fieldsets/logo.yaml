@@ -1,0 +1,33 @@
+title: Logo
+fields:
+  -
+    handle: name
+    field:
+      input_type: text
+      antlers: false
+      display: Name
+      type: text
+      icon: text
+      width: 33
+      listable: hidden
+      validate:
+        - required
+      localizable: true
+  -
+    handle: url
+    field:
+      input_type: url
+      antlers: false
+      display: URL
+      type: text
+      icon: text
+      width: 33
+      listable: hidden
+      localizable: true
+  -
+    handle: logo
+    field: common.logo
+    config:
+      width: 33
+      validate:
+        - required

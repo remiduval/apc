@@ -1,0 +1,31 @@
+<div class="banner">
+
+	<div class="wrapper">
+
+		<div class="titles">
+			<h1 class="title">{{ yield:seo_title }}{{ title ?? view:title }}</h1>
+			{{ if intro }}
+				<div class="intro">{{ intro }}</div>
+			{{ /if }}
+		</div>
+		
+		<div class="cover">
+			{{ 
+				partial:components/picture 
+				sizes="(max-width: 1140px) 100vw, 1140px"
+				fit="true"
+		
+				{{ if cover }}
+					:picture="cover"
+				{{ elseif collection == 'news' }}
+					:picture="covers:news"
+				{{ elseif response_code == '404' }}
+					:picture="covers:not_found"
+				{{ else }}
+					:picture="covers:default"
+				{{ /if }}
+			}}
+		</div>
+	</div>
+
+</div>

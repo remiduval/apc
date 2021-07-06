@@ -1,0 +1,76 @@
+title: 'Prose light'
+fields:
+  -
+    handle: prose
+    field:
+      always_show_set_button: true
+      sets:
+        buttons:
+          display: Buttons
+          fields:
+            -
+              import: buttons
+        entries:
+          display: Entries
+          fields:
+            -
+              import: entries
+        gallery:
+          display: Gallery
+          fields:
+            -
+              import: gallery
+        googleform:
+          display: 'Google Form'
+          fields:
+            -
+              import: googleform
+        figure:
+          display: Image
+          fields:
+            -
+              import: figure
+        logos:
+          display: Logos
+          fields:
+            -
+              import: logos
+        map:
+          display: Map
+          fields:
+            -
+              import: map
+        person:
+          display: Person
+          fields:
+            -
+              import: person
+        video:
+          display: Video
+          fields:
+            -
+              import: video
+      buttons:
+        - h2
+        - h3
+        - bold
+        - italic
+        - unorderedlist
+        - orderedlist
+        - removeformat
+        - anchor
+        - table
+      save_html: false
+      toolbar_mode: fixed
+      link_noopener: false
+      link_noreferrer: false
+      target_blank: false
+      reading_time: false
+      fullscreen: false
+      allow_source: false
+      type: bard
+      listable: hidden
+      display: Content
+      localizable: true
+      enable_input_rules: true
+      enable_paste_rules: true

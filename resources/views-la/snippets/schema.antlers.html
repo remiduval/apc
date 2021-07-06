@@ -1,0 +1,26 @@
+<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "{{ seo:schema_type }}",
+		"name": "{{ seo:schema_name }}",
+		{{ if seo:schema_alternate }}
+			"alternateName": "{{ seo:schema_alternate }}",
+		{{ /if }}
+		"url": "{{ config:app:url }}",
+		"logo": "{{ seo:schema_logo | get:permalink }}",
+		"telephone": "{{ seo:schema_phone }}",
+		"address": {
+			"@type": "PostalAddress",
+			"streetAddress":	"{{ seo:schema_address:street }}",
+			"addressLocality":	"{{ seo:schema_address:city }}",
+			"postalCode":		"{{ seo:schema_address:postcode }}",
+			"addressCountry":	"{{ seo:schema_address:country }}"
+		},
+		"sameAs": [
+			{{ socials:socials }}
+				"{{ url }}"{{ unless last }},{{ /unless }}
+			{{ /socials:socials }}
+		]
+	}
+</script>
+{{ schema_custom }}

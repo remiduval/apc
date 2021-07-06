@@ -1,0 +1,113 @@
+// Generated from: https://codesandbox.io/s/palettizer-d0fop?file=/src/App.js:179-384
+define-tone(color)
+	for key, value in color
+		{'--tone-' + key}: value
+
+primary = {
+	'900': #0A3028
+	'800': #16473F
+	'700': #1F5C54
+	'600': #27776C
+	'500': #2F8D80
+	'400': #36A998
+	'300': #3BBDA7
+	'200': #44C8B7
+	'100': #71D7C9
+	'075': #98E2D8
+	'050': #BEEEE7
+	'025': #D9FBF2
+}
+
+secondary = {
+	'900': #5D1D07
+	'800': #87290A
+	'700': #B2330C
+	'600': #E33D0D
+	'500': #E7714A
+	'400': #F1997C
+	'300': #F3A990
+	'200': #F5B7A2
+	'100': #F7C9B9
+	'075': #F9D4C8
+	'050': #FBE2DA
+	'025': #FFF1EB
+}
+
+success = {
+	'900': #052b21
+	'800': #073c2e
+	'700': #084d38
+	'600': #0c6143
+	'500': #12734f
+	'400': #17875e
+	'300': #1d9f70
+	'200': #20b580
+	'100': #23cb8f
+	'075': #45e1a8
+	'050': #8df2c9
+	'025': #cefcee
+}
+
+warning = {
+	'900': #463000
+	'800': #694700
+	'700': #875c00
+	'600': #af7500
+	'500': #d28a00
+	'400': #ffa500
+	'300': #ffb528
+	'200': #ffc146
+	'100': #ffd16e
+	'075': #ffdb87
+	'050': #ffe9b4
+	'025': #fff2d2
+}
+
+error = {
+	'900': #420707
+	'800': #5b0a0b
+	'700': #6e0d10
+	'600': #871316
+	'500': #a11c1f
+	'400': #b92225
+	'300': #db4144
+	'200': #e86669
+	'100': #f38e8f
+	'075': #f6adae
+	'050': #fad0d0
+	'025': #fdf1f1
+}
+
+neutral = {
+	'900': #262525
+	'800': #353333
+	'700': #454343
+	'600': #585555
+	'500': #656565
+	'400': #777777
+	'300': #8c8c8c
+	'200': #a2a0a0
+	'100': #b4b3b3
+	'075': #cbcaca
+	'050': #dfdfdf
+	'025': #faf4f4
+}
+
+// List available colors
+colours = {
+	'primary':		primary
+	'secondary':	secondary
+	'success':		success
+	'warning':		warning
+	'error':		error
+	'neutral':		neutral
+}
+
+// Affecting colors
+for name, colour in colours
+	for key, value in colour
+		define('$' + name + '-' + key, value)
+
+// Defining default tone
+:root
+	define-tone(primary)

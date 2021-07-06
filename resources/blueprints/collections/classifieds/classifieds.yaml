@@ -1,0 +1,106 @@
+title: Classifieds
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field: common.title
+        config:
+          required: true
+      -
+        handle: taxonomy_classifieds
+        field:
+          type: terms
+          taxonomies:
+            - taxonomy_classifieds
+          display: Categories
+          mode: select
+          width: 25
+      -
+        handle: author
+        field:
+          input_type: text
+          character_limit: 50
+          antlers: false
+          display: 'Author name'
+          type: text
+          icon: text
+          width: 33
+          listable: hidden
+          validate:
+            - required
+      -
+        handle: email
+        field:
+          input_type: email
+          antlers: false
+          display: Email
+          type: text
+          icon: text
+          width: 33
+          listable: hidden
+          validate:
+            - email
+      -
+        handle: phone
+        field:
+          input_type: tel
+          antlers: false
+          display: Phone
+          type: text
+          icon: text
+          width: 33
+          listable: hidden
+      -
+        handle: prose
+        field:
+          always_show_set_button: false
+          buttons:
+            - bold
+            - italic
+            - unorderedlist
+            - orderedlist
+            - removeformat
+          save_html: false
+          toolbar_mode: fixed
+          link_noopener: false
+          link_noreferrer: false
+          target_blank: false
+          reading_time: false
+          fullscreen: false
+          allow_source: false
+          enable_input_rules: false
+          enable_paste_rules: false
+          display: Content
+          type: bard
+          icon: bard
+          localizable: true
+          listable: hidden
+          validate:
+            - required
+            - 'max:1000'
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: date
+        field: common.date
+      -
+        handle: expiration
+        field: common.expiration
+      -
+        handle: slug
+        field:
+          type: slug
+          required: true
+          localizable: true
+          listable: hidden
+          validate:
+            - required
+            - 'unique_entry_value:{collection},{id},{site}'
+  seo:
+    display: SEO
+    fields:
+      -
+        import: seo

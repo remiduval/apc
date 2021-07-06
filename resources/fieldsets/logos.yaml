@@ -1,0 +1,15 @@
+title: Logos
+fields:
+  -
+    handle: logos
+    field:
+      fields:
+        -
+          import: logo
+      mode: table
+      add_row: 'Add logo'
+      reorderable: true
+      display: Logos
+      type: grid
+      icon: grid
+      listable: hidden

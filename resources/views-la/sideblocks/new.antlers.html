@@ -1,0 +1,11 @@
+<aside class="sideblock new">
+	<div class="prose prose--sm">
+		{{ if tags }}
+			<div class="tags">
+				{{ tags }}<span>{{ value }}</span>{{ /tags }}
+			</div>
+		{{ /if }}
+
+		<p class="sideblock__info">{{ trans:custom.published }} {{ date }}</p>
+	</div>
+</aside>

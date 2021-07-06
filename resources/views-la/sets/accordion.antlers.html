@@ -1,0 +1,29 @@
+<div 
+	class="set accordion"
+	x-data="{ active: false }"
+	:class="{ 'accordion--active': active }"
+>
+
+	{{ 
+		partial:components/link
+		shape="accordion"
+		tag="button"
+		click="active = !active"
+		:label="title"
+		icon="chevron"
+	}}
+
+	<div
+		class="accordion__content"
+		x-cloak
+		x-ref="accordionContent"
+		:style="active ? 'max-height: ' + ($refs.accordionContent.scrollHeight + 2) + 'px' : ''"
+	>
+		<div class="prose">
+			{{ prose }}
+				{{ partial src="sets/{type}" }}
+			{{ /prose }}
+		</div>
+	</div>
+</div>
+

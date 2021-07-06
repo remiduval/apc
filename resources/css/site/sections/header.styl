@@ -1,0 +1,120 @@
+$header-padding-y-min = $px-24
+$header-padding-y-max = $px-32
+
+body > header
+	background-color grey
+
+	@media lg
+		fluid(padding-top,		$header-padding-y-min, $header-padding-y-max)
+		fluid(padding-bottom,	$header-padding-y-min, $header-padding-y-max)
+
+	.wrapper
+		wrapper-x()
+		display flex
+		justify-content space-between
+		align-items center
+		column-gap $px-32
+		position relative
+		z-index 1
+
+		// &::before, &::after
+		// 	content ''
+		// 	position absolute
+		// 	z-index -1
+		// 	color $primary-200
+		
+		// &::before
+		// 	background url('/svg/star.svg')
+		// 	fluid(width, $px-32, $px-64)
+		// 	fluid(height, $px-32, $px-64)
+		// 	left 72%
+		// 	top 50%
+		// 	transform translateY(-50%)
+
+		// 	@media lg
+		// 		left 240px
+		// 		top 10%
+
+		// &::after
+		// 	display none
+		// 	background url('/svg/cloud.svg')
+		// 	width $px-128
+		// 	height $px-128
+		// 	transform translateY(50%)
+
+		// 	@media lg
+		// 		display block
+		// 		right 0
+		// 		bottom 0
+
+	.emblem
+		img
+			height auto
+
+		.emblem--sm
+			width $px-224
+
+		.emblem--lg
+			display none
+			width $px-192
+
+		@media lg
+			.emblem--sm
+				display none
+			.emblem--lg
+				display block
+			
+.header__menu
+	display none
+	flex 1
+
+	> ul > li:first-child
+		display none
+
+	@media lg
+		display flex
+
+	@media xl
+		> ul > li:first-child
+			display inherit
+
+.header__topbar
+	display none
+	align-self flex-start
+	align-items center
+	column-gap $px-24
+	
+	@media lg
+		display flex
+
+
+.header__toggle
+	//position fixed
+	//z-index $zindex-fixed-element
+	//fluid(right, $wrapper-x-min, $wrapper-x-max)
+
+	@media lg
+		display: none
+
+.header__menu
+	justify-content center
+
+	> ul
+		display flex
+
+		> li
+			position relative
+
+.header__dropdown
+	position absolute
+	z-index $zindex-popover
+	left 50%
+	transform translateX(-50%)
+	top calc(100% + 1rem)
+	height auto
+	overflow hidden
+	min-width $px-256
+	background-color $primary-075
+	border-radius $radius-lg
+	overflow hidden
+	box-shadow $shadow-xl

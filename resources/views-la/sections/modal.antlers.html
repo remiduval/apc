@@ -1,0 +1,69 @@
+<div
+	class="modal"
+	@click.away="modal = false" 
+	x-cloak
+	x-show="modal"
+	x-transition:enter="slide-up-enter"
+	x-transition:enter-start="slide-up-enter-start"
+	x-transition:enter-end="slide-up-enter-end"
+	x-transition:leave="slide-up-leave"
+	x-transition:leave-end="slide-up-leave-end"
+>
+	<header>
+		{{ partial:components/emblem size="large" }}
+
+		<div class="controls">
+			{{ locales }}
+				{{ unless locale.key == current }}
+					{{ 
+						partial:components/link
+						shape="control"
+						link_type="url"
+						label="{locale:name}"
+						icon="lang/{locale:short}"
+					}}
+				{{ /unless}}
+			{{ /locales }}
+
+			{{ 
+				partial:components/link
+				shape="control"
+				click="modal = false"
+				icon="cross"
+				label="Close"
+				{{# tag="button" bug ios #}}
+			}}
+		</div>
+
+		<div class="links">
+			{{ topbar:links }}
+				{{ partial:components/link shape="sock" }}
+			{{ /topbar:links}}
+		</div>
+	</header>
+
+	<nav class="menu">
+		<ul>
+			{{ nav_excluding_hidden }}
+				<li>
+					{{ 
+						partial:components/nav
+						primary="true"
+						inverted="true"
+					}}
+
+					{{ if children }}
+						<ul	class="children">
+							{{ children }}
+								<li>
+									{{ partial:components/nav }}
+								</li>
+							{{ /children }}  
+						</ul>
+					{{ /if }}
+
+				</li>
+			{{ /nav_excluding_hidden }}
+		</ul>
+	</nav>
+</div>

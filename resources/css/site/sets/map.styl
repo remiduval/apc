@@ -1,0 +1,19 @@
+.map
+	border-radius $radius-xl
+	overflow hidden
+
+	> *
+		height 500px
+		z-index 0
+
+	.marker__heading
+		font-weight 600
+		line-height $leading-snug
+		fluid(font-size, $text-14, $text-16)
+
+	.marker__description
+		line-height $leading-snug
+		fluid(font-size, $text-14, $text-16)
+
+	.leaflet-marker-icon
+		color v(tone-300)

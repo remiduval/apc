@@ -1,0 +1,15 @@
+{{ if image }}
+	<figure class="set figure">
+		{{ 
+			partial:components/picture 
+			:picture="image"
+			sizes="(min-width: 1440px) 832px, 95vw"
+		}}
+
+		{{ if caption }}
+			<figcaption>
+				{{ caption }}
+			</figcaption>
+		{{ /if }} 
+	</figure>
+{{ /if }}

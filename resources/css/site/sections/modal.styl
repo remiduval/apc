@@ -1,0 +1,62 @@
+.modal
+	position: fixed
+	z-index: $zindex-overlay
+	left: 0
+	right: 0
+	top: 0
+	align-items: center
+	width 100%
+	height 100%
+	overflow-y: auto
+	box-shadow $shadow-lg
+	background-color $primary-050
+	display flex
+	flex-direction column
+
+	overscroll-behavior contain
+
+	@media xl
+		display: none
+	
+	header
+		background $primary-100
+		wrapper-x()
+		display grid
+		gap $px-16 $px-24
+		grid-template-columns 1fr auto
+		//grid-template-rows auto auto
+		align-items center
+		justify-content space-between
+		padding-top $px-24
+		padding-bottom $px-24
+
+		.emblem
+			grid-row 1 / span 2
+
+			img
+				width $px-160
+
+		.controls
+			display flex
+			column-gap $px-12
+
+		.links
+			justify-self end
+
+	.menu
+		flex 1
+		overflow-y auto
+		wrapper-x()
+
+		> ul
+			display flex
+			flex-wrap wrap
+			align-items flex-start
+			justify-content space-between
+			gap $px-12
+			margin-top $px-16
+
+			& > li
+				width calc(50% - 6px)
+				border-radius $radius-lg
+				overflow hidden

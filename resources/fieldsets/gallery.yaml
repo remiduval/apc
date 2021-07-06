@@ -1,0 +1,13 @@
+title: Gallery
+fields:
+  -
+    handle: images
+    field:
+      mode: grid
+      restrict: false
+      allow_uploads: true
+      type: assets
+      listable: hidden
+      display: Images
+      container: assets
+      folder: images

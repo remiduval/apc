@@ -1,0 +1,23 @@
+.drawing
+	position relative
+	width $px-48
+	height $px-48
+
+	svg
+		width 100%
+		height 100%
+		color v(tone-700)
+		position relative
+		transition all ease-out $duration-200
+
+	&::before
+		content ""
+		position absolute
+		left 50%
+		top 50%
+		transform translateX(-50%) translateY(-50%)
+		width 90%
+		height 90%
+		background-color v(tone-200)
+		border-radius $radius-full
+		transition all ease-out $duration-200

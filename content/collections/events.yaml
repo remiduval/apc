@@ -1,0 +1,12 @@
+title: Events
+sites:
+  - english
+  - french
+template: default
+layout: layout
+mount: eb771723-7a34-4827-993a-949fad38a82e
+revisions: false
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private

@@ -1,0 +1,29 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: default
+        field: common.cover
+        config:
+          display: Default
+      -
+        handle: classifieds
+        field: common.cover
+        config:
+          display: Classifieds
+      -
+        handle: events
+        field: common.cover
+        config:
+          display: Events
+      -
+        handle: news
+        field: common.cover
+        config:
+          display: News
+      -
+        handle: not_found
+        field: common.cover
+        config:
+          display: 'Page not found'

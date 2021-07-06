@@ -1,0 +1,93 @@
+title: Map
+fields:
+  -
+    handle: zoom
+    field:
+      step: 1
+      min: 0
+      max: 18
+      type: range
+      listable: hidden
+      display: Zoom
+      width: 33
+      default: 12
+      validate:
+        - required
+  -
+    handle: latitude
+    field:
+      input_type: text
+      type: text
+      listable: hidden
+      display: Latitude
+      validate:
+        - required
+        - numeric
+      width: 33
+      antlers: false
+  -
+    handle: longitude
+    field:
+      input_type: text
+      type: text
+      listable: hidden
+      display: Longitude
+      validate:
+        - required
+        - numeric
+      width: 33
+      antlers: false
+  -
+    handle: markers
+    field:
+      sets:
+        marker:
+          display: Marker
+          fields:
+            -
+              handle: name
+              field:
+                input_type: text
+                type: text
+                listable: hidden
+                display: Name
+                width: 75
+            -
+              handle: open
+              field:
+                display: Open
+                type: toggle
+                icon: toggle
+                width: 25
+                listable: hidden
+            -
+              handle: latitude
+              field:
+                input_type: text
+                type: text
+                listable: hidden
+                display: Latitude
+                validate:
+                  - required
+                  - numeric
+                width: 50
+                antlers: false
+            -
+              handle: longitude
+              field:
+                input_type: text
+                type: text
+                listable: hidden
+                display: Longitude
+                validate:
+                  - required
+                  - numeric
+                width: 50
+                antlers: false
+            -
+              handle: paragraph
+              field: common.paragraph
+      type: replicator
+      listable: hidden
+      display: Markers
+      collapse: false

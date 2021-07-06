@@ -1,0 +1,22 @@
+$duration-75 = 75ms
+$duration-100 = 100ms
+$duration-150 = 150ms
+$duration-200 = 200ms
+$duration-300 = 300ms
+$duration-500 = 500ms
+$duration-700 = 700ms
+$duration-1000 = 1000ms
+
+.slide-up-enter
+	transition: all $duration-300 ease-out
+.slide-up-enter-start
+	opacity: 0
+	transform: translateY( -($px-8) )
+.slide-up-enter-end
+	opacity: 100
+	transform: translateY(0)
+.slide-up-leave
+	transition: all $duration-300 ease-in
+.slide-up-leave-end
+	opacity: 0
+	transform: translateY( -($px-12) )

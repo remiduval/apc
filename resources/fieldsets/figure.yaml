@@ -1,0 +1,17 @@
+title: Figure
+fields:
+  -
+    handle: image
+    field: common.image
+    config:
+      width: 50
+  -
+    handle: caption
+    field:
+      input_type: text
+      type: text
+      localizable: true
+      listable: hidden
+      display: Caption
+      instructions: 'An optional caption that will be displayed under the image.'
+      width: 50

@@ -1,0 +1,321 @@
+sections:
+  page_titles:
+    display: 'Page titles'
+    fields:
+      -
+        handle: title_separator
+        field:
+          options:
+            ' | ': '|'
+            ' - ': '-'
+            ' / ': /
+            ' :: ': '::'
+            ' > ': '>'
+          clearable: false
+          multiple: false
+          searchable: true
+          taggable: false
+          push_tags: false
+          cast_booleans: false
+          type: select
+          instructions: 'Select the character to separate the page title and site title.'
+          width: 33
+          listable: hidden
+          display: Separator
+      -
+        handle: site_name
+        field:
+          input_type: text
+          type: text
+          localizable: true
+          listable: hidden
+          display: 'Website title'
+          instructions: 'The title for the website'
+          width: 66
+      -
+        handle: not_found
+        field:
+          display: 'Page not found (404)'
+          type: section
+          icon: section
+          listable: hidden
+      -
+        handle: 404_title
+        field:
+          input_type: text
+          antlers: false
+          display: Title
+          type: text
+          icon: text
+          width: 33
+          listable: hidden
+          validate:
+            - required
+          localizable: true
+      -
+        import: prose-light
+        prefix: '404_'
+  schema:
+    display: Schema
+    fields:
+      -
+        handle: section_schema
+        field:
+          type: section
+          instructions: 'Learn more: https://developers.google.com/search/docs/guides/intro-structured-data'
+          display: 'Knowledge graph data'
+      -
+        handle: schema_name
+        field:
+          input_type: text
+          type: text
+          listable: hidden
+          display: Name
+          width: 25
+          antlers: false
+          validate:
+            - required
+      -
+        handle: schema_alternate
+        field:
+          input_type: text
+          type: text
+          listable: hidden
+          display: 'Alternate name'
+          width: 25
+      -
+        handle: schema_logo
+        field: common.logo
+        config:
+          instructions: 'Minimum 112px x 112px, will be focal cropped to a square.'
+      -
+        handle: schema_type
+        field:
+          input_type: text
+          type: text
+          listable: hidden
+          instructions: 'Pick one from https://schema.org/docs/full.html'
+          display: Type
+          width: 50
+          antlers: false
+          validate:
+            - required
+      -
+        handle: schema_phone
+        field:
+          input_type: text
+          type: text
+          listable: hidden
+          display: Phone
+          instructions: 'Condensed (no space, no brackets, incl. country code)'
+          width: 50
+      -
+        handle: schema_address
+        field:
+          mode: keyed
+          keys:
+            street: 'Number and street'
+            city: City
+            postcode: Postcode
+            country: 'Country code (GB, ES, FR...)'
+          display: Address
+          type: array
+          icon: array
+          listable: hidden
+          validate:
+            - required
+      -
+        handle: schema_custom
+        field:
+          type: code
+          instructions: 'Add custom JSON-LD (business hours, contact data...). Including `<script>` tags'
+          listable: false
+          display: JSON-LD
+          theme: material
+          mode: htmlmixed
+          indent_type: tabs
+          indent_size: 4
+          key_map: default
+          line_numbers: true
+          line_wrapping: true
+  social:
+    display: Social
+    fields:
+      -
+        handle: og_image
+        field: common.cover
+        config:
+          display: 'Social image'
+          instructions: 'The default OG image. Can be overridden per entry. The recommended size is 1200px x 630px'
+  sitemap:
+    display: Sitemap
+    fields:
+      -
+        handle: sitemap_collections
+        field:
+          mode: select
+          type: collections
+          instructions: 'Select which collections to include in the sitemap.xml'
+          listable: hidden
+          default: pages
+          display: Collections
+  trackers:
+    display: Trackers
+    fields:
+      -
+        handle: trackers_gsv
+        field:
+          input_type: text
+          antlers: false
+          display: 'Google site verification'
+          type: text
+          icon: text
+          instructions: 'Prove ownership of your website and gain access to Google Search Console tools like indexing'
+          listable: hidden
+      -
+        handle: trackers_type
+        field:
+          options:
+            gtm: 'Google Tag Manager'
+            ga: 'Google Analytics'
+            plausible: Plausible
+            fathom: Fathom
+            cloudflare: Cloudflare
+          display: Type
+          type: button_group
+          icon: button_group
+          listable: hidden
+      -
+        handle: trackers_cloudflare
+        field:
+          input_type: text
+          antlers: false
+          display: 'Beacon ID'
+          type: text
+          icon: text
+          listable: hidden
+          validate:
+            - 'required_if:trackers_type,cloudflare'
+          if:
+            trackers_type: 'equals cloudflare'
+      -
+        handle: trackers_fathom
+        field:
+          input_type: text
+          antlers: false
+          display: 'Site ID'
+          type: text
+          icon: text
+          listable: hidden
+          if:
+            trackers_type: 'equals fathom'
+      -
+        handle: trackers_plausible
+        field:
+          input_type: text
+          antlers: false
+          display: Domain
+          type: text
+          icon: text
+          listable: hidden
+          if:
+            trackers_type: 'equals plausible'
+      -
+        handle: trackers_ga
+        field:
+          input_type: text
+          antlers: false
+          display: 'Tracking ID'
+          type: text
+          icon: text
+          instructions: 'The Analytics tracking ID. Note: if you don''t anonymize IP''s you need cookie consent in the EU. You should then use Google Tag Manager to load the Analytics tracking scripts and enable the Cookie Banner.'
+          width: 50
+          listable: hidden
+          if:
+            trackers_type: 'equals ga'
+      -
+        handle: trackers_ga_anon
+        field:
+          display: 'Anonymize IPs'
+          type: toggle
+          icon: toggle
+          instructions: 'Enable this to potentially be exempt from needing cookie consent'
+          width: 50
+          listable: hidden
+          if:
+            trackers_type: 'equals ga'
+      -
+        handle: trackers_gtm
+        field:
+          input_type: text
+          antlers: false
+          display: 'Tracking ID'
+          type: text
+          icon: text
+          width: 50
+          listable: hidden
+          if:
+            trackers_type: 'equals gtm'
+      -
+        handle: trackers_banner
+        field:
+          display: 'Cookie banner'
+          type: toggle
+          icon: toggle
+          instructions: 'Enable the cookie banner. Make sure you load all tracking scripts via GTM and set GTM to only function when the cookie `cookie_consent` is set to `true`.'
+          width: 50
+          listable: hidden
+          if:
+            trackers_type: 'equals gtm'
+      -
+        handle: trackers_message
+        field: common.paragraph
+        config:
+          buttons:
+            - bold
+            - italic
+            - unorderedlist
+            - orderedlist
+            - removeformat
+            - anchor
+          display: Message
+          if:
+            trackers_type: 'equals gtm'
+            trackers_banner: 'equals true'
+      -
+        handle: trackers_duration
+        field:
+          input_type: number
+          prepend: After
+          append: days
+          antlers: false
+          display: 'Expire cookie consent'
+          type: text
+          icon: text
+          instructions: 'After how many days the cookie consent cookie should expire and users need to consent again.'
+          listable: hidden
+          width: 50
+          default: 365
+          if:
+            trackers_type: 'equals gtm'
+            trackers_banner: 'equals true'
+      -
+        handle: trackers_revoke_before
+        field:
+          mode: single
+          time_enabled: false
+          time_required: false
+          earliest_date: '1900-01-01'
+          full_width: false
+          inline: false
+          columns: 1
+          rows: 1
+          display: 'Revoke consent before'
+          instructions: 'Revoke all users consent before this date. Use this when you added new trackers to GTM and your privacy policy changed. The cookie bar will reappear.'
+          type: date
+          width: 50
+          icon: date
+          listable: hidden
+          if:
+            trackers_type: 'equals gtm'
+            trackers_banner: 'equals true'

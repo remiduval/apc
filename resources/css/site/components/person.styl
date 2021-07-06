@@ -1,0 +1,25 @@
+.person
+	display flex
+	grid-template-columns auto 1fr
+	column-gap $px-16
+	
+	.person__portrait
+		fluid(width, $px-64, $px-96)
+		fluid(height, $px-64, $px-96)
+
+		img
+			border-radius $radius-full
+			overflow hidden
+
+	.person__info
+		flex 1
+
+	.person__name
+		font-size $text-24
+		font-weight 600
+		line-height $leading-snug
+		font-family $font-display
+	
+	.person__biography
+		margin-top $px-12
+

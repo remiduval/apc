@@ -1,0 +1,14 @@
+.gallery
+	display flex
+	flex-wrap wrap
+	gap $px-16
+
+	.gallery__thumb
+		border-radius $radius-lg
+		overflow hidden
+		border solid 2px v(tone-600)
+		fluid(width, $px-96, $px-128)
+		fluid(height, $px-96, $px-128)
+
+		&:hover
+			filter brightness(80%)

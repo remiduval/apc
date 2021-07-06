@@ -1,0 +1,188 @@
+.prose
+	color $neutral-800
+	fluid(font-size, $text-16, $text-20)
+	line-height $leading-relaxed
+
+	&.prose--sm
+		fluid(font-size, $text-16, $text-18)
+		//line-height $leading-snug
+
+		.set
+			margin-top 1em
+			margin-bottom 1em
+
+		.link--button
+			font-size $text-14
+
+
+	// Spacing
+	.set
+		margin-top 3em
+		margin-bottom 3em
+
+	.accordion + .accordion	
+		margin-top -2em
+
+	& > :first-child 
+		margin-top 0 !important
+	& > :last-child 
+		margin-bottom 0 !important
+	& > :empty // https://caniuse.com/mdn-css_selectors_empty_matches_whitespace
+		margin-top 0
+		margin-bottom 0
+
+
+
+	// Links
+	p, ul, ol, h2, h3, table:not([class^="fc"])
+		a 
+			color black
+			text-decoration underline
+			text-decoration-thickness 0.125em
+			//text-underline-offset 0 // Chromium bug
+			text-decoration-color black // Chromium bug
+			transition text-decoration-color $duration-200
+
+			&:hover
+				text-decoration-color v(tone-200)
+
+
+
+	// Bold
+	strong 
+		color black
+		font-weight 600
+
+
+
+	// Paragraphs
+	p 
+		margin-top 1.25em
+		margin-bottom 1.25em
+
+
+
+	// Titles
+	h2, h3
+		font-family $font-display
+		color $neutral-900
+		& + *
+			margin-top 0 !important
+
+	h2 
+		font-weight 700
+		font-size 1.5em
+		margin-top 2em
+		margin-bottom 1em
+		line-height 1.3333333
+
+	h3 
+		font-size 1.25em
+		margin-top 1.6em
+		margin-bottom 0.6em
+		line-height 1.6
+		font-weight 600
+
+
+
+	// Lists
+	ol, ul 
+		margin-top 1.25em
+		margin-bottom 1.25em
+
+	ol ol, ol ul, ul ol, ul ul 
+		margin-top 0.75em
+		margin-bottom 0.75em
+
+	li
+		margin-top 0.5em
+		margin-bottom 0.5em
+
+	ol 
+		& > li 
+			position relative
+			padding-left 1.75em
+			&:before 
+				content counter(list-item,var(--list-counter-style, decimal)) "."
+				position absolute
+				font-weight 400
+				color v(tone-300)
+				left 0
+
+	ul 
+		& > li
+			position relative
+			padding-left 1.75em
+			&:before 
+				content ""
+				position absolute
+				background-color v(tone-075)
+				border-radius 50%
+				width 0.375em
+				height 0.375em
+				top calc(.875em - .1875em)
+				left 0.25em
+
+	& > ul 
+		& > li 
+			p 
+				margin-top 0.75em
+				margin-bottom 0.75em
+			& > :first-child 
+				margin-top 1.25em
+			& > :last-child 
+				margin-bottom 1.25em
+	& > ol 
+		& > li 
+			& > :first-child 
+				margin-top 1.25em
+			& > :last-child 
+				margin-bottom 1.25em
+
+
+
+	// Tables
+	table:not([class^="fc"])
+		width 100%
+		table-layout auto
+		text-align left
+		margin-top 2em
+		margin-bottom 2em
+		font-size 0.875em
+		line-height 1.7142857
+		overflow-x auto
+		display block
+		hyphens initial // Revert so tables can overflow-x
+		word-break initial // Revert so tables can overflow-x
+
+		p // https://github.com/statamic/cms/issues/1058
+			margin-top 0
+			margin-bottom 0
+			& + p
+				margin-top 0.75em
+
+		tr
+			&:not(:last-child)
+				border-bottom solid 1px v(tone-025)
+
+		th, td
+			padding 0.6em
+			max-width 30ch
+
+		th
+			font-weight 600
+			background v(tone-025)
+			color v(tone-600)
+
+
+	// Inverted
+	&.prose--inverted
+		color white
+
+		p, ul, ol, h2, h3, table:not([class^="fc"])
+			a 
+				color white
+				text-decoration-color white
+
+				&:hover
+					text-decoration-color v(tone-100)

@@ -1,0 +1,14 @@
+title: Classifieds
+sites:
+  - english
+  - french
+template: default
+layout: layout
+mount: 3cf96ec0-dcb2-43dc-b55c-d370fc0607b4
+taxonomies:
+  - taxonomy_classifieds
+revisions: false
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private

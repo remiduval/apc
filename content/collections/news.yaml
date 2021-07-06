@@ -1,0 +1,11 @@
+title: News
+sites:
+  - english
+  - french
+template: default
+layout: layout
+revisions: false
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private

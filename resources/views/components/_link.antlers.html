@@ -1,0 +1,40 @@
+<{{ tag or 'a' }}
+	class="
+		link
+		link--{{ shape }}
+		{{ if primary }}	link--primary	{{ /if }}
+		{{ if main }}		link--main		{{ /if }}
+		{{ if inverted }}	link--inverted	{{ /if }}
+		{{ if is_parent }}	link--parent	{{ /if }}
+		{{ if is_current }}	link--current	{{ /if }}
+	"
+	
+	{{ if link_type == 'entry' }}
+		href="{{ entry:url }}"
+	{{ elseif link_type == 'url' }}
+		href="{{ url }}"
+	{{ elseif link_type == 'email' }}
+		href="mailto:{{ email | obfuscate }}"
+	{{ elseif link_type == 'tel' }}
+		href="tel:{{ tel }}"
+	{{ elseif link_type == 'document' }}
+		href="{{ document }}" download
+	{{ /if }}
+
+	{{ if click }} 
+		@click.prevent
+		@click="{{ click }}"
+	{{ /if }}
+>
+
+	{{ if icon }}
+		<span class="icon">{{ svg src="icon/{icon}" }}</span>
+	{{ /if }}
+
+	{{ if drawing }}
+		{{ partial:components/drawing }}
+	{{ /if }}
+
+	<span class="label">{{ label }}</span>
+	
+</{{ tag or 'a' }}>

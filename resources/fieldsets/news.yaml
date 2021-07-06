@@ -1,0 +1,12 @@
+title: News
+fields:
+  -
+    handle: limit
+    field:
+      display: Limit
+      type: integer
+      icon: integer
+      instructions: 'Maximum number of entries per page'
+      listable: hidden
+      validate:
+        - required

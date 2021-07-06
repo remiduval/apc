@@ -1,0 +1,19 @@
+<article class="entry {{ inline ?= 'entry--inline' }}">
+	<a href="{{ url }}" title="{{ alt ?= alt }}">
+
+		{{ if collection == "news" and tags }}
+			<div class="tags">
+				{{ tags }}<span>{{ value }}</span>{{ /tags }}
+			</div>
+		{{ /if }}
+
+		{{ if collection == "jobs" and until }}
+			<div class="tags">
+				<span>{{ trans:custom.deadline }} {{ until format="d M Y" }}</span>
+			</div>
+		{{ /if }}
+
+		<h1 class="title">{{ title }}</h1>
+
+	</a>
+</article>

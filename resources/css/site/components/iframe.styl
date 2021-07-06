@@ -1,0 +1,23 @@
+.iframe
+	position: relative
+	padding-bottom: 56.25% /* 16:9 */
+	height: 0
+	background-color var(--tone-800)
+
+	> *
+		opacity 0
+		transition opacity $duration-500
+		transition-delay 1s
+
+	&.iframe--mesured
+		padding-bottom calc(var(--iframe-height) / var(--iframe-width) * 100%)
+		background-color transparent
+
+		> *
+			opacity 1
+			position absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+

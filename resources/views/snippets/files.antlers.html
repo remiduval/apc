@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="{{ mix src='/css/style.css' }}">
+<script src="{{ mix src='/js/site.js' }}" defer></script>
+<script src="{{ mix src='/js/vendor/alpine.js' }}" defer></script>
+<link rel="preload" href="/fonts/open-sans-v18-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/open-sans-v18-latin-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/handlee-latin-600.woff2" as="font" type="font/woff2" crossorigin>
+
+
+{{ section:leaflet }}
+	<link rel="stylesheet" href="{{ mix src='/css/vendor/leaflet.css' }}">
+	<script src="{{ mix src='/js/vendor/leaflet.js' }}" defer></script>
+	<script src="{{ mix src='/js/map.js' }}" defer></script>
+{{ /section:leaflet }}
+
+{{ section:lightbox }}
+	<link rel="stylesheet" href="{{ mix src='/css/vendor/simpleLightbox.css' }}">
+	<script src="{{ mix src='/js/vendor/simpleLightbox.js' }}" defer></script>
+	<script src="{{ mix src='/js/lightbox.js' }}" defer></script>
+{{ /section:lightbox }}
+
+{{ section:video }}
+	<script src="{{ mix src='/js/iframe.js' }}" defer></script>
+{{ /section:video }}
+
+
+{{ prose where="type:gallery" limit="1" }}
+	{{ yield:lightbox }}
+{{ /prose }}
+
+{{ prose where="type:googleform" limit="1" }}
+	{{ yield:lightbox }}
+{{ /prose }}
+
+{{ prose where="type:map" limit="1" }}
+	{{ yield:leaflet }}
+{{ /prose }}
+
+{{ prose where="type:video" limit="1" }}
+	{{ yield:video }}
+{{ /prose }}
+
+{{ prose where="type:accordion" limit="1" }}
+	{{ yield:leaflet }}
+	{{ yield:lightbox }}
+	{{ yield:video }}
+{{ /prose }}
+
+
+

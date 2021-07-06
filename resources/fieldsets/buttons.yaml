@@ -1,0 +1,16 @@
+title: Buttons
+fields:
+  -
+    handle: buttons
+    field:
+      fields:
+        -
+          import: link
+      mode: stacked
+      reorderable: true
+      display: Buttons
+      type: grid
+      icon: grid
+      listable: hidden
+      add_row: 'Add button'
+      localizable: true

@@ -1,0 +1,9 @@
+title: Video
+fields:
+  -
+    handle: url
+    field:
+      type: video
+      listable: hidden
+      display: URL
+      instructions: 'From YouTube or Vimeo'
