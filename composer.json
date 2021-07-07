@@ -7,7 +7,7 @@
         "php": "^7.3 || ^8.0",
         "4rn0/statamic-v3-image-optimizer": "^1.0",
         "doublethreedigital/sc-digital-products": "^2.1",
-        "doublethreedigital/simple-commerce": "2.3.5",
+        "doublethreedigital/simple-commerce": "2.3.11",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.3",
