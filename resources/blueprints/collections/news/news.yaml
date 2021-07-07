@@ -4,7 +4,7 @@ sections:
     display: Main
     fields:
       -
-        handle: intro
+        handle: title
         field: common.title
       -
         handle: cover
@@ -20,9 +20,13 @@ sections:
       -
         handle: date
         field: common.date
+        config:
+          listable: true
       -
         handle: pinned
         field: common.pinned
+        config:
+          listable: true
       -
         handle: slug
         field:

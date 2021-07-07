@@ -27,7 +27,7 @@ sections:
           type: text
           icon: text
           width: 33
-          listable: hidden
+          listable: true
           validate:
             - required
       -
@@ -86,9 +86,13 @@ sections:
       -
         handle: date
         field: common.date
+        config:
+          listable: true
       -
         handle: expiration
         field: common.expiration
+        config:
+          listable: true
       -
         handle: slug
         field:

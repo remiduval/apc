@@ -1,0 +1,36 @@
+<aside class="sideblock submenu">
+	
+	{{ section:nav_segment_1 }}
+		{{ nav from="/{segment_0}" limit='1' }}
+			{{ if is_parent or is_current }}
+				<li>
+					{{ partial:components/nav primary="true" }}
+				</li>
+			{{ /if }}
+		{{ /nav }}
+	{{ /section:nav_segment_1 }}
+
+
+	{{ nav from="/{segment_1}" as="mynav" }}
+		{{# excluding isolated pages #}}
+		{{ if mynav }}
+			<nav class="sideblock sideblock--menu box">
+				<ul>
+					{{# adding segment_1 item #}}
+					{{ yield:nav_segment_1 }}
+
+					{{# actual nav #}}
+					{{ mynav }}
+						<li>
+							{{ partial:components/nav }}
+						</li>
+
+						{{# anchors #}}
+						{{ if is_current }}{{ yield:anchors }}{{ /if }}
+					{{ /mynav }}
+				</ul>
+			</nav>
+		{{ /if }}
+	{{ /nav }}
+
+</aside>

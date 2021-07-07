@@ -2,9 +2,11 @@ title: News
 sites:
   - english
   - french
-template: default
+template: templates/new
 layout: layout
+mount: 6dbfc1ca-8249-4850-a13e-5297a6917995
 revisions: false
+route: '{mount}/{slug}'
 sort_dir: asc
 date_behavior:
   past: public

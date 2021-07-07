@@ -7,45 +7,23 @@
 		wrapper-x(1140px, $px-8)
 		position relative
 
+	.titles
+		display flex
+		flex-direction column
+
 	.cover
-		fluid(height, 200px, 400px)
-		border-radius $radius-xl
+		width 100%
 		overflow hidden
-		box-shadow $shadow-lg
 
 	.title
-		display inline-flex
-		fluid(font-size, $text-20, $text-30)
-		padding 0.4em 1.5em
-		color white
-		background black
+		fluid(font-size, $text-30, $text-48)
+		color $blue-800
 		font-family $font-display
 		line-height $leading-tight
-		transform translateY(-50%)
-		box-shadow $shadow-lg
-		position relative
-		margin-left v(title-bunting-width)
-		margin-right v(title-bunting-width)
 
-		// &::before, &::after
-		// 	content ""
-		// 	position absolute
-		// 	top 0
-		// 	width v(title-bunting-width)
-		// 	height 100%
-		// 	background-color $secondary-500
-		// 	clip-path $bunting-shape
+	@media lg
+		.wrapper
+			display flex
 
-		// &::before
-		// 	right 100%
-		// 	transform rotate(180deg)
-
-		// &::after
-		// 	left 100%
-
-
-	> svg
-		position absolute
-		top 0
-		left 0
-		width 100%
+		.cover
+			width 400px

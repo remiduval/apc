@@ -2,3 +2,6 @@ title: Categories
 sites:
   - english
   - french
+url: '{mount}/{slug}'
+route: '{mount}/{slug}'
+template: templates/events

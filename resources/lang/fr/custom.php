@@ -2,6 +2,9 @@
     return [
         'deadline' => 'Date limite :',
         'published' => 'Publié le',
-        'jobs_no_results' => 'Pas d\'offre d\'emploi en ce moment',
+        'back_classifieds' => 'Petites annonces',
+        'back_events' => 'Calendrier',
+        'back_news' => 'Actualités',
+        'back_products' => 'Boutique',
     ];
 ?>

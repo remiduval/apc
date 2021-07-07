@@ -2,6 +2,9 @@
     return [
         'published' => 'Published on',
         'deadline' => 'Deadline:',
-        'jobs_no_results' => 'No job offer at this time',
+        'back_classifieds' => 'All classifieds',
+        'back_events' => 'Calendar',
+        'back_news' => 'All news',
+        'back_products' => 'Shop',
     ];
 ?>

@@ -1,6 +1,18 @@
 <header>
 	<div class="wrapper">
-		{{ partial:components/emblem }}
+
+		<div class="emblem">
+			<a aria-label="Logo {{ seo:site_name }}" href="{{ homepage }}">
+				{{ 
+					partial:components/picture 
+					picture="true"
+					:alt="seo:site_name"
+					external_picture="/svg/logo/logo.svg"
+					width="144"
+					height="79"
+				}}
+			</a>
+		</div>
 
 		<div class="header__menu">
 			<ul>
@@ -52,19 +64,36 @@
 	
 		<div class="header__topbar">
 					
-			<div class="languages">
-				{{ locales }}
-					{{ unless locale.key == current }}
-						{{ 
-							partial:components/link
-							shape="control"
-							link_type="url"
-							label="{locale:name}"
-							icon="lang/{locale:short}"
-						}}
-					{{ /unless}}
-				{{ /locales }}
-			</div>
+			{{ locales }}
+				{{ unless locale.key == current }}
+					{{ 
+						partial:components/link
+						shape="control"
+						link_type="url"
+						label="{locale:name}"
+						icon="{locale:short}"
+					}}
+				{{ /unless}}
+			{{ /locales }}
+
+			{{ 
+				partial:components/link
+				shape="control"
+				link_type="url"
+				label="Shopping cart"
+				icon="cart"
+				url="/cart"
+			}}
+
+			{{ 
+				partial:components/link
+				shape="control"
+				link_type="url"
+				label="Account"
+				icon="person"
+				url="/admin"
+			}}
+
 		</div>
 	
 		<div class="header__toggle">

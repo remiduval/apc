@@ -28,11 +28,7 @@
 >
 
 	{{ if icon }}
-		<span class="icon">{{ svg src="icon/{icon}" }}</span>
-	{{ /if }}
-
-	{{ if drawing }}
-		{{ partial:components/drawing }}
+		<span class="icon">{{ svg src="{icon}" }}</span>
 	{{ /if }}
 
 	<span class="label">{{ label }}</span>

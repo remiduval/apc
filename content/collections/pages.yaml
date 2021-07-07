@@ -5,6 +5,5 @@ sites:
 revisions: false
 route: '{parent_uri}/{slug}'
 template: templates/page
-sidebar: pageee
 structure:
   root: true

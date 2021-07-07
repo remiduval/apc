@@ -1,12 +1,12 @@
 <div class="page">
 
-	<main class="friend--{{ friend ?? 'dog' }}">
-		{{ partial:sections/prose }}
+	<main>
+		{{ partial:main/news }}
 	</main>
 	
 	<div class="sidebar">
 		{{ partial:sideblocks/edit }}
-		{{ partial:sideblocks/new }}
+		{{ partial:sideblocks/pagination }}
 	</div>
 
 </div>

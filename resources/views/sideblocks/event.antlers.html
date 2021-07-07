@@ -1,0 +1,14 @@
+<aside class="sideblock event">
+	{{ if event_date }}
+		{{ partial:components/detail icon="calendar" label="{event_date format='D j M y'}" }}
+	{{ /if }}
+	{{ if location }}
+		{{ partial:components/detail icon="location" :label="location" }}
+	{{ /if }}
+	{{ if info }}
+		{{ partial:components/detail icon="info" :label="info" }}
+	{{ /if }}
+	{{ if buttons }}
+		{{ partial:sets/buttons }}
+	{{ /if }}
+</aside>

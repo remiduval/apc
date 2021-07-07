@@ -2,10 +2,11 @@ title: Events
 sites:
   - english
   - french
-template: default
+template: templates/event
 layout: layout
-mount: eb771723-7a34-4827-993a-949fad38a82e
+mount: 94cb977d-e2df-4f67-850d-f706fa0c75c5
 revisions: false
+route: '{mount}/{slug}'
 sort_dir: asc
 date_behavior:
   past: public

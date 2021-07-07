@@ -191,7 +191,7 @@ fields:
       type: text
       icon: text
       localizable: true
-      listable: hidden
+      listable: true
       width: 75
       validate:
         - required

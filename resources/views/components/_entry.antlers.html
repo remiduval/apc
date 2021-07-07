@@ -1,17 +1,41 @@
-<article class="entry {{ inline ?= 'entry--inline' }}">
+<article class="entry entry--{{ collection }}">
 	<a href="{{ url }}" title="{{ alt ?= alt }}">
 
-		{{ if collection == "news" and tags }}
-			<div class="tags">
-				{{ tags }}<span>{{ value }}</span>{{ /tags }}
-			</div>
-		{{ /if }}
+		{{ unless no_image }}
+			<div class="entry__image">
+				{{ 
+					partial:components/picture 
+					fit="true"
+					sizes="128px"
 
-		{{ if collection == "jobs" and until }}
-			<div class="tags">
-				<span>{{ trans:custom.deadline }} {{ until format="d M Y" }}</span>
+					{{ if cover }}
+						:picture="cover"
+					{{ else }}
+						:picture="covers:news"
+					{{ /if }}
+				}}
 			</div>
-		{{ /if }}
+		{{ /unless }}
+
+		<div class="entry__taxonomies">
+			{{ taxonomy_classifieds }}
+				{{ value }}
+			{{ /taxonomy_classifieds }}
+		</div>
+
+		<div class="entry__date">
+			{{ partial:components/detail icon="calendar" label="{date format='D j M y'}" }}
+		</div>
+	
+		<div class="entry__event_date">
+			<span>{{ date format='D' }}</span>
+			<span>{{ date format='j' }}</span>
+			<span>{{ date format='M' }}</span>
+		</div>
+
+		<div class="entry__intro">
+			{{ intro }}
+		</div>
 
 		<h1 class="title">{{ title }}</h1>
 
