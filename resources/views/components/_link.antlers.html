@@ -7,6 +7,7 @@
 		{{ if inverted }}	link--inverted	{{ /if }}
 		{{ if is_parent }}	link--parent	{{ /if }}
 		{{ if is_current }}	link--current	{{ /if }}
+		{{ classes }}
 	"
 	
 	{{ if link_type == 'entry' }}
@@ -31,6 +32,6 @@
 		<span class="icon">{{ svg src="{icon}" }}</span>
 	{{ /if }}
 
-	<span class="label">{{ label }}</span>
+	<span class="label {{ no_label ?= 'visually-hidden' }}">{{ label }}</span>
 	
 </{{ tag or 'a' }}>

@@ -1,0 +1,42 @@
+.link--nav
+	display flex
+	align-items center
+	gap $px-4
+	padding $px-12 $px-20
+	line-height $leading-tight
+
+	&.link--primary
+		font-weight 500
+		font-size $text-18
+
+	&.link--main
+		color $blue-600
+		padding $px-8 $px-24
+		font-weight 500
+
+	&.link--inverted
+		color white
+		background $blue-600
+
+	&.link--current, &.link--parent
+		background-color $malibu-100
+
+		&.link--inverted
+			color white
+			background $blue-600
+
+	.icon
+		order 1
+		width $px-24
+
+	&:hover
+		background-color $malibu-100
+
+		&.link--main
+			background-color $malibu-100
+
+		&.link--inverted
+			background-color $blue-700
+
+	@media lg
+		padding $px-12 $px-24

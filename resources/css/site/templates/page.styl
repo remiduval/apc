@@ -13,7 +13,7 @@ $dog-size-max = $px-128
 	main
 		flex 1
 		background white
-		box-shadow $shadow-md
+		//box-shadow $shadow-md
 		wrapper-x()
 		fluid(padding-top,		$padding-main-y-min, $padding-main-y-max)
 		fluid(padding-bottom,	$padding-main-y-min, $padding-main-y-max)
@@ -49,25 +49,18 @@ $dog-size-max = $px-128
 		flex-direction row
 		justify-content flex-end
 		align-items flex-start
-		fluid(column-gap, $px-32, $px-48)
+		fluid(gap, $px-32, $px-64)
 		//position relative
 
 		main
 			unwrapper-x()
-			fluid(padding-left,		$wrapper-x-min, $px-32)
-			fluid(padding-right,	$wrapper-x-min, $px-32)
-			border-radius $radius-xl
+			fluid(padding-left,		$wrapper-x-min, $px-48)
+			fluid(padding-right,	$wrapper-x-min, $px-48)
+			border-radius $radius
+			border solid 2px $malibu-050
 
 		.sidebar
 			unwrapper-x()
 			position sticky
 			fluid(top, $padding-main-y-min, $padding-main-y-max)
 			width 300px
-
-	@media xl
-		.sidebar
-			fluid(margin-bottom, 240px, 300px)
-
-	@media xxl			
-		.sidebar
-			width 400px

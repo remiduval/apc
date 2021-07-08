@@ -9,61 +9,73 @@
 	x-transition:leave="slide-up-leave"
 	x-transition:leave-end="slide-up-leave-end"
 >
-	<header>
-		{{ partial:components/emblem size="large" }}
-
-		<div class="controls">
+	<div class="wrapper">
+		<div class="modal__controls">
+					
 			{{ locales }}
 				{{ unless locale.key == current }}
 					{{ 
-						partial:components/link
-						shape="control"
+						partial:components/control
 						link_type="url"
 						label="{locale:name}"
-						icon="lang/{locale:short}"
+						icon="{locale:short}"
 					}}
 				{{ /unless}}
 			{{ /locales }}
 
 			{{ 
-				partial:components/link
-				shape="control"
+				partial:components/control
+				link_type="url"
+				label="Shopping cart"
+				icon="bag"
+				url="/cart"
+			}}
+
+			{{ 
+				partial:components/control
+				link_type="url"
+				label="Account"
+				icon="person"
+				url="/admin"
+				inverted="true"
+			}}
+
+		</div>
+	
+		<nav class="modal__menu">
+			<ul>
+				{{ nav_excluding_hidden }}
+					<li>
+						{{ 
+							partial:components/nav
+							primary="true"
+							inverted="true"
+						}}
+	
+						{{ if children }}
+							<ul	class="children">
+								{{ children }}
+									<li>
+										{{ partial:components/nav }}
+									</li>
+								{{ /children }}  
+							</ul>
+						{{ /if }}
+	
+					</li>
+				{{ /nav_excluding_hidden }}
+			</ul>
+		</nav>
+
+		<div class="modal__footer">
+			{{ 
+				partial:components/control
 				click="modal = false"
 				icon="cross"
 				label="Close"
+				inverted="true"
 				{{# tag="button" bug ios #}}
 			}}
 		</div>
-
-		<div class="links">
-			{{ topbar:links }}
-				{{ partial:components/link shape="sock" }}
-			{{ /topbar:links}}
-		</div>
-	</header>
-
-	<nav class="menu">
-		<ul>
-			{{ nav_excluding_hidden }}
-				<li>
-					{{ 
-						partial:components/nav
-						primary="true"
-						inverted="true"
-					}}
-
-					{{ if children }}
-						<ul	class="children">
-							{{ children }}
-								<li>
-									{{ partial:components/nav }}
-								</li>
-							{{ /children }}  
-						</ul>
-					{{ /if }}
-
-				</li>
-			{{ /nav_excluding_hidden }}
-		</ul>
-	</nav>
+	</div>
 </div>

@@ -15,6 +15,7 @@
         "laravel/tinker": "^2.0",
         "rias/statamic-redirect": "^1.4",
         "statamic/cms": "^3.1",
+        "webup/laravel-sendinblue": "^3.1",
         "wildbit/swiftmailer-postmark": "^3.3"
     },
     "require-dev": {

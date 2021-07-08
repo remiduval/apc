@@ -1,15 +1,6 @@
 <footer>
 	<div class="wrapper">
 
-		<div class="footer__links">
-			{{ footer:buttons }}
-				{{ 
-					partial:components/link
-					shape="link"
-				}}
-			{{ /footer:buttons }}
-		</div>
-
 		<div class="footer__socials">
 			{{ socials:socials }}
 				{{ 
@@ -17,11 +8,21 @@
 					shape="social" 
 					link_type="url"
 					:icon="name" 
+					no_label="true"
 					label="{ label ?? name:label}" 
 					attr_aria="{ label ?? name:label}"
 					classes="link--{name}"
 				}}
 			{{ /socials:socials }}
+		</div>
+
+		<div class="footer__links">
+			{{ footer:buttons }}
+				{{ 
+					partial:components/link
+					shape="link"
+				}}
+			{{ /footer:buttons }}
 		</div>
 		
 	</div>

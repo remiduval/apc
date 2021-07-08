@@ -1,89 +1,21 @@
-$footer-padding-y-min = 24px
-$footer-padding-y-max = 32px
+$footer-padding-y-min = 48px
+$footer-padding-y-max = 48px
 
 body > footer
-
-	.emblem
-		img
-			fluid(width, $px-160, $px-192)
-			height auto
-
-	.giraffe
-		fluid(width, $px-64, $px-128)
-
-	.group1
+	.wrapper
 		wrapper-x()
+		fluid(padding-bottom, $footer-padding-y-min, $footer-padding-y-max)
 		display flex
-		justify-content space-between
+		flex-direction column
+		gap $px-4
 		align-items center
 
-	.items
-		wrapper-x()
-		fluid(padding-top,		$footer-padding-y-min, $footer-padding-y-max)
-		fluid(padding-bottom,	$footer-padding-y-min, $footer-padding-y-max)
-		background-color grey
-		display grid
-		gap $px-24
-		grid-template-columns 1fr 1fr
-		grid-template-rows auto auto
-		position relative
-
-		> *
-			flex 1
-
-		// &::after
-		// 	content ""
-		// 	position absolute
-		// 	left 0
-		// 	bottom 100%
-		// 	height $px-24
-		// 	width 100%
-		// 	background-image url("data:image/svg+xml;base64,PHN2ZyBpZD0idmlzdWFsIiB2aWV3Qm94PSIwIDAgMjAwMCAyNCIgd2lkdGg9IjIwMDAiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZlcnNpb249IjEuMSI+PHBhdGggZD0iTTAgMUwxOC41IDMuOEMzNyA2LjcgNzQgMTIuMyAxMTEgMTQuM0MxNDggMTYuMyAxODUgMTQuNyAyMjIgMTMuOEMyNTkgMTMgMjk2IDEzIDMzMyAxNEMzNzAgMTUgNDA3IDE3IDQ0NC4yIDE3LjVDNDgxLjMgMTggNTE4LjcgMTcgNTU1LjggMTUuM0M1OTMgMTMuNyA2MzAgMTEuMyA2NjcgOS41QzcwNCA3LjcgNzQxIDYuMyA3NzggN0M4MTUgNy43IDg1MiAxMC4zIDg4OSAxMi43QzkyNiAxNSA5NjMgMTcgMTAwMCAxNy41QzEwMzcgMTggMTA3NCAxNyAxMTExIDE3QzExNDggMTcgMTE4NSAxOCAxMjIyIDE2LjJDMTI1OSAxNC4zIDEyOTYgOS43IDEzMzMgNy4zQzEzNzAgNSAxNDA3IDUgMTQ0NC4yIDUuN0MxNDgxLjMgNi4zIDE1MTguNyA3LjcgMTU1NS44IDcuM0MxNTkzIDcgMTYzMCA1IDE2NjcgNi4yQzE3MDQgNy4zIDE3NDEgMTEuNyAxNzc4IDE0QzE4MTUgMTYuMyAxODUyIDE2LjcgMTg4OSAxNy43QzE5MjYgMTguNyAxOTYzIDIwLjMgMTk4MS41IDIxLjJMMjAwMCAyMkwyMDAwIDI1TDE5ODEuNSAyNUMxOTYzIDI1IDE5MjYgMjUgMTg4OSAyNUMxODUyIDI1IDE4MTUgMjUgMTc3OCAyNUMxNzQxIDI1IDE3MDQgMjUgMTY2NyAyNUMxNjMwIDI1IDE1OTMgMjUgMTU1NS44IDI1QzE1MTguNyAyNSAxNDgxLjMgMjUgMTQ0NC4yIDI1QzE0MDcgMjUgMTM3MCAyNSAxMzMzIDI1QzEyOTYgMjUgMTI1OSAyNSAxMjIyIDI1QzExODUgMjUgMTE0OCAyNSAxMTExIDI1QzEwNzQgMjUgMTAzNyAyNSAxMDAwIDI1Qzk2MyAyNSA5MjYgMjUgODg5IDI1Qzg1MiAyNSA4MTUgMjUgNzc4IDI1Qzc0MSAyNSA3MDQgMjUgNjY3IDI1QzYzMCAyNSA1OTMgMjUgNTU1LjggMjVDNTE4LjcgMjUgNDgxLjMgMjUgNDQ0LjIgMjVDNDA3IDI1IDM3MCAyNSAzMzMgMjVDMjk2IDI1IDI1OSAyNSAyMjIgMjVDMTg1IDI1IDE0OCAyNSAxMTEgMjVDNzQgMjUgMzcgMjUgMTguNSAyNUwwIDI1WiIgZmlsbD0iIzcxRDdDOSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49Im1pdGVyIj48L3BhdGg+PC9zdmc+")
-		// 	background-size cover
-
-	@media md
-		.items
+		.footer__socials
 			display flex
-			justify-content space-between
+			gap $px-12
 
-	@media xl
-		background-color grey
-		position relative
-
-		// &::after
-		// 	content ""
-		// 	position absolute
-		// 	left 0
-		// 	bottom 100%
-		// 	height $px-24
-		// 	width 100%
-		// 	background-image url("data:image/svg+xml;base64,PHN2ZyBpZD0idmlzdWFsIiB2aWV3Qm94PSIwIDAgMjAwMCAyNCIgd2lkdGg9IjIwMDAiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZlcnNpb249IjEuMSI+PHBhdGggZD0iTTAgMUwxOC41IDMuOEMzNyA2LjcgNzQgMTIuMyAxMTEgMTQuM0MxNDggMTYuMyAxODUgMTQuNyAyMjIgMTMuOEMyNTkgMTMgMjk2IDEzIDMzMyAxNEMzNzAgMTUgNDA3IDE3IDQ0NC4yIDE3LjVDNDgxLjMgMTggNTE4LjcgMTcgNTU1LjggMTUuM0M1OTMgMTMuNyA2MzAgMTEuMyA2NjcgOS41QzcwNCA3LjcgNzQxIDYuMyA3NzggN0M4MTUgNy43IDg1MiAxMC4zIDg4OSAxMi43QzkyNiAxNSA5NjMgMTcgMTAwMCAxNy41QzEwMzcgMTggMTA3NCAxNyAxMTExIDE3QzExNDggMTcgMTE4NSAxOCAxMjIyIDE2LjJDMTI1OSAxNC4zIDEyOTYgOS43IDEzMzMgNy4zQzEzNzAgNSAxNDA3IDUgMTQ0NC4yIDUuN0MxNDgxLjMgNi4zIDE1MTguNyA3LjcgMTU1NS44IDcuM0MxNTkzIDcgMTYzMCA1IDE2NjcgNi4yQzE3MDQgNy4zIDE3NDEgMTEuNyAxNzc4IDE0QzE4MTUgMTYuMyAxODUyIDE2LjcgMTg4OSAxNy43QzE5MjYgMTguNyAxOTYzIDIwLjMgMTk4MS41IDIxLjJMMjAwMCAyMkwyMDAwIDI1TDE5ODEuNSAyNUMxOTYzIDI1IDE5MjYgMjUgMTg4OSAyNUMxODUyIDI1IDE4MTUgMjUgMTc3OCAyNUMxNzQxIDI1IDE3MDQgMjUgMTY2NyAyNUMxNjMwIDI1IDE1OTMgMjUgMTU1NS44IDI1QzE1MTguNyAyNSAxNDgxLjMgMjUgMTQ0NC4yIDI1QzE0MDcgMjUgMTM3MCAyNSAxMzMzIDI1QzEyOTYgMjUgMTI1OSAyNSAxMjIyIDI1QzExODUgMjUgMTE0OCAyNSAxMTExIDI1QzEwNzQgMjUgMTAzNyAyNSAxMDAwIDI1Qzk2MyAyNSA5MjYgMjUgODg5IDI1Qzg1MiAyNSA4MTUgMjUgNzc4IDI1Qzc0MSAyNSA3MDQgMjUgNjY3IDI1QzYzMCAyNSA1OTMgMjUgNTU1LjggMjVDNTE4LjcgMjUgNDgxLjMgMjUgNDQ0LjIgMjVDNDA3IDI1IDM3MCAyNSAzMzMgMjVDMjk2IDI1IDI1OSAyNSAyMjIgMjVDMTg1IDI1IDE0OCAyNSAxMTEgMjVDNzQgMjUgMzcgMjUgMTguNSAyNUwwIDI1WiIgZmlsbD0iIzcxRDdDOSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49Im1pdGVyIj48L3BhdGg+PC9zdmc+")
-		// 	background-size cover
-
-		.wrapper
-			wrapper-x()
-			fluid(padding-top,		$footer-padding-y-min, $footer-padding-y-max)
-			fluid(padding-bottom,	$footer-padding-y-min, $footer-padding-y-max)
+		.footer__links
 			display flex
-			column-gap $px-64
-			position relative
-
-		.group1, .items
-			unwrapper-x()
-
-		.giraffe
-			position absolute
-			fluid(right, $wrapper-x-min, $wrapper-x-max)
-			//fluid(--offset, $footer-padding-y-min, $footer-padding-y-max)
-			//bottom calc( 100% + var(--offset) )	
-			bottom 100%
-
-		.items
-			position initial
-			flex 1
-			background-color initial
-			padding-top 0
-			padding-bottom 0
-
-			&::after
-				content none
+			flex-wrap wrap
+			justify-content center
+			gap $px-8 $px-16

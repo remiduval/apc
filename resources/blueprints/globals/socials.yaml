@@ -11,10 +11,7 @@ sections:
               field:
                 options:
                   facebook: Facebook
-                  twitter: Twitter
                   instagram: Instagram
-                  linkedin: LinkedIn
-                  youtube: YouTube
                 clearable: false
                 multiple: false
                 searchable: false

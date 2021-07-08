@@ -3,117 +3,71 @@ $header-padding-y-max = $px-32
 
 body > header
 
-	@media lg
-		fluid(padding-top,		$header-padding-y-min, $header-padding-y-max)
-		fluid(padding-bottom,	$header-padding-y-min, $header-padding-y-max)
-
-	.wrapper
-		wrapper-x()
-		display flex
-		justify-content space-between
-		align-items center
-		column-gap $px-32
-		position relative
-		z-index 1
-
-		// &::before, &::after
-		// 	content ''
-		// 	position absolute
-		// 	z-index -1
-		// 	color $primary-200
-		
-		// &::before
-		// 	background url('/svg/star.svg')
-		// 	fluid(width, $px-32, $px-64)
-		// 	fluid(height, $px-32, $px-64)
-		// 	left 72%
-		// 	top 50%
-		// 	transform translateY(-50%)
-
-		// 	@media lg
-		// 		left 240px
-		// 		top 10%
-
-		// &::after
-		// 	display none
-		// 	background url('/svg/cloud.svg')
-		// 	width $px-128
-		// 	height $px-128
-		// 	transform translateY(50%)
-
-		// 	@media lg
-		// 		display block
-		// 		right 0
-		// 		bottom 0
-
 	.emblem
-		img
-			height auto
+		position absolute
+		z-index $zindex-fixed-element
+		top $px-4
+		fluid(left,	$wrapper-x-min, $wrapper-x-max)
+		width $px-96
 
-		.emblem--sm
-			width $px-224
+		// img
+		// 	height auto
 
-		.emblem--lg
-			display none
-			width $px-192
-
-		@media lg
-			.emblem--sm
-				display none
-			.emblem--lg
-				display block
-			
-.header__menu
-	display none
-	flex 1
-
-	> ul > li:first-child
+	.header__menu
 		display none
+		flex 1
+
+		> ul
+			display flex
+			background-color $malibu-050
+			border-radius $radius
+
+			> li
+				position relative
+
+	.header__dropdown
+		position absolute
+		z-index $zindex-popover
+		left 0
+		top calc(100% + 1rem)
+		overflow hidden
+		width $px-240
+		background-color $malibu-050
+		border solid 2px $malibu-075
+		border-radius $radius
+
+	.header__controls
+		display none
+		align-self flex-start
+		gap $px-16
+
+	.header__toggle
+		position fixed
+		z-index $zindex-fixed-element
+		bottom $px-12
+		fluid(right,	$wrapper-x-min, $wrapper-x-max)
 
 	@media lg
-		display flex
+		.wrapper
+			wrapper-x()
+			padding-top $px-24
+			padding-bottom $px-24
+			display flex
+			align-items center
+			gap $px-48
+			//position relative
+			//z-index 1
 
-	@media xl
-		> ul > li:first-child
-			display inherit
+		.emblem
+			position initial
+			width $px-144
 
-.header__topbar
-	display none
-	align-self flex-start
-	align-items center
-	column-gap $px-24
-	
-	@media lg
-		display flex
+		.header__menu
+			display flex
+			margin-top $px-14
 
+		.header__controls
+			display flex
 
-.header__toggle
-	//position fixed
-	//z-index $zindex-fixed-element
-	//fluid(right, $wrapper-x-min, $wrapper-x-max)
-
-	@media lg
-		display: none
-
-.header__menu
-	justify-content center
-
-	> ul
-		display flex
-
-		> li
-			position relative
-
-.header__dropdown
-	position absolute
-	z-index $zindex-popover
-	left 50%
-	transform translateX(-50%)
-	top calc(100% + 1rem)
-	height auto
-	overflow hidden
-	min-width $px-256
-	background-color $primary-075
-	border-radius $radius-lg
-	overflow hidden
-	box-shadow $shadow-xl
+		.header__toggle
+			display none

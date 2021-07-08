@@ -20,11 +20,11 @@
 					<li x-data="{ active: false }">
 						{{ 
 							partial:components/nav
-							primary="true"
 							main="true"
 	
 							{{ if (children | count) > 0 }}
 								click="active = !active"
+								icon="down"
 							{{ /if }}
 						}}
 	
@@ -62,13 +62,12 @@
 			</ul>
 		</div>
 	
-		<div class="header__topbar">
+		<div class="header__controls">
 					
 			{{ locales }}
 				{{ unless locale.key == current }}
 					{{ 
-						partial:components/link
-						shape="control"
+						partial:components/control
 						link_type="url"
 						label="{locale:name}"
 						icon="{locale:short}"
@@ -77,32 +76,31 @@
 			{{ /locales }}
 
 			{{ 
-				partial:components/link
-				shape="control"
+				partial:components/control
 				link_type="url"
 				label="Shopping cart"
-				icon="cart"
+				icon="bag"
 				url="/cart"
 			}}
 
 			{{ 
-				partial:components/link
-				shape="control"
+				partial:components/control
 				link_type="url"
 				label="Account"
 				icon="person"
 				url="/admin"
+				inverted="true"
 			}}
 
 		</div>
 	
 		<div class="header__toggle">
 			{{ 
-				partial:components/link
-				shape="control"
+				partial:components/control
 				click="modal = true" 
 				icon="menu"
 				label="Menu"
+				inverted="true"
 				{{# tag="button" bug ios #}}
 			}}
 		</div>

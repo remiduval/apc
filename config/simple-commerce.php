@@ -79,6 +79,11 @@ return [
                 'to' => 'duncan@example.com',
             ],
         ],
+        'digital_download_ready' => [
+            \DoubleThreeDigital\DigitalProducts\Notifications\DigitalDownloadsNotification::class => [
+                'to' => 'customer',
+            ],
+        ],
     ],
 
     /*
