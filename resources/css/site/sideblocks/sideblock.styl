@@ -1,7 +1,30 @@
 .sideblock
-	.prose
-		color $neutral-600
+	position fixed
+	z-index $zindex-popover
+	bottom 64px
+	background-color $malibu-050
+	border-radius $radius
+	overflow hidden
 
-	.sideblock__info
-		font-weight 600
-		font-size $text-16
+	.sideblock__title
+		padding $px-12 $px-20
+		line-height $leading-tight
+		font-weight 500
+		font-size $text-18
+		color white
+		background $blue-600
+
+	.sideblock__content
+		padding $px-24
+		display flex
+		flex-direction column
+		gap $px-32
+
+	.details
+		display flex
+		flex-direction column
+		gap $px-12
+
+
+	@media lg
+		position initial

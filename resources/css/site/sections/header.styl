@@ -24,6 +24,7 @@ body > header
 
 			> li
 				position relative
+				display flex
 
 	.header__dropdown
 		position absolute
@@ -41,33 +42,50 @@ body > header
 		align-self flex-start
 		gap $px-16
 
-	.header__toggle
+	@media md
 		position fixed
-		z-index $zindex-fixed-element
-		bottom $px-12
-		fluid(right,	$wrapper-x-min, $wrapper-x-max)
+		z-index $zindex-header
+		width 100%
+		backdrop-filter blur(30px)
+		//background-color rgba(255, 255, 255, 0.5)
 
-	@media lg
-		.wrapper
+		> .wrapper
 			wrapper-x()
 			padding-top $px-24
 			padding-bottom $px-24
-			display flex
-			align-items center
-			gap $px-48
-			//position relative
-			//z-index 1
+			display grid
+			align-items start
+			gap $px-16
+			grid-template-columns auto auto
+			grid-template-rows auto auto
+			min-height $px-192
 
 		.emblem
 			position initial
-			width $px-144
+			width $px-128
 
 		.header__menu
+			grid-column 1 / span 2
 			display flex
-			margin-top $px-14
+			justify-self center
 
 		.header__controls
 			display flex
+			justify-self flex-end
+			
+	@media xl
+		> .wrapper
+			display flex
+			align-items center
+			gap $px-48
+			min-height $px-128
 
-		.header__toggle
-			display none
+		.emblem
+			width $px-144
+
+		.header__menu
+			order 2
+			margin-top $px-14
+
+		.header__controls
+			order 3

@@ -1,0 +1,23 @@
+.toggles
+	position fixed
+	bottom 0
+	z-index $zindex-fixed-element
+	width 100%
+
+	.wrapper
+		wrapper-x()
+		padding-top $px-12
+		padding-bottom $px-12
+		display flex
+		justify-content space-between
+
+	.side
+		display flex
+		gap $px-12
+
+	@media md
+		.link--toggle-menu
+			display none
+
+	@media lg
+		display none

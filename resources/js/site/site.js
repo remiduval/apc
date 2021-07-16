@@ -19,9 +19,6 @@ window.getCookie = function(name) {
 	if (parts.length === 2) return parts.pop().split(';').shift();
 }
 
-// Emulating masonry on mobile menu by placing the long 'Our school' item in second place
-var mobile_menu_items = document.querySelectorAll(".modal .menu > ul > li");
-mobile_menu_items[0].parentNode.insertBefore(mobile_menu_items[2], mobile_menu_items[1]);
 
 function doesntSupportFlexboxGap() {
 	// create flex container with row-gap set

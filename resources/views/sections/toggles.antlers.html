@@ -1,0 +1,32 @@
+<div class="toggles">
+	<div class="wrapper">
+
+		<div class="side">
+			{{ yield:toggles }}
+		</div>
+
+		<div class="side">
+			{{ user:can do="edit pages entries" }}
+				{{ 
+					partial:components/control
+					icon="edit"
+					link_type="url"
+					url="{ edit_url }" 
+					label="Edit this page"
+					inverted="true"
+				}}
+			{{ /user:can }}
+
+			{{ 
+				partial:components/control
+				click="modal = true" 
+				icon="menu"
+				label="Menu"
+				inverted="true"
+				classes="link--toggle-menu"
+				{{# tag="button" bug ios #}}
+			}}
+		</div>
+		
+	</div>
+</div>

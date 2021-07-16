@@ -14,7 +14,7 @@
 	{{ nav from="/{segment_1}" as="mynav" }}
 		{{# excluding isolated pages #}}
 		{{ if mynav }}
-			<nav class="sideblock sideblock--menu box">
+			<nav class="">
 				<ul>
 					{{# adding segment_1 item #}}
 					{{ yield:nav_segment_1 }}

@@ -16,18 +16,28 @@
 	class=""
 	x-data="{
 		scroll: window.pageYOffset, 
-		modal: false
+		mobile: window.innerWidth < 1024,
+		modal:					false,
+		sideblock_new:			false,
+		sideblock_event:		false,
+		sideblock_events:		false,
+		sideblock_classified:	false,
+		sideblock_classifieds:	false,
+		sideblock_product:		false,
+		sideblock_products:		false,
 	}"
 	:class="{ 
 		'body--modal': modal
 	}"
 	@scroll.window="scroll = window.pageYOffset, document.documentElement.style.setProperty('--scroll', window.pageYOffset)"
+	@resize.window="mobile = window.innerWidth < 1024"
 >
 	{{ partial:sections/header }}
 	{{ partial:sections/banner }}
 	{{ template_content }}
 	{{ partial:sections/footer }}
 	{{ partial:sections/modal }}
+	{{ partial:sections/toggles }}
 	{{ yield:seo_body }}
 </body>
 

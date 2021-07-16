@@ -1,14 +1,24 @@
-<aside class="sideblock event">
-	{{ if event_date }}
-		{{ partial:components/detail icon="calendar" label="{event_date format='D j M y'}" }}
-	{{ /if }}
-	{{ if location }}
-		{{ partial:components/detail icon="location" :label="location" }}
-	{{ /if }}
-	{{ if info }}
-		{{ partial:components/detail icon="info" :label="info" }}
-	{{ /if }}
-	{{ if buttons }}
-		{{ partial:sets/buttons }}
-	{{ /if }}
+<aside
+	class="sideblock event"
+	x-cloak
+	x-show="!mobile || sideblock_event"
+	@click.away="sideblock_event = false"
+>
+	<div class="sideblock__title">{{ trans:sideblock.title_event }}</div>
+	<div class="sideblock__content">
+		<div class="details">
+			{{ if event_date }}
+				{{ partial:components/detail icon="calendar" label="{event_date format='D j M y'}" }}
+			{{ /if }}
+			{{ if location }}
+				{{ partial:components/detail icon="location" :label="location" }}
+			{{ /if }}
+			{{ if info }}
+				{{ partial:components/detail icon="info" :label="info" }}
+			{{ /if }}
+		</div>
+		{{ if buttons }}
+			{{ partial:sets/buttons }}
+		{{ /if }}
+	</div>
 </aside>

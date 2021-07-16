@@ -1,3 +1,16 @@
-<aside class="sideblock new">
-	{{ partial:components/detail icon="calendar" label="{date format='D j M y'}" }}
+<aside 
+	class="sideblock new"
+	x-cloak
+	x-show="!mobile || sideblock_new"
+	@click.away="sideblock_new = false"
+>
+
+	<div class="sideblock__title">{{ trans:sideblock.title_new }}</div>
+
+	<div class="sideblock__content">
+		<div class="details">
+			{{ partial:components/detail icon="calendar" label="{date format='D j M y'}" }}
+		</div>
+	</div>
+	
 </aside>

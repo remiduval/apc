@@ -1,18 +1,11 @@
 <div class="banner">
 
 	<div class="wrapper">
-
-		<div class="titles">
-			<h1 class="title">{{ yield:seo_title }}{{ title ?? view:title }}</h1>
-			{{ if intro }}
-				<div class="intro">{{ intro }}</div>
-			{{ /if }}
-		</div>
-		
+	
 		<div class="cover">
-			{{ 
+			{{
 				partial:components/picture 
-				sizes="(max-width: 1140px) 100vw, 1140px"
+				sizes="(max-width: 768px) 100vw, (max-width: 1280px) 288px, 400px"
 				fit="true"
 		
 				{{ if cover }}
@@ -26,6 +19,14 @@
 				{{ /if }}
 			}}
 		</div>
+
+		<div class="titles">
+			<h1 class="title">{{ yield:seo_title }}{{ title ?? view:title }}</h1>
+			{{ if intro }}
+				<div class="intro prose">{{ intro }}</div>
+			{{ /if }}
+		</div>
+
 	</div>
 
 </div>

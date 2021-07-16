@@ -1,3 +1,22 @@
+{{ section:toggles }}
+	{{ 
+		partial:components/control
+		link_type="url"
+		url="{{ site:url }}/{{ segment_1 }}"
+		label="{trans:custom.back_news}"
+		icon="left"
+		inverted="true"
+	}}
+
+	{{ 
+		partial:components/link
+		shape="button"
+		click="sideblock_new = !sideblock_new" 
+		label="{trans:sideblock.toggle_new}"
+		tag="button"
+	}}
+{{ /section:toggles }}
+
 <div class="page">
 	
 	<div class="sidebar">

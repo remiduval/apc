@@ -14,6 +14,38 @@
 			</a>
 		</div>
 
+		<div class="header__controls">
+					
+			{{ locales }}
+				{{ unless locale.key == current }}
+					{{ 
+						partial:components/control
+						link_type="url"
+						label="{locale:name}"
+						icon="{locale:short}"
+					}}
+				{{ /unless}}
+			{{ /locales }}
+
+			{{ 
+				partial:components/control
+				link_type="url"
+				label="Shopping cart"
+				icon="bag"
+				url="/cart"
+			}}
+
+			{{ 
+				partial:components/control
+				link_type="url"
+				label="Account"
+				icon="person"
+				url="/admin"
+				inverted="true"
+			}}
+
+		</div>
+
 		<div class="header__menu">
 			<ul>
 				{{ nav_excluding_hidden include_home="false" }}
@@ -60,49 +92,6 @@
 					</li>
 				{{ /nav_excluding_hidden }}
 			</ul>
-		</div>
-	
-		<div class="header__controls">
-					
-			{{ locales }}
-				{{ unless locale.key == current }}
-					{{ 
-						partial:components/control
-						link_type="url"
-						label="{locale:name}"
-						icon="{locale:short}"
-					}}
-				{{ /unless}}
-			{{ /locales }}
-
-			{{ 
-				partial:components/control
-				link_type="url"
-				label="Shopping cart"
-				icon="bag"
-				url="/cart"
-			}}
-
-			{{ 
-				partial:components/control
-				link_type="url"
-				label="Account"
-				icon="person"
-				url="/admin"
-				inverted="true"
-			}}
-
-		</div>
-	
-		<div class="header__toggle">
-			{{ 
-				partial:components/control
-				click="modal = true" 
-				icon="menu"
-				label="Menu"
-				inverted="true"
-				{{# tag="button" bug ios #}}
-			}}
 		</div>
 	</div>	
 </header>
