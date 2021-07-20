@@ -1,0 +1,63 @@
+<article class="entry entry--classified">
+	<div>
+
+		<div class="entry__content">
+
+			<div class="entry__taxonomies">
+				{{ taxonomy_classifieds }}
+					{{ value }}
+				{{ /taxonomy_classifieds }}
+			</div>
+
+			<h1 class="entry__title">{{ title }}</h1>
+
+			<div class="entry__prose">
+				{{ prose }}
+			</div>
+
+		</div>
+
+		<div class="entry__details">
+			{{ 
+				partial:components/link
+				tag="div"
+				shape="detail" 
+				icon="calendar" 
+				label="{date format='D j M y'}" 
+			}}
+
+			{{ if author }}
+				{{ 
+					partial:components/link
+					tag="div"
+					shape="detail"
+					icon="person" 
+					:label="author"
+				}}
+			{{ /if }}
+
+			{{ if email }}
+				{{ 
+					partial:components/link
+					shape="detail"
+					icon="mail" 
+					:label="email"
+					link_type="email"
+					:email="email"
+				}}
+			{{ /if }}
+
+			{{ if tel }}
+				{{ 
+					partial:components/link
+					shape="detail"
+					icon="tel" 
+					:label="tel"
+					link_type="tel"
+					:tel="tel"
+				}}
+			{{ /if }}
+		</div>
+
+	</div>
+</article>

@@ -2,10 +2,11 @@
 	.wrapper
 		display flex
 		flex-direction column
-		gap $px-16
 
 	.titles
 		wrapper-x()
+		padding-top $px-20
+		padding-bottom $px-20
 		display flex
 		flex-direction column
 		gap $px-24
@@ -25,20 +26,22 @@
 
 		.wrapper
 			wrapper-x()
-			// padding-top $px-32
-			// padding-bottom $px-32
+			padding-top $px-48
+			padding-bottom $px-48
 			flex-direction row
 			align-items center
 			gap $px-64
 
 		.titles
 			unwrapper-x()
+			padding 0
 			flex 1
 
 		.cover
 			width $px-288
 			height $px-288
 			order 1
+			clip-path polygon(0 0, 100% 0, 100% 96%, 0% 100%)
 			
 	@media xl
 		margin-top $px-128 // fixed header

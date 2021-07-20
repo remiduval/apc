@@ -3,7 +3,7 @@
 		partial:components/control
 		link_type="url"
 		url="{{ site:url }}/{{ segment_1 }}"
-		label="{trans:custom.back_events}"
+		label="{trans:sideblock.back_events}"
 		icon="left"
 		inverted="true"
 	}}
@@ -18,15 +18,13 @@
 {{ /section:toggles }}
 
 <div class="page">
+
+	{{ partial:main/default }}
 	
 	<div class="sidebar">
 		{{ partial:sideblocks/edit }}
-		{{ partial:sideblocks/back label="custom.back_events" }}
+		{{ partial:sideblocks/back label="{trans:sideblock.back_events}" }}
 		{{ partial:sideblocks/event }}
 	</div>
-
-	<main>
-		{{ partial:sections/prose }}
-	</main>
 
 </div>

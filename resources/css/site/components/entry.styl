@@ -1,27 +1,55 @@
 .entry
+	display grid
 
-	a
-		display flex
-		flex-direction column
-		gap $px-8 $px-16
-		border-radius $radius-lg
-		background-color v(tone-025)
-		fluid(padding-top,      $px-12,  $px-20)
-		fluid(padding-bottom,   $px-12,  $px-20)
-		fluid(padding-left,     $px-16,  $px-24)
-		fluid(padding-right,    $px-16,  $px-24)
+	> *
+		display grid
+		border-radius $radius
+		overflow hidden
+		background-color $malibu-050
 
-		&:hover
-			background-color v(tone-050)
+	> a:hover
+		background-color $malibu-075
 
-	.title
-		//flex 1
-		font-weight 600
+	.entry__title
+		font-weight 500
 		line-height $leading-snug
-		color v(tone-600)
-		fluid(font-size, $text-16, $text-18)
+		color $blue-800
+		font-family $font-display
+		font-size $text-18
 
-	&.entry--inline
-		a
-			flex-direction row
-			align-items center
+	.entry__intro
+		color $blue-600
+
+	.entry__date
+		color $blue-600
+
+	.entry__details
+		display flex
+		gap $px-8 $px-32
+		align-items center
+		padding 0 $px-24
+	
+	&.entry--new
+		> a
+			grid-template-rows $px-144 1fr auto
+
+		.entry__content
+			display flex
+			flex-direction column
+			gap $px-16
+			padding $px-16 $px-24
+
+		.entry__details
+			justify-content space-between
+
+		.entry__arrow
+			width $px-24
+			height $px-24
+
+	&.entry--classified
+		.entry__content
+			padding $px-24
+			background-color white
+
+		.entry__details
+			flex-wrap wrap

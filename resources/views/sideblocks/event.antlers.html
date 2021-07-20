@@ -8,13 +8,34 @@
 	<div class="sideblock__content">
 		<div class="details">
 			{{ if event_date }}
-				{{ partial:components/detail icon="calendar" label="{event_date format='D j M y'}" }}
+				{{ 
+					partial:components/link
+					tag="div"
+					shape="detail"
+					icon="calendar" 
+					label="{event_date format='D j M y'}" 
+					main="true"
+				}}
 			{{ /if }}
 			{{ if location }}
-				{{ partial:components/detail icon="location" :label="location" }}
+				{{ 
+					partial:components/link
+					tag="div"
+					shape="detail"
+					icon="location" 
+					:label="location"
+					main="true"
+				}}
 			{{ /if }}
 			{{ if info }}
-				{{ partial:components/detail icon="info" :label="info" }}
+				{{ 
+					partial:components/link
+					tag="div"
+					shape="detail"
+					icon="info" 
+					:label="info"
+					main="true"
+				}}
 			{{ /if }}
 		</div>
 		{{ if buttons }}

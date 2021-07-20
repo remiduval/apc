@@ -1,7 +1,7 @@
-<main class="main--news">
+<main class="main--classifieds">
 	{{ collection 
-		from="news"
-		limit="2"
+		from="classifieds"
+		limit="3"
 		paginate="true"
 		as="entries"
 		sort="pinned:desc|date:desc"
@@ -12,7 +12,7 @@
 		{{ /if }}
 
 		{{ entries }}
-			{{ partial:components/entry--new }}
+			{{ partial:components/entry--classified }}
 		{{ /entries }}	
 
 		{{ if paginate:total_pages > 1 }}

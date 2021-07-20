@@ -1,20 +1,14 @@
 {{ if logged_in }}
 	<aside class="sideblock edit">
-		<div class="prose prose--sm">
-			<p class="sideblock__info">Logged in as {{ user }}{{ name }}{{ /user }}</p>
-
-
-			{{ user:can do="edit pages entries" }}
-				<div class="set">
-					{{ 
-						partial:components/link
-						shape="sock"
-						link_type="url"
-						url="{ edit_url }" 
-						label="Edit this page" 
-					}}
-				</div>
-			{{ /user:can }}
-		</div>
+		{{ user:can do="edit pages entries" }}
+			{{ 
+				partial:components/link
+				shape="button"
+				link_type="url"
+				url="{ edit_url }" 
+				label="Edit" 
+				icon="edit"
+			}}
+		{{ /user:can }}
 	</aside>
 {{ /if }}

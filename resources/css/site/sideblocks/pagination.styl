@@ -1,0 +1,33 @@
+.pagination
+	display flex
+	align-items center
+	width fit-content
+	border-radius $radius
+	background-color $blue-500
+	overflow hidden
+	color white
+
+	.arrow
+		display flex
+		align-items center
+		justify-content center
+		width $px-40
+		height $px-40
+
+		&:hover
+			background-color $blue-600
+
+	svg
+		width $px-20
+		height $px-20
+
+	.pagination__count
+		font-weight 500
+		padding 0 $px-16
+
+
+.sideblock.pagination
+	display none
+
+	@media lg
+		display flex

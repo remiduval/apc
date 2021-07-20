@@ -3,36 +3,3 @@
 	//flex-direction column
 	//flex-wrap wrap
 	gap $px-24 $px-40
-
-	.pagination
-		display flex
-		align-items center
-		width fit-content
-		border-radius $radius-lg
-		background-color v(tone-025)
-		overflow hidden
-		color: v(tone-600)
-
-		.arrow
-			display flex
-			align-items center
-			justify-content center
-			width $px-48
-			height $px-48
-
-			&:hover
-				background-color v(tone-050)
-			
-			&.arrow--prev
-				transform: rotate(90deg)
-
-			&.arrow--next
-				transform: rotate(-90deg)
-
-		svg
-			width $px-24
-			height $px-24
-
-		.pagination__count
-			font-weight 600
-			padding: 0 $px-16

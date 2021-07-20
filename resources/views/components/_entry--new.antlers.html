@@ -1,0 +1,39 @@
+<article class="entry entry--new">
+	<a href="{{ url }}" title="{{ alt ?= alt }}">
+
+		<div class="entry__image">
+			{{ 
+				partial:components/picture 
+				fit="true"
+				sizes="(min-width: 600px) 460px, 620px"
+
+				{{ if cover }}
+					:picture="cover"
+				{{ else }}
+					:picture="covers:news"
+				{{ /if }}
+			}}
+		</div>
+
+		<div class="entry__content">
+			<h1 class="entry__title">{{ title }}</h1>
+
+			<div class="entry__intro">
+				{{ intro }}
+			</div>
+		</div>
+
+		<div class="entry__details">
+			{{ 
+				partial:components/link
+				shape="detail" 
+				tag="div"
+				icon="calendar" 
+				label="{date format='D j M y'}"
+			}}
+
+			{{ svg src="arrow" class="entry__arrow" }}
+		</div>
+
+	</a>
+</article>

@@ -1,44 +1,28 @@
-$dog-size-min = $px-80
-$dog-size-max = $px-128
-
 .page
 	flex 1
 	width 100%
+	padding-top $px-32
+	padding-bottom $px-32
 
 	main
 		flex 1
-		background white
-		//box-shadow $shadow-md
-		wrapper-x()
-		fluid(padding-top,		$padding-main-y-min, $padding-main-y-max)
-		fluid(padding-bottom,	$padding-main-y-min, $padding-main-y-max)
-		fluid(padding-left,		$wrapper-x-min, $px-32)
-		fluid(padding-right,	$wrapper-x-min, $px-32)
-		position relative
 
 	.sidebar
 		display flex
 		flex-direction column
 		row-gap $px-48
-		wrapper-x()	
 
 	@media lg
 		wrapper-x()
 		display flex
 		align-items flex-start
 		fluid(column-gap, $px-16, $px-64)
-		//position relative
 
 		main
+			order 1
 			flex 1
-			unwrapper-x()
-			fluid(padding-left,		$wrapper-x-min, $px-48)
-			fluid(padding-right,	$wrapper-x-min, $px-48)
-			border-radius $radius
-			border solid 2px $malibu-050
 
 		.sidebar
-			unwrapper-x()
 			position sticky
 			fluid(top, $padding-main-y-min, $padding-main-y-max)
 			width $px-208

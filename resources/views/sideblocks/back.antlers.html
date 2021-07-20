@@ -2,5 +2,12 @@
 	class="sideblock back"
 	x-show="!mobile"
 >
-	<a href="{{ site:url }}/{{ segment_1 }}">{{ trans key="{label}" }}</a>
+	{{ 
+		partial:components/link
+		shape="button"
+		link_type="url"
+		url="{{ site:url }}/{{ segment_1 }}"
+		icon="left"
+		inverted="true"
+	}}
 </aside>

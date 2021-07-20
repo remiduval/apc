@@ -43,7 +43,7 @@ sections:
           validate:
             - email
       -
-        handle: phone
+        handle: tel
         field:
           input_type: tel
           antlers: false

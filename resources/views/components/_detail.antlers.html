@@ -1,7 +1,14 @@
-<div class="detail">
-	<div class="icon">
-		{{ svg src="blob/circle-sm" class="back" }}
-		{{ svg src="{icon}" class="front" }}
-	</div>
-	<div class="label">{{ label }}</div>
-</div>
+<{{ detail_link ? 'a' : 'div' }} class="detail {{ circled ?= 'detail--circled' }}" {{ detail_link ?= 'href="' }}>
+
+		<div class="icon">
+
+			{{ if circled }}
+				{{ svg src="blob/circle-sm" class="back" }}
+			{{ /if }}
+
+			{{ svg src="{icon}" class="front" }}
+
+		</div>
+		<div class="label">{{ label }}</div>
+
+</{{ detail_link ? 'a' : 'div' }}>

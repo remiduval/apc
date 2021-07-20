@@ -9,7 +9,14 @@
 
 	<div class="sideblock__content">
 		<div class="details">
-			{{ partial:components/detail icon="calendar" label="{date format='D j M y'}" }}
+			{{ 
+				partial:components/link
+				tag="div"
+				shape="detail" 
+				icon="calendar" 
+				label="{date format='D j M y'}" 
+				main="true"
+			}}
 		</div>
 	</div>
 	

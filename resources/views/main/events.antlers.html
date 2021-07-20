@@ -1,8 +1,6 @@
-<main class="main--news">
+<main class="main--events">
 	{{ collection 
-		from="news"
-		limit="2"
-		paginate="true"
+		from="events"
 		as="entries"
 		sort="pinned:desc|date:desc"
 	}}
@@ -10,9 +8,9 @@
 		{{ if no_results }}
 			<p>No results</p>
 		{{ /if }}
-
+	
 		{{ entries }}
-			{{ partial:components/entry--new }}
+			{{ partial:components/entry--event	}}
 		{{ /entries }}	
 
 		{{ if paginate:total_pages > 1 }}
@@ -30,6 +28,6 @@
 
 			{{ /section:pagination }}
 		{{ /if }}
-
+	
 	{{ /collection }}
 </main>
