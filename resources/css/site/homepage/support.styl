@@ -1,0 +1,40 @@
+.homepage__support
+	text-align center
+
+	.wrapper
+		wrapper-x()
+		space-y($px-64)
+
+	.support__actions
+		display flex
+		flex-wrap wrap
+		gap $px-64
+		justify-content center
+
+	.action__title
+		display flex
+		flex-direction column
+		gap $px-20
+		align-items center
+		font-size $px-20
+		font-weight 500
+		margin-bottom $px-20
+
+		&::after
+			content ""
+			display block
+			width $px-32
+			height 28px
+
+	.action
+		max-width $px-288
+
+		&:nth-child(n+1) .action__title::after
+			background-color $yellow-400
+			clip-path url(#circle-sm)
+		&:nth-child(n+2) .action__title::after
+			background-color $red-400
+			clip-path url(#triangle-sm)
+		&:nth-child(n+3) .action__title::after
+			background-color $blue-400
+			clip-path url(#square-sm)

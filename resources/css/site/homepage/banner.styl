@@ -1,0 +1,32 @@
+.homepage .banner
+
+	@media md
+		.cover
+			width 346.5px
+			height 406px
+			
+			picture
+				clip-path url(#circle-lg)
+
+			&::before
+				display none
+
+			&::after
+				content ""
+				position absolute
+				top 0
+				right 90%
+				width 347.2px
+				height 350px
+				clip-path url(#triangle-lg)
+				background-color $yellow-400
+				mix-blend-mode multiply
+			
+	@media xl
+		.cover
+			width 495px
+			height 580px
+
+			&::after
+				width 496px
+				height 500px

@@ -14,9 +14,22 @@ schoolyears:
         end: 2023-07-31
 ---
 
-<aside class="sideblock events">
-    
-    {{ view:schoolyears }}
-        {{ label }}
-    {{ /view:schoolyears }}
+<aside 
+	class="sideblock events"
+	x-cloak
+	x-show="!mobile || sideblock_events"
+	@click.away="sideblock_events = false"
+>
+    <div class="sideblock__title">{{ trans:sideblock.title_events }}</div>
+
+    <ul>
+        {{ view:schoolyears }}
+            <li>
+                {{ 
+                    partial:components/nav
+                    :menu_label="label"
+                }}
+            </li>
+        {{ /view:schoolyears }}
+    </ul>
 </aside>

@@ -1,10 +1,10 @@
-<article class="entry entry--event">
+<article class="entry entry--event {{ inverted ?= 'entry--inverted' }}">
 	<a href="{{ url }}" title="{{ alt ?= alt }}">
 
 		<div class="entry__event_date">
-			<span>{{ date format='D' }}</span>
-			<span>{{ date format='j' }}</span>
-			<span>{{ date format='M' }}</span>
+			<span class="weekday">{{ date format='D' }}</span>
+			<span class="day">{{ date format='j' }}</span>
+			<span class="month">{{ date format='M' }}</span>
 		</div>
 
 		<div class="entry__content">

@@ -1,0 +1,54 @@
+<div class="homepage__latest">
+	<div class="wrapper">
+	
+		<div class="latest__wrapper">
+
+			<div class="news">
+				<h2 class="latest__title">{{ news_title }}</h2>
+	
+				<div class="latest__buttons">
+					{{ partial:sets/buttons :buttons="news_buttons" }}
+				</div>
+	
+				<div class="latest__entries">
+					{{ collection 
+						from="news"
+						limit="4"
+						sort="pinned:desc|date:desc"
+					}}
+						{{ 
+							partial:components/entry--new
+							{{ if first }} inverted="true" {{ /if }}
+						}}			
+					{{ /collection }}
+				</div>
+			</div>
+	
+	
+			<div class="events">
+				<h2 class="latest__title">{{ events_title }}</h2>
+	
+				<div class="latest__buttons">
+					{{ partial:sets/buttons :buttons="events_buttons" }}
+				</div>
+	
+				<div class="latest__entries">
+					{{ collection 
+						from="events"
+						limit="4"
+						sort="pinned:desc|event_date:asc"
+						event_date:gte="{today format='Y-m-d'}"
+	
+					}}
+						{{ 
+							partial:components/entry--event
+							
+						}}
+					{{ /collection }}
+				</div>
+			</div>
+			
+		</div>
+
+	</div>
+</div>

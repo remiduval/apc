@@ -77,6 +77,20 @@ fields:
       listable: hidden
       width: 25
   -
+    handle: advert
+    field:
+      mode: grid
+      container: assets
+      folder: adverts
+      restrict: false
+      allow_uploads: true
+      max_files: 1
+      display: Advert
+      type: assets
+      icon: assets
+      localizable: true
+      listable: hidden
+  -
     handle: document
     field:
       mode: grid

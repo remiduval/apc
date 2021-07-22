@@ -1,0 +1,25 @@
+.entry--event
+	> a
+		display flex
+
+	.entry__event_date
+		width $px-64
+		padding $px-10
+		color $yellow-800
+		background $yellow-400
+		display grid
+		place-items center
+		font-weight 500
+
+		.weekday, .month
+			font-size $px-14
+		
+		.day
+			font-size $text-24
+			font-family $font-display
+
+	.entry__content
+		flex 1
+		display flex
+		align-items center
+		padding $px-10 $px-24

@@ -1,7 +1,14 @@
 {{ section:toggles }}
-
+	{{ 
+		partial:components/link
+		shape="button"
+		click="sideblock_events = !sideblock_events" 
+		label="{trans:sideblock.toggle_events}"
+		tag="button"
+	}}
 {{ /section:toggles }}
 
+{{ partial:sections/banner }}
 <div class="page">
 
 	{{ partial:main/events }}

@@ -1,0 +1,287 @@
+title: Homepage
+sections:
+  banner:
+    display: Banner
+    fields:
+      -
+        handle: title
+        field: common.title
+        config:
+          required: true
+      -
+        handle: cover
+        field: common.cover
+      -
+        handle: banner_intro
+        field: common.intro
+      -
+        import: buttons
+        prefix: banner_
+  latest:
+    display: Latest
+    fields:
+      -
+        handle: news
+        field:
+          display: News
+          type: section
+          icon: section
+          listable: hidden
+      -
+        handle: news_title
+        field:
+          input_type: text
+          antlers: false
+          display: Title
+          type: text
+          icon: text
+          localizable: true
+          listable: hidden
+      -
+        import: buttons
+        prefix: news_
+      -
+        handle: events
+        field:
+          display: Events
+          type: section
+          icon: section
+          listable: hidden
+      -
+        handle: events_title
+        field:
+          input_type: text
+          antlers: false
+          display: Title
+          type: text
+          icon: text
+          localizable: true
+          listable: hidden
+      -
+        import: buttons
+        prefix: events_
+  support:
+    display: Support
+    fields:
+      -
+        handle: support_title
+        field:
+          input_type: text
+          antlers: false
+          display: Title
+          type: text
+          icon: text
+          localizable: true
+          listable: hidden
+      -
+        handle: support_intro
+        field: common.intro
+        config:
+          buttons:
+            - bold
+            - italic
+            - removeformat
+            - anchor
+      -
+        handle: actions
+        field:
+          fields:
+            -
+              handle: title
+              field:
+                input_type: text
+                antlers: false
+                display: Title
+                type: text
+                icon: text
+                listable: hidden
+            -
+              handle: description
+              field: common.paragraph
+              config:
+                buttons:
+                  - bold
+                  - italic
+                  - unorderedlist
+                  - orderedlist
+                  - removeformat
+                  - anchor
+                display: Description
+          mode: table
+          max_rows: 3
+          min_rows: 1
+          reorderable: true
+          display: Actions
+          type: grid
+          icon: grid
+          localizable: true
+          listable: hidden
+  newsletter:
+    display: Newsletter
+    fields:
+      -
+        handle: newsletter_title
+        field:
+          input_type: text
+          antlers: false
+          display: Title
+          type: text
+          icon: text
+          localizable: true
+          listable: hidden
+      -
+        handle: newsletter_intro
+        field: common.intro
+        config:
+          buttons:
+            - bold
+            - italic
+            - removeformat
+            - anchor
+      -
+        handle: newsletter_input
+        field:
+          input_type: text
+          antlers: false
+          display: 'Input label'
+          type: text
+          icon: text
+          localizable: true
+          listable: hidden
+      -
+        handle: newsletter_notice
+        field: common.paragraph
+        config:
+          display: 'Input notice'
+  classifieds:
+    display: Classifieds
+    fields:
+      -
+        handle: classifieds_title
+        field:
+          input_type: text
+          antlers: false
+          display: Title
+          type: text
+          icon: text
+          localizable: true
+          listable: hidden
+      -
+        handle: classifieds_intro
+        field: common.intro
+        config:
+          buttons:
+            - bold
+            - italic
+            - removeformat
+            - anchor
+      -
+        handle: classifieds_taxonomy_label
+        field:
+          input_type: text
+          antlers: false
+          display: 'Categories label'
+          type: text
+          icon: text
+          localizable: true
+          listable: hidden
+      -
+        import: buttons
+        prefix: classifieds_
+  ad:
+    display: Ad
+    fields:
+      -
+        handle: advert
+        field: common.advert
+  network:
+    display: Network
+    fields:
+      -
+        handle: network_title
+        field:
+          input_type: text
+          antlers: false
+          display: Title
+          type: text
+          icon: text
+          localizable: true
+          listable: hidden
+          width: 75
+      -
+        handle: network__image
+        field: common.cover
+        config:
+          display: Image
+      -
+        handle: network_intro
+        field: common.intro
+        config:
+          buttons:
+            - bold
+            - italic
+            - removeformat
+            - anchor
+      -
+        handle: network_partners
+        field:
+          fields:
+            -
+              handle: name
+              field:
+                input_type: text
+                antlers: false
+                display: Name
+                type: text
+                icon: text
+                listable: hidden
+            -
+              handle: logo
+              field: common.logo
+            -
+              handle: link
+              field:
+                display: Link
+                type: link
+                icon: link
+                listable: hidden
+          mode: table
+          add_row: 'Add partner'
+          reorderable: true
+          display: Partners
+          type: grid
+          icon: grid
+          localizable: true
+          listable: hidden
+  seo:
+    display: SEO
+    fields:
+      -
+        import: seo
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: is_hidden
+        field: common.is_hidden
+      -
+        handle: menu_label
+        field: common.menu_label
+      -
+        handle: slug
+        field:
+          type: slug
+          required: true
+          localizable: true
+          validate:
+            - required
+            - 'unique_entry_value:{collection},{id},{site}'
+      -
+        handle: parent
+        field:
+          type: entries
+          collections:
+            - pages
+          max_items: 1
+          listable: false
+          localizable: true

@@ -1,4 +1,4 @@
-<article class="entry entry--new">
+<article class="entry entry--new {{ inverted ?= 'entry--inverted' }}">
 	<a href="{{ url }}" title="{{ alt ?= alt }}">
 
 		<div class="entry__image">
@@ -18,9 +18,11 @@
 		<div class="entry__content">
 			<h1 class="entry__title">{{ title }}</h1>
 
-			<div class="entry__intro">
-				{{ intro }}
-			</div>
+			{{ if intro }}
+				<div class="entry__intro">
+					{{ intro }}
+				</div>
+			{{ /if }}
 		</div>
 
 		<div class="entry__details">

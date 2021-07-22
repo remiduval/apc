@@ -1,0 +1,41 @@
+.homepage__newsletter
+
+
+	.newsletter__wrapper
+		position relative
+		color $yellow-800
+		background-color $yellow-400
+		overflow hidden
+		wrapper-x()
+		padding-top $px-32
+		padding-bottom $px-32
+		display grid
+
+		> *
+			position relative
+
+		&::before
+			position absolute
+			right 0
+			top 50%
+			transform translateY(-50%)
+			content ""
+			width 50%
+			aspect-ratio 0.88
+			background-color $yellow-100
+			clip-path url(#circle-sm)
+
+	@media lg
+		.wrapper
+			wrapper-x()
+
+		.newsletter__wrapper
+			border-radius $radius
+			padding $px-32 $px-48
+			grid-template-columns 1fr 1fr
+			grid-template-rows auto auto
+			gap $px-16 $px-80
+
+		.titles
+			grid-row 1 / span 2
+

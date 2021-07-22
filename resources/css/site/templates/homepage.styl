@@ -1,102 +1,17 @@
-$homepage-map-max-width = 448px
-
 .homepage
-	flex: 1
+	flex 1
 	display flex
 	flex-direction column
-	fluid(row-gap, $px-40, $px-64)
-	fluid(padding-top, $px-24, $px-48)
-	fluid(padding-bottom, $px-64, $px-96)
+	gap $px-160
 
-
-	.banner .wrapper
-		text-align center
-
-
-	.sections-1-2
+	.titles
 		display flex
 		flex-direction column
-		background white
-		box-shadow $shadow-md
+		gap $px-12
 
-	.intro
-		fluid(padding-top,		$px-24, $px-32)
-		fluid(padding-bottom,	$px-24, $px-32)
-		fluid(padding-left,		$wrapper-x-min, $px-32)
-		fluid(padding-right,	$wrapper-x-min, $px-32)
+	h2
+		font-family $font-display
+		fluid(font-size, $text-30, $text-36)
 
-	.entries
-		@media xl
-			grid-template-columns 1fr 1fr
-
-	.map_home
-		width 100%
-		height 100vw		
-
-		picture
-			background-color #EAF6EA
-
-	.usps
-		display grid
-		fluid(gap, $px-24, $px-32)
-		define-tone(secondary)
-
-	.usp
-		background white
-		box-shadow $shadow-md
-		fluid(padding,	$wrapper-x-min, $px-24)
-		display grid
-		gap $px-12 $px-16
-		align-items center
-		grid-template-columns $px-64 1fr
-
-		.usp__drawing
-			.drawing
-				width 100%
-				height auto
-
-		h2
-			font-family $font-display
-			line-height $leading-tight
-			color $secondary-600
-			fluid(font-size, $text-24, $text-30)
-
-		p
-			grid-column 1 / span 2
-
-	@media xs
-		.map_home
-			height 70vw
-	@media md
-		.sections-1-2
-			flex-direction row
-
-		.map_home
-			height initial
-			max-width $homepage-map-max-width
-
-		.usps
-			grid-template-columns 1fr 1fr
-
-	@media lg
-		wrapper-x()
-
-		.sections-1-2
-			border-radius $radius-xl
-			overflow hidden
-
-		.usp
-			align-items initial
-			grid-template-rows auto 1fr
-			grid-template-columns $px-80 1fr
-			border-radius $radius-xl
-
-			.usp__drawing
-				grid-row 1 / span 2
-
-			p
-				grid-column initial
-
-	@media xl
-		.usps
-			margin-right $homepage-map-max-width
+	// .intro
+	// 	font-size $text-20

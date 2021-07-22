@@ -1,0 +1,41 @@
+<div class="homepage__classifieds">
+	<div class="wrapper">
+	
+		<div class="titles">
+			<h2 class="support__title">{{ classifieds_title }}</h2>
+
+			<div class="support__intro intro prose prose--lg">{{ classifieds_intro }}</div>
+		</div>
+
+
+		<div class="classifieds__content">
+
+			<div class="classifieds__taxonomy">
+				<p>{{ classifieds_taxonomy_label }}</p>
+				<div class="taxonomies">
+					{{ taxonomy:taxonomy_classifieds }}
+						{{ partial:components/tag primary="true" }}
+					{{ /taxonomy:taxonomy_classifieds }}
+				</div>
+			</div>
+	
+			<div class="classifieds__entries">
+				{{ collection 
+					from="classifieds"
+					limit="3"
+					sort="pinned:desc|date:desc"
+				}}			
+					{{ entries }}
+						{{ partial:components/entry--classified }}
+					{{ /entries }}				
+				{{ /collection }}
+			</div>
+	
+			<div class="classifieds__buttons">
+	
+			</div>
+
+		</div>
+
+	</div>
+</div>

@@ -2,8 +2,8 @@ body
 	display: flex
 	flex-direction: column
 	min-height: 100vh
-	background-color: $malibu-025
-	color: $blue-800
+	background-color $malibu-025
+	color $blue-800
 	font-family: $font-main
 	line-height $leading-normal
 	-webkit-font-smoothing antialiased // Controversial
@@ -22,3 +22,36 @@ body
 
 	&.body--modal
 		overflow hidden
+
+	> header
+		position absolute
+		z-index $zindex-fixed-element
+		top $px-4
+		fluid(left,	$px-12, $wrapper-x-max)		
+
+	> footer
+		margin-bottom $px-64 // fixed toggles
+
+	.toggles
+		position fixed
+		bottom 0
+		z-index $zindex-fixed-element
+		width 100%
+
+	@media md
+		> header
+			position fixed
+			left 0
+			z-index $zindex-header
+			width 100%
+
+		.banner
+			margin-top $px-192 // fixed header	
+
+	@media lg
+		> footer
+			margin-bottom $px-48
+
+	@media xl
+		.banner
+			margin-top $px-128 // fixed header

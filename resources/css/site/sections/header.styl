@@ -4,14 +4,13 @@ $header-padding-y-max = $px-32
 body > header
 
 	.emblem
-		position absolute
-		z-index $zindex-fixed-element
-		top $px-4
-		fluid(left,	$wrapper-x-min, $wrapper-x-max)
 		width $px-96
 
-		// img
-		// 	height auto
+		a
+			position relative
+		
+		&::before
+			background-blob($px-128, 105px, circle-sm, white)
 
 	.header__menu
 		display none
@@ -43,9 +42,6 @@ body > header
 		gap $px-16
 
 	@media md
-		position fixed
-		z-index $zindex-header
-		width 100%
 		backdrop-filter blur(30px)
 		//background-color rgba(255, 255, 255, 0.5)
 
@@ -63,6 +59,9 @@ body > header
 		.emblem
 			position initial
 			width $px-128
+
+			&::before
+				content none
 
 		.header__menu
 			grid-column 1 / span 2

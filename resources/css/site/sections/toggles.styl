@@ -1,9 +1,4 @@
 .toggles
-	position fixed
-	bottom 0
-	z-index $zindex-fixed-element
-	width 100%
-
 	.wrapper
 		wrapper-x()
 		padding-top $px-12
@@ -14,6 +9,13 @@
 	.side
 		display flex
 		gap $px-12
+
+	.link--toggle-menu
+		position relative
+
+		&::before
+			background-blob(80px, 70.8px, circle-sm, $yellow-400)
+			z-index -1
 
 	@media md
 		.link--toggle-menu

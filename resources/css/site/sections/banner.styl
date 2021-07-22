@@ -22,8 +22,6 @@
 		height $px-224
 
 	@media md
-		margin-top $px-192 // fixed header
-
 		.wrapper
 			wrapper-x()
 			padding-top $px-48
@@ -38,17 +36,25 @@
 			flex 1
 
 		.cover
+			position relative
 			width $px-288
 			height $px-288
 			order 1
-			clip-path polygon(0 0, 100% 0, 100% 96%, 0% 100%)
+			
+			picture
+				clip-path polygon(0 0, 100% 0, 100% 96%, 0% 100%)
+
+			&::before
+				background-blob(378px, 336px, circle-sm, $yellow-400)
 			
 	@media xl
-		margin-top $px-128 // fixed header
-
 		.wrapper
 			gap $px-128
 
 		.cover
 			width 400px
 			height 400px
+
+			&::before
+				width 522px
+				height 462px

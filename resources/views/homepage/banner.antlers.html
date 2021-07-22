@@ -1,0 +1,31 @@
+<div class="homepage__banner banner">
+	<div class="wrapper">
+	
+		<div class="cover">
+			{{
+				partial:components/picture 
+				sizes="(max-width: 768px) 100vw, (max-width: 1280px) 288px, 400px"
+				fit="true"
+		
+				{{ if cover }}
+					:picture="cover"
+				{{ else }}
+					:picture="covers:default"
+				{{ /if }}
+			}}
+		</div>
+
+		<div class="titles">
+
+			<h1 class="title">{{ yield:seo_title }}{{ title ?? view:title }}</h1>
+
+			{{ if banner_intro }}
+				<div class="intro prose">{{ banner_intro }}</div>
+			{{ /if }}
+
+            {{ partial:sets/buttons :buttons="banner_buttons" }}
+
+		</div>
+
+	</div>
+</div>

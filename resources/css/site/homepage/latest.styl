@@ -1,0 +1,91 @@
+.homepage__latest
+
+	.latest__wrapper
+		position relative
+
+		> * > *
+			position relative
+
+		&::before
+			content ""
+			position absolute
+			right 30%
+			bottom -10%
+			width 298px
+			height 349px
+			background-color $yellow-400
+			clip-path url(#circle-lg)
+			mix-blend-mode multiply
+
+	.news, .events
+		wrapper-x()
+		padding-top $px-32
+		padding-bottom $px-32
+		display grid
+		grid-template-columns 1fr auto
+		grid-template-rows auto 1fr
+		align-items center
+		row-gap $px-44
+
+	.news
+		background-color $blue-050
+
+		.entry
+			&:nth-child(n+2)
+				> a
+					grid-template-rows initial
+
+				.entry__image
+					display none
+
+		
+
+	.events
+		background-color $blue-600
+
+		.latest__title
+			color $blue-025
+
+	.latest__entries
+		align-self stretch
+		grid-column 1 / span 2
+		display grid
+		gap $px-24
+
+	.entry
+		&:not(.entry--inverted)
+			> a
+				background-color $blue-025
+
+				&:hover
+					background-color $blue-075
+
+	@media md
+		.news
+			.latest__entries
+				display grid
+				grid-template-columns 1fr 1fr
+				grid-template-rows repeat(1, 1fr)
+
+			.entry:first-child
+				grid-row 1 / span 3	
+
+	@media lg
+		.wrapper
+			wrapper-x()
+
+		.latest__wrapper
+			border-radius $radius
+			overflow hidden
+			display flex
+
+		.news, .events
+			unwrapper-x()
+			padding $px-40 $px-48
+
+		.news
+			flex 1
+			
+		.events
+			width 36%
+

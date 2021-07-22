@@ -17,16 +17,33 @@
 		display flex
 		align-items flex-start
 		fluid(column-gap, $px-16, $px-64)
+		position relative
 
 		main
 			order 1
 			flex 1
+			position relative
 
 		.sidebar
 			position sticky
 			fluid(top, $padding-main-y-min, $padding-main-y-max)
 			width $px-208
 
+		&::before
+			content ""
+			position absolute
+			top 0
+			left $px-24
+			width 372px
+			height 375px
+			background-image url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 139 140'%3E%3Cpath fill='%23DDEAFF' d='M0 82.5l136 57.1s5.4-138 0-139.2c-5.4-1.2-136 82-136 82z'/%3E%3C/svg%3E")
+			background-size 100% 100%
+			background-repeat no-repeat
+
 	@media xl
 		.sidebar
 			width $px-288
+
+		&::before
+			width 496px
+			height 500px

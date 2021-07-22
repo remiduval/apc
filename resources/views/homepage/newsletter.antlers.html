@@ -1,0 +1,38 @@
+<div class="homepage__newsletter">
+	<div class="wrapper">
+
+		<div class="newsletter__wrapper">
+			<div class="titles">
+				<h2 class="newsletter__title">{{ newsletter_title }}</h2>
+				<div class="newsletter__intro intro prose">{{ newsletter_intro }}</div>
+			</div>
+	
+			<div class="newsletter__form">
+				<input type="email" placeholder="{{ newsletter_input }}">
+				{{ 
+					partial:components/link 
+					shape="button" 
+					link_type="url"
+					icon="right"
+					label="Subscribe"
+				}}
+				<div class="newsletter__notice prose prose--sm">{{ newsletter_notice }}</div>
+			</div>
+	
+			<div class="newsletter__socials">
+				{{ socials:socials }}
+					{{ 
+						partial:components/link 
+						shape="button" 
+						link_type="url"
+						:icon="name"
+						label="{ label ?? name:label}" 
+						attr_aria="{ label ?? name:label}"
+						classes="link--{name}"
+					}}
+				{{ /socials:socials }}
+			</div>
+		</div>
+
+	</div>
+</div>
