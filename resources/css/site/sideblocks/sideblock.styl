@@ -1,7 +1,9 @@
 .sideblock
 	position fixed
 	z-index $zindex-popover
+	fluid(left, $wrapper-x-min, $wrapper-x-max)
 	bottom 64px
+	width 300px
 	border-radius $radius
 	overflow hidden
 
@@ -28,3 +30,5 @@
 
 	@media lg
 		position initial
+		z-index initial
+		width initial

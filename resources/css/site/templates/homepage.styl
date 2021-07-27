@@ -1,8 +1,6 @@
 .homepage
-	flex 1
-	display flex
-	flex-direction column
-	gap $px-160
+	display grid
+	gap $px-64
 
 	.titles
 		display flex
@@ -13,5 +11,5 @@
 		font-family $font-display
 		fluid(font-size, $text-30, $text-36)
 
-	// .intro
-	// 	font-size $text-20
+	@media lg
+		gap $px-160

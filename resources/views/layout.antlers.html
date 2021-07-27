@@ -15,7 +15,6 @@
 <body
 	class=""
 	x-data="{
-		scroll: window.pageYOffset, 
 		mobile: window.innerWidth < 1024,
 		modal:					false,
 		sideblock_new:			false,
@@ -29,7 +28,6 @@
 	:class="{ 
 		'body--modal': modal
 	}"
-	@scroll.window="scroll = window.pageYOffset, document.documentElement.style.setProperty('--scroll', window.pageYOffset)"
 	@resize.window="mobile = window.innerWidth < 1024"
 >
 	{{ partial:sections/header }}

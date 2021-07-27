@@ -10,7 +10,22 @@
 
 		<div class="classifieds__content">
 
-			<div class="classifieds__taxonomy">
+			<div class="classifieds__entries">
+				<div class="classifieds">
+					{{ collection 
+						from="classifieds"
+						limit="3"
+						sort="pinned:desc|date:desc"
+					}}
+						{{
+							partial:components/entry--classified 
+							linked="true"
+						}}
+					{{ /collection }}
+				</div>
+			</div>
+
+			<div class="classifieds__taxonomies">
 				<p>{{ classifieds_taxonomy_label }}</p>
 				<div class="taxonomies">
 					{{ taxonomy:taxonomy_classifieds }}
@@ -19,20 +34,8 @@
 				</div>
 			</div>
 	
-			<div class="classifieds__entries">
-				{{ collection 
-					from="classifieds"
-					limit="3"
-					sort="pinned:desc|date:desc"
-				}}			
-					{{ entries }}
-						{{ partial:components/entry--classified }}
-					{{ /entries }}				
-				{{ /collection }}
-			</div>
-	
 			<div class="classifieds__buttons">
-	
+				{{ partial:sets/buttons :buttons="classifieds_buttons" }}
 			</div>
 
 		</div>

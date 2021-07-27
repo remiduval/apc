@@ -18,8 +18,8 @@ fields:
       validate:
         - required
   -
-    handle: drawing
-    field: common.drawing
+    handle: icon
+    field: common.icon
   -
     handle: label
     field:

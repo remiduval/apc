@@ -24,8 +24,6 @@
 	@media md
 		.wrapper
 			wrapper-x()
-			padding-top $px-48
-			padding-bottom $px-48
 			flex-direction row
 			align-items center
 			gap $px-64
@@ -46,6 +44,10 @@
 
 			&::before
 				background-blob(378px, 336px, circle-sm, $yellow-400)
+
+	@media lg
+		.wrapper
+			unwrapper-x()
 			
 	@media xl
 		.wrapper

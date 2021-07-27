@@ -1,5 +1,7 @@
-<article class="entry entry--classified {{ inverted ?= 'entry--inverted' }}">
-	<div>
+<article class="entry entry--classified {{ inverted ?= 'entry--inverted' }} {{ extended ?= 'entry--extended' }}">
+	<{{ linked ? 'a' : 'div' }}
+		{{ if linked }} href="{{ url }}" {{ /if }}
+	>
 
 		<div class="entry__content">
 
@@ -11,9 +13,11 @@
 
 			<h1 class="entry__title">{{ title }}</h1>
 
-			<div class="entry__prose">
-				{{ prose }}
-			</div>
+			{{ if extended }}
+				<div class="entry__prose">
+					{{ prose }}
+				</div>
+			{{ /if }}
 
 		</div>
 
@@ -26,38 +30,42 @@
 				label="{date format='D j M y'}" 
 			}}
 
-			{{ if author }}
-				{{ 
-					partial:components/link
-					tag="div"
-					shape="detail"
-					icon="person" 
-					:label="author"
-				}}
-			{{ /if }}
+			{{ if extended }}
 
-			{{ if email }}
-				{{ 
-					partial:components/link
-					shape="detail"
-					icon="mail" 
-					:label="email"
-					link_type="email"
-					:email="email"
-				}}
-			{{ /if }}
+				{{ if author }}
+					{{ 
+						partial:components/link
+						tag="div"
+						shape="detail"
+						icon="person" 
+						:label="author"
+					}}
+				{{ /if }}
 
-			{{ if tel }}
-				{{ 
-					partial:components/link
-					shape="detail"
-					icon="tel" 
-					:label="tel"
-					link_type="tel"
-					:tel="tel"
-				}}
+				{{ if email }}
+					{{ 
+						partial:components/link
+						shape="detail"
+						icon="mail" 
+						:label="email"
+						link_type="email"
+						:email="email"
+					}}
+				{{ /if }}
+
+				{{ if tel }}
+					{{ 
+						partial:components/link
+						shape="detail"
+						icon="tel" 
+						:label="tel"
+						link_type="tel"
+						:tel="tel"
+					}}
+				{{ /if }}
+
 			{{ /if }}
 		</div>
 
-	</div>
+	</{{ linked ? "a" : "div" }}>
 </article>

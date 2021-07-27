@@ -5,7 +5,7 @@ fields:
     field:
       fields:
         -
-          import: link
+          import: button
       mode: stacked
       reorderable: true
       display: Buttons

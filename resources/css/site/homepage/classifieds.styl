@@ -3,11 +3,20 @@
 	.wrapper
 		wrapper-x()
 		space-y($px-64)
+		max-width 1040px
 
 	.titles
 		text-align center
 
-	.classifieds__taxonomy
+	.classifieds
+		display grid
+		grid-template-columns repeat(auto-fit, minmax(200px, 1fr))
+		grid-gap 1rem
+
+	.entry--classified
+		min-height $px-176
+
+	.classifieds__taxonomies
 		space-y($px-16)
 		
 		p
@@ -18,3 +27,18 @@
 			flex-direction column
 			align-items flex-start
 			gap $px-12
+
+
+	@media lg
+		.classifieds__content
+			display grid
+			grid-template-rows 1fr auto
+			grid-template-columns 1fr $px-160
+			gap $px-64
+			grid-auto-flow dense
+
+		.classifieds__taxonomies
+			grid-column-start 2
+			grid-row 1 / span 2
+
+

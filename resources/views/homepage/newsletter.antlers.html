@@ -8,14 +8,18 @@
 			</div>
 	
 			<div class="newsletter__form">
-				<input type="email" placeholder="{{ newsletter_input }}">
-				{{ 
-					partial:components/link 
-					shape="button" 
-					link_type="url"
-					icon="right"
-					label="Subscribe"
-				}}
+
+				<form action="https://remiduval.us7.list-manage.com/subscribe/post?u=4fe780c005390413bb0e9f2cf&amp;id=dde6dbb7db" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+					<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="{{ newsletter_input }}">
+
+					<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_4fe780c005390413bb0e9f2cf_dde6dbb7db" tabindex="-1" value=""></div>
+					<button type="submit" class="link link--button link--primary">
+						<span class="icon">{{ svg src="right" }}</span>
+						<span class="label">Subscribe</span>
+					</button>
+				</form>
+
+
 				<div class="newsletter__notice prose prose--sm">{{ newsletter_notice }}</div>
 			</div>
 	

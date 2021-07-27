@@ -1,0 +1,21 @@
+form
+	input:not([type="submit"])
+	textarea
+	select
+		display block
+		width 100%
+		appearance none
+		background-color white
+		border solid $neutral-050 1px
+		border-radius $radius
+		padding $px-8 $px-12
+		font-size $px-16
+		line-height 1.5rem
+
+		&::placeholder
+			color $neutral-100
+
+		&:focus
+			outline none
+			box-shadow 0 0 0 3px v(tone-300)
+			border-color v(tone-500)

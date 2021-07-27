@@ -1,26 +1,19 @@
 title: Common
 fields:
   -
-    handle: drawing
+    handle: icon
     field:
       options:
-        books: Books
-        cloud: Cloud
-        cubes: Cubes
-        document: Document
-        light: 'Light bulb'
-        map: Map
-        phone: Phone
-        speech: Speech
-        tree: Tree
+        left: Left
+        right: Right
       multiple: false
       max_items: 1
-      clearable: false
+      clearable: true
       searchable: false
       taggable: false
       push_tags: false
       cast_booleans: false
-      display: Drawing
+      display: Icon
       type: select
       icon: select
       listable: hidden

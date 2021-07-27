@@ -1,35 +1,37 @@
 <main class="main--news">
-	{{ collection 
-		from="news"
-		limit="2"
-		paginate="true"
-		as="entries"
-		sort="pinned:desc|date:desc"
-	}}
-
-		{{ if no_results }}
-			<p>No results</p>
-		{{ /if }}
-
-		{{ entries }}
-			{{ partial:components/entry--new }}
-		{{ /entries }}	
-
-		{{ if paginate:total_pages > 1 }}
-			{{ section:pagination }}
-
-				{{ paginate }}
-					<div class="pagination">
-						<a href="{{ prev_page }}" aria-label="Previous" class="arrow arrow--prev">{{ svg src="left" }}</a>
-		
-						<div class="pagination__count">{{ current_page }} / {{ total_pages }}</div>
-		
-						<a href="{{ next_page }}" aria-label="Next" class="arrow arrow--next">{{ svg src="right" }}</a>
-					</div>
-				{{ /paginate }}
-
-			{{ /section:pagination }}
-		{{ /if }}
-
-	{{ /collection }}
+	<div class="news">
+		{{ collection 
+			from="news"
+			limit="2"
+			paginate="true"
+			as="entries"
+			sort="pinned:desc|date:desc"
+		}}
+	
+			{{ if no_results }}
+				<p>No results</p>
+			{{ /if }}
+	
+			{{ entries }}
+				{{ partial:components/entry--new }}
+			{{ /entries }}	
+	
+			{{ if paginate:total_pages > 1 }}
+				{{ section:pagination }}
+	
+					{{ paginate }}
+						<div class="pagination">
+							<a href="{{ prev_page }}" aria-label="Previous" class="arrow arrow--prev">{{ svg src="left" }}</a>
+			
+							<div class="pagination__count">{{ current_page }} / {{ total_pages }}</div>
+			
+							<a href="{{ next_page }}" aria-label="Next" class="arrow arrow--next">{{ svg src="right" }}</a>
+						</div>
+					{{ /paginate }}
+	
+				{{ /section:pagination }}
+			{{ /if }}
+	
+		{{ /collection }}
+	</div>
 </main>

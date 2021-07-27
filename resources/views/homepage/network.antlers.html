@@ -1,42 +1,47 @@
 <div class="homepage__network">
 	<div class="wrapper">
-	
-		<div class="network_content">
-			<div class="titles">
-				<h2 class="support__title">{{ network_title }}</h2>
-	
-				<div class="support__intro intro prose prose--lg">{{ network_intro }}</div>
-			</div>
-	
-			<div class="network__partners">
-				{{ network_partners }}
-					<{{ link ? "a href='{link}'" : "div" }} class="partner">
-						{{ if link }}
-						<div class="partner__name">{{ name }}</div>	
-						<div class="partner__logo">
-							{{ 
-								partial:components/picture 
-								:picture="logo"
-								sizes="96px"
-							}}
-						</div>
-					</{{ link ? "a'" : "div" }}>		
-				{{ /network_partners }}
-			</div>
-		</div>
+		<div class="network__wrapper">
 
-		<div class="network__image">
-			{{
-				partial:components/picture 
-				sizes="(max-width: 768px) 100vw, (max-width: 1280px) 288px, 600px"
-				fit="true"
+			<div class="network__image">
+				{{
+					partial:components/picture 
+					sizes="(max-width: 768px) 100vw, (max-width: 1024px) 300px, (max-width: 1280px) 400px, 600px"
+					fit="true"
+			
+					{{ if network_image }}
+						:picture="network_image"
+					{{ else }}
+						:picture="covers:default"
+					{{ /if }}
+				}}
+			</div>	
+
+			<div class="network__content">
+				<div class="titles">
+					<h2 class="support__title">{{ network_title }}</h2>
 		
-				{{ if network_image }}
-					:picture="network_image"
-				{{ else }}
-					:picture="covers:default"
-				{{ /if }}
-			}}
+					<div class="support__intro intro prose prose--lg">{{ network_intro }}</div>
+				</div>
+		
+				<div class="network__partners">
+					{{ network_partners }}
+						<{{ link ? 'a' : 'div' }} class="partner"
+							{{ if link }} href="{{ link }}" {{ /if }}
+							
+						>
+							<div class="partner__logo">
+								{{ 
+									partial:components/picture 
+									:picture="logo"
+									sizes="96px"
+								}}
+							</div>
+							<div class="partner__name">{{ name }}</div>	
+						</{{ link ? "a" : "div" }}>
+					{{ /network_partners }}
+				</div>
+			</div>
+	
 		</div>
 
 	</div>

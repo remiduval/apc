@@ -2,6 +2,7 @@
 
 	.latest__wrapper
 		position relative
+		overflow hidden
 
 		> * > *
 			position relative
@@ -9,8 +10,8 @@
 		&::before
 			content ""
 			position absolute
-			right 30%
-			bottom -10%
+			left 80%
+			bottom 30%
 			width 298px
 			height 349px
 			background-color $yellow-400
@@ -76,8 +77,12 @@
 
 		.latest__wrapper
 			border-radius $radius
-			overflow hidden
 			display flex
+
+			&::before
+				left initial
+				right 30%
+				bottom -10%
 
 		.news, .events
 			unwrapper-x()

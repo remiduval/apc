@@ -1,0 +1,69 @@
+.homepage__network
+
+	.wrapper
+		wrapper-x()
+
+	.network__wrapper
+		display flex
+		flex-direction column
+		fluid(gap, $px-48, $px-80)
+
+	.network__image
+		position relative
+		width 100%
+		height 300px
+	
+		&::before
+			background-blob(105%, 105%, square-lg, $yellow-400)
+			transform translateX(-50%) translateY(-50%) rotate(-5deg)
+
+		picture
+			clip-path url(#square-lg)
+
+
+	.network__content
+		space-y($px-64)
+
+	.network__partners
+		display flex
+		flex-direction column
+		gap $px-32
+
+	.partner
+		display flex
+		align-items center
+		gap $px-48
+
+		.partner__logo
+			width $px-96
+
+		.partner__name
+			flex 1
+			font-weight 500
+			font-size $text-18
+
+	a.partner:hover
+		.partner__name
+			text-decoration underline
+
+	@media md
+		.network__wrapper
+			flex-direction row
+			align-items center
+
+		.network__image
+			width 300px
+			height 300px
+
+		.network__content
+			flex 1
+
+	@media lg
+		.network__image
+			width 400px
+			height 400px
+
+	@media xl
+		.network__image
+			width 600px
+			height 600px
