@@ -1,17 +1,26 @@
 <article class="entry entry--classified {{ inverted ?= 'entry--inverted' }} {{ extended ?= 'entry--extended' }}">
-	<{{ linked ? 'a' : 'div' }}
-		{{ if linked }} href="{{ url }}" {{ /if }}
+	<{{ extended ? 'div' : 'a' }}
+		{{ if !extended }} href="{{ url }}" {{ /if }}
 	>
 
 		<div class="entry__content">
 
-			<div class="entry__taxonomies">
-				{{ taxonomy_classifieds }}
-					{{ value }}
-				{{ /taxonomy_classifieds }}
-			</div>
+			<div class="entry__titles">
+				{{ if taxonomy_classifieds }}
+					<div class="entry__taxonomies">
+						{{ taxonomy_classifieds }}
+							{{ 
+								partial:components/tag 
+								{{ if !extended }}
+									tag="div"
+								{{ /if }}
+							}}
+						{{ /taxonomy_classifieds }}
+					</div>
+				{{ /if }}
 
-			<h1 class="entry__title">{{ title }}</h1>
+				<h1 class="entry__title">{{ title }}</h1>
+			</div>
 
 			{{ if extended }}
 				<div class="entry__prose">
@@ -22,25 +31,25 @@
 		</div>
 
 		<div class="entry__details">
-			{{ 
-				partial:components/link
-				tag="div"
-				shape="detail" 
-				icon="calendar" 
-				label="{date format='D j M y'}" 
-			}}
+			{{ if author }}
+				{{ 
+					partial:components/link
+					tag="div"
+					shape="detail"
+					icon="person" 
+					:label="author"
+				}}
+			{{ /if }}
 
 			{{ if extended }}
 
-				{{ if author }}
-					{{ 
-						partial:components/link
-						tag="div"
-						shape="detail"
-						icon="person" 
-						:label="author"
-					}}
-				{{ /if }}
+				{{ 
+					partial:components/link
+					tag="div"
+					shape="detail" 
+					icon="calendar" 
+					label="{date format='D j M y'}" 
+				}}
 
 				{{ if email }}
 					{{ 
@@ -67,5 +76,5 @@
 			{{ /if }}
 		</div>
 
-	</{{ linked ? "a" : "div" }}>
+	</{{ extended ? "div" : "a" }}>
 </article>

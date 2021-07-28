@@ -1,15 +1,16 @@
 .homepage__newsletter
-
+	define-tone(yellow)
 
 	.newsletter__wrapper
 		position relative
-		color $yellow-800
-		background-color $yellow-400
+		color v(tone-800)
+		background-color v(tone-400)
 		overflow hidden
 		wrapper-x()
 		padding-top $px-32
 		padding-bottom $px-32
 		display grid
+		gap $px-16
 
 		> *
 			position relative
@@ -22,8 +23,13 @@
 			content ""
 			width 50%
 			aspect-ratio 0.88
-			background-color $yellow-100
+			background-color v(tone-100)
 			clip-path url(#circle-sm)
+
+	.newsletter__form
+		display flex
+		flex-direction column
+		gap $px-4
 
 	form
 		display flex
@@ -31,6 +37,16 @@
 
 		input[type="email"]
 			flex 1
+
+	.newsletter__socials
+		justify-self flex-end
+
+	.link--button
+		color v(tone-800)
+		background-color v(tone-400)
+
+		&:hover
+			background-color v(tone-500)
 
 	@media lg
 		.wrapper

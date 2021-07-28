@@ -25,6 +25,7 @@ fields:
       localizable: true
       width: 25
       listable: hidden
+      default: true
   -
     handle: link_type
     field:

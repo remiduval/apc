@@ -7,7 +7,7 @@
 		column-gap $px-12
 		fluid(padding-left,		$px-16, $px-24)
 		fluid(padding-right,	4px, $px-12)
-		border-radius $radius-lg
+		border-radius $radius
 		color v(tone-600)
 		background-color v(tone-025)
 
@@ -16,7 +16,7 @@
 
 		.label
 			flex 1
-			font-weight 600
+			font-weight 500
 			margin $px-12 0
 			text-align left
 			fluid(font-size, $text-16, $text-18)
@@ -41,13 +41,13 @@
 
 	.prose
 		fluid(padding, $px-16, $px-32)
-		border: solid 2px v(tone-025)
-		border-radius: 0 0 $radius-lg $radius-lg
+		border solid 2px v(tone-025)
+		border-radius: 0 0 $radius $radius
 
 
 	&.accordion--active
 		.link--accordion 
-			border-radius $radius-lg $radius-lg 0 0
+			border-radius $radius $radius 0 0
 
 			svg
 				transform rotate(180deg)

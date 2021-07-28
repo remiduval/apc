@@ -29,6 +29,7 @@ sections:
           listable: true
           validate:
             - required
+          localizable: true
       -
         handle: location
         field:
@@ -56,9 +57,6 @@ sections:
           width: 33
       -
         import: buttons
-        config:
-          max_items: 1
-          display: Booking link
       -
         handle: intro
         field: common.intro
