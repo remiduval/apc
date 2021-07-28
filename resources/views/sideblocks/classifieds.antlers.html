@@ -1,5 +1,18 @@
-<aside class="sideblock classifieds">
-	{{ taxonomy:taxonomy_classifieds }}
-		<a href="{{ url }}">{{ title }}</a>
-	{{ /taxonomy:taxonomy_classifieds }}
+<aside
+	class="sideblock classifieds"
+	x-cloak
+	x-show="!mobile || sideblock_classifieds"
+	@click.away="sideblock_classifieds = false"
+>
+	<div class="sideblock__title">{{ trans:sideblock.title_classifieds }}</div>
+	<div class="sideblock__content">
+		<div class="taxonomies">
+			{{ taxonomy:taxonomy_classifieds }}
+				{{ 
+					partial:components/tag
+					primary="true"
+				}}
+			{{ /taxonomy:taxonomy_classifieds }}
+		</div>
+	</div>
 </aside>
