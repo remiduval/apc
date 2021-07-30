@@ -1,9 +1,7 @@
 <main class="main--classifieds">
 	<div class="classifieds">
-		{{ collection 
-			from="classifieds"
+		{{ entries 
 			paginate="2"
-			as="entries"
 			sort="pinned:desc|date:desc"
 		}}
 	
@@ -11,12 +9,12 @@
 				<p>No results</p>
 			{{ /if }}
 	
-			{{ entries }}
+			{{ results }}
 				{{ 
 					partial:components/entry--classified 
 					extended="true"
 				}}
-			{{ /entries }}
+			{{ /results }}	
 	
 			{{ if paginate:total_pages > 1 }}
 				{{ section:pagination }}
@@ -34,6 +32,6 @@
 				{{ /section:pagination }}
 			{{ /if }}
 	
-		{{ /collection }}
+		{{ /entries }}
 	</div>
 </main>

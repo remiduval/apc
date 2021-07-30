@@ -1,0 +1,15 @@
+<main class="main--default">
+	{{ partial:sections/prose }}
+
+	{{ description }}
+
+	{{ gallery }}
+		<img
+			class="my-2 h-32 {{ page:gallery }}{{ if last }}{{ if count === 1 }} h-82 {{ elseif count === 2 }} w-1/2 {{ elseif count === 3 }} w-1/3 {{ /if }}{{ /if }}{{ /page:gallery }}"
+			src="{{ url }}"
+			alt="{{ alt }}"
+			data-zoomable="true"
+		>
+	{{ /gallery }}
+
+</main>

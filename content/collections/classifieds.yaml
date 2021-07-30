@@ -5,7 +5,7 @@ sites:
 template: templates/classified
 mount: 3cf96ec0-dcb2-43dc-b55c-d370fc0607b4
 taxonomies:
-  - taxonomy_classifieds
+  - topics
 revisions: false
 sort_dir: asc
 route: '{mount}/{slug}'

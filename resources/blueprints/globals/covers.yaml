@@ -23,6 +23,11 @@ sections:
         config:
           display: News
       -
+        handle: products
+        field: common.cover
+        config:
+          display: Products
+      -
         handle: not_found
         field: common.cover
         config:

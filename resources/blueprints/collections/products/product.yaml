@@ -6,33 +6,81 @@ sections:
       -
         handle: title
         field: common.title
+        config:
+          required: true
+      -
+        handle: cover
+        field: common.cover
+      -
+        handle: clients
+        field: common.clients
+        config:
+          display: 'Available to'
+          width: 33
+          validate:
+            - required
+      -
+        handle: price
+        field:
+          type: money
+          display: Price
+          read_only: false
+          listable: hidden
+          localizable: true
+          width: 33
+      -
+        handle: price_visitors
+        field:
+          read_only: false
+          display: 'Visitors price'
+          type: money
+          icon: generic
+          instructions: 'For advertisement purpose'
+          localizable: true
+          width: 33
+          listable: hidden
+          if:
+            clients: 'equals members'
+      -
+        handle: price_members
+        field:
+          read_only: false
+          display: 'Members price'
+          type: money
+          icon: generic
+          instructions: 'For advertisement purpose'
+          localizable: true
+          width: 33
+          listable: hidden
+          if:
+            clients: 'equals visitors'
+      -
+        handle: extra
+        field:
+          fields:
+            -
+              handle: name
+              field:
+                input_type: text
+                antlers: false
+                display: Name
+                type: text
+                icon: text
+                listable: hidden
+          mode: table
+          reorderable: true
+          display: 'Extra fields'
+          type: grid
+          icon: grid
+          listable: hidden
       -
         handle: intro
         field: common.intro
       -
         import: prose
-      -
-        handle: gallery
-        field:
-          mode: grid
-          container: assets
-          restrict: false
-          allow_uploads: true
-          max_files: 3
-          display: 'Gallery Images'
-          type: assets
-          icon: assets
-          listable: hidden
   sidebar:
     display: Sidebar
     fields:
-      -
-        handle: price
-        field:
-          read_only: false
-          type: money
-          listable: hidden
-          display: Price
       -
         handle: slug
         field:

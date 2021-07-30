@@ -1,10 +1,16 @@
-<main class="main--classifieds">
-	<div class="classifieds">
+<main class="main--products">
+	This person is {{ session:user_clients }}.
+
+	<div class="products">
+
 		{{ collection 
-			from="classifieds"
-			paginate="2"
+			from="products"
+			limit="2"
+			paginate="true"
 			as="entries"
 			sort="pinned:desc|date:desc"
+			clients:in="all|{session:user_clients}"
+
 		}}
 	
 			{{ if no_results }}
@@ -12,11 +18,8 @@
 			{{ /if }}
 	
 			{{ entries }}
-				{{ 
-					partial:components/entry--classified 
-					extended="true"
-				}}
-			{{ /entries }}
+				{{ partial:components/entry--product }}
+			{{ /entries }}	
 	
 			{{ if paginate:total_pages > 1 }}
 				{{ section:pagination }}
@@ -35,5 +38,7 @@
 			{{ /if }}
 	
 		{{ /collection }}
+
+
 	</div>
 </main>

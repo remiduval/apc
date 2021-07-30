@@ -112,8 +112,9 @@ return [
             'collection' => 'coupons',
         ],
         'customers' => [
-            'driver' => \DoubleThreeDigital\SimpleCommerce\Customers\Customer::class,
-            'collection' => 'customers',
+            // 'driver' => \DoubleThreeDigital\SimpleCommerce\Customers\Customer::class,
+            'driver' => \DoubleThreeDigital\SimpleCommerce\Customers\UserCustomer::class,
+            // 'collection' => 'customers',
         ],
     ],
 

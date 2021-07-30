@@ -3,5 +3,7 @@
 	shape="tag"
 	:label="title"
     classes="link--{color}"
-	link_type="url"
+	{{ if slug == last_segment }}
+		is_current="true"
+	{{ /if }}
 }}

@@ -1,3 +1,37 @@
-<aside class="sideblock product">
-	Sidebock product
+<aside
+	class="sideblock product"
+	x-cloak
+	x-show="!mobile || sideblock_product"
+	@click.away="sideblock_product = false"
+>
+	<div class="sideblock__title">{{ trans:sideblock.title_product }}</div>
+	<div class="sideblock__content">
+		{{ sc:cart:addItem class="border-t border-gray-200 py-4 flex justify-between items-center" redirect="/cart" }}
+			<input type="hidden" name="product" value="{{ id }}">
+
+			{{ if product_variants }}
+				<div class="flex flex-row items-center mb-2">
+					<label class="text-gray-700 mr-3 font-semibold w-1/2" for="variant">Variant</label>
+
+					<select id="variant" class="bg-gray-200 p-1 rounded w-16" name="variant">
+						{{ product_variants:options }}
+							<option value="{{ key }}">{{ variant }} ({{ price }})</option>
+						{{ /product_variants:options }}
+					</select>
+				</div>
+			{{ /if }}
+
+			<div class="flex flex-row items-center mb-2">
+				<label class="text-gray-700 mr-3 font-semibold w-1/2" for="quantity">Quantity</label>
+
+				<select id="quantity" class="bg-gray-200 p-1 rounded w-16" name="quantity">
+					{{ loop from="1" to="5" }}
+						<option value="{{ value }}">{{ value }}</option>
+					{{ /loop }}
+				</select>
+			</div>
+
+			<button class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold px-4 py-2 focus:outline-none">Add to Cart</button>
+		{{ /sc:cart:addItem }}
+	</div>
 </aside>

@@ -15,16 +15,20 @@
 			}}
 		</div>
 
-		<div class="titles">
+		<div class="banner__content">
 
-			<h1 class="title">{{ yield:seo_title }}{{ title ?? view:title }}</h1>
+			<div class="titles">
 
-			{{ if banner_intro }}
-				<div class="intro prose">{{ banner_intro }}</div>
-			{{ /if }}
+				<h1 class="title">{{ yield:seo_title }}{{ title ?? view:title }}</h1>
+	
+				{{ if banner_intro }}
+					<div class="intro prose">{{ banner_intro }}</div>
+				{{ /if }}
 
-            {{ partial:sets/buttons :buttons="banner_buttons" }}
-
+			</div>
+	
+			{{ partial:sets/buttons :buttons="banner_buttons" }}
+			
 		</div>
 
 	</div>

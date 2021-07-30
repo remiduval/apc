@@ -9,12 +9,12 @@ sections:
         config:
           required: true
       -
-        handle: taxonomy_classifieds
+        handle: topics
         field:
           type: terms
           taxonomies:
-            - taxonomy_classifieds
-          display: Categories
+            - topics
+          display: Topics
           mode: select
           width: 25
       -

@@ -1,17 +1,44 @@
-{{ section:toggles }}
+{{ user }}
+	{{ if member_until > today }}
+		{{ session:set user_clients="members" }}
+	{{ else }}
+		{{ session:set user_clients="visitors" }}
+	{{ /if }}
+{{ /user }}
 
+{{ if (clients == 'members') and ({session:user_clients} != 'members') }}
+  {{ redirect to="/" }}
+{{ /if }}
+
+
+{{ section:toggles }}
+	{{ 
+		partial:components/control
+		link_type="url"
+		url="{{ site:url }}/{{ segment_1 }}"
+		label="{trans:sideblock.back_products}"
+		icon="left"
+		inverted="true"
+	}}
+
+	{{ 
+		partial:components/link
+		shape="button"
+		primary="true"
+		click="sideblock_product = !sideblock_product" 
+		label="{trans:sideblock.toggle_product}"
+		tag="button"
+	}}
 {{ /section:toggles }}
 
 <div class="page">
 	{{ partial:sections/banner }}
 
-	<main>
-		{{ partial:sections/prose }}
-	</main>
+	{{ partial:main/default }}
 	
 	<div class="sidebar">
 		{{ partial:sideblocks/edit }}
-		{{ partial:sideblocks/back label="custom.back_products" }}
+		{{ partial:sideblocks/back label="{trans:sideblock.back_products}" }}
 		{{ partial:sideblocks/product }}
 	</div>
 

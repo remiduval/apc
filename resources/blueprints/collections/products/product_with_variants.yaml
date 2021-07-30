@@ -5,24 +5,32 @@ sections:
     fields:
       -
         handle: title
-        field: common.title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+          width: 50
+          localizable: true
       -
-        handle: intro
-        field: common.intro
+        handle: cover
+        field: common.cover
+      -
+        handle: clients
+        field: common.clients
+        config:
+          validate:
+            - required
+      -
+        handle: product_variants
+        field:
+          display: 'Product Variants'
+          type: product_variants
+          icon: product_variants
+          listable: hidden
+          localizable: true
       -
         import: prose
-      -
-        handle: gallery
-        field:
-          mode: grid
-          container: assets
-          restrict: false
-          allow_uploads: true
-          max_files: 3
-          display: 'Gallery Images'
-          type: assets
-          icon: assets
-          listable: hidden
   sidebar:
     display: Sidebar
     fields:
@@ -34,4 +42,3 @@ sections:
           localizable: true
           validate:
             - required
-

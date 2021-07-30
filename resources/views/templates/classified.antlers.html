@@ -1,5 +1,21 @@
 {{ section:toggles }}
+	{{ 
+		partial:components/control
+		link_type="url"
+		url="{{ site:url }}/{{ segment_2 }}"
+		label="{trans:sideblock.back_classifieds}"
+		icon="left"
+		inverted="true"
+	}}
 
+	{{ 
+		partial:components/link
+		shape="button"
+		primary="true"
+		click="sideblock_classified = !sideblock_classified" 
+		label="{trans:sideblock.toggle_classified}"
+		tag="button"
+	}}
 {{ /section:toggles }}
 
 <div class="page">
@@ -9,7 +25,7 @@
 
 	<div class="sidebar">
 		{{ partial:sideblocks/edit }}
-		{{ partial:sideblocks/back label="custom.back_classifieds" }}
+		{{ partial:sideblocks/back label="{trans:sideblock.back_classifieds}" }}
 		{{ partial:sideblocks/classified }}
 	</div>
 

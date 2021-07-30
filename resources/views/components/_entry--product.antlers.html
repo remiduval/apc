@@ -1,0 +1,84 @@
+<article class="entry entry--product">
+	<a href="{{ url }}" title="{{ alt ?= alt }}">
+
+		<div class="entry__image">
+			{{ 
+				partial:components/picture 
+				fit="true"
+				sizes="(min-width: 600px) 460px, 620px"
+
+				{{ if cover }}
+					:picture="cover"
+				{{ else }}
+					:picture="covers:products"
+				{{ /if }}
+			}}
+		</div>
+
+		<div class="entry__content">
+			<h1 class="entry__title">{{ title }}</h1>
+
+
+			{{ if clients == 'all' }}
+
+				<div class="entry__price">
+					<span>
+						{{ if product_variants }}
+							{{ product_variants:options }}{{ if first }}{{ price }}{{ /if }}{{ /product_variants:options }}
+						{{ else }}
+							{{ price }}
+						{{ /if }}
+					</span>
+				</div>
+
+			{{ /if }}
+
+
+			{{ if clients == 'visitors' }}
+
+				<div class="entry__price">
+					<span>
+						{{ if product_variants }}
+							{{ product_variants:options }}{{ if first }}{{ price }}{{ /if }}{{ /product_variants:options }}
+						{{ else }}
+							{{ price }}
+						{{ /if }}
+					</span>
+				</div>
+
+				{{ if price_members }}
+					<div class="entry__price entry__price--inverted">
+						<span>Members</span>
+						<span>{{ price_members }}</span>
+					</div>
+				{{ /if }}
+
+			{{ /if }}
+
+
+
+			{{ if clients == 'members' }}
+
+				{{ if price_visitors }}
+					<div class="entry__price">
+						<span>{{ price_visitors }}</span>
+					</div>
+				{{ /if }}
+
+				<div class="entry__price entry__price--inverted">
+					<span>Members</span>
+					<span>
+						{{ if product_variants }}
+							{{ product_variants:options }}{{ if first }}{{ price }}{{ /if }}{{ /product_variants:options }}
+						{{ else }}
+							{{ price }}
+						{{ /if }}
+					</span>
+				</div>
+
+			{{ /if }}
+
+		</div>
+
+	</a>
+</article>

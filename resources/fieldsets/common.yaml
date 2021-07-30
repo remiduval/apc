@@ -265,3 +265,19 @@ fields:
       instructions: 'Unlist after that date'
       localizable: true
       listable: hidden
+  -
+    handle: clients
+    field:
+      options:
+        all: All
+        visitors: Visitors
+        members: Members
+      default: all
+      display: Clients
+      type: button_group
+      icon: button_group
+      localizable: true
+      width: 25
+      listable: true
+      validate:
+        - required

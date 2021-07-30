@@ -6,16 +6,14 @@
 		<div class="entry__content">
 
 			<div class="entry__titles">
-				{{ if taxonomy_classifieds }}
+				{{ if topics }}
 					<div class="entry__taxonomies">
-						{{ taxonomy_classifieds }}
+						{{ topics }}
 							{{ 
 								partial:components/tag 
-								{{ if !extended }}
-									tag="div"
-								{{ /if }}
+								tag="div"
 							}}
-						{{ /taxonomy_classifieds }}
+						{{ /topics }}
 					</div>
 				{{ /if }}
 

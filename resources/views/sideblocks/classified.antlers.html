@@ -1,3 +1,57 @@
-<aside class="sideblock classified">
-	Sidebock classified
+<aside
+	class="sideblock classified"
+	x-cloak
+	x-show="!mobile || sideblock_classified"
+	@click.away="sideblock_classified = false"
+>
+	<div class="sideblock__title">{{ trans:sideblock.title_classified }}</div>
+	<div class="sideblock__content">
+		<div class="details">
+
+			{{ if author }}
+				{{ 
+					partial:components/link
+					tag="div"
+					shape="detail"
+					icon="person" 
+					:label="author"
+					primary="true"
+				}}
+			{{ /if }}
+
+			{{ 
+				partial:components/link
+				tag="div"
+				shape="detail" 
+				icon="calendar" 
+				label="{date format='D j M y'}" 
+				primary="true"
+			}}
+
+			{{ if email }}
+				{{ 
+					partial:components/link
+					shape="detail"
+					icon="mail" 
+					:label="email"
+					link_type="email"
+					:email="email"
+					primary="true"
+				}}
+			{{ /if }}
+
+			{{ if tel }}
+				{{ 
+					partial:components/link
+					shape="detail"
+					icon="tel" 
+					:label="tel"
+					link_type="tel"
+					:tel="tel"
+					primary="true"
+				}}
+			{{ /if }}
+
+		</div>
+	</div>
 </aside>

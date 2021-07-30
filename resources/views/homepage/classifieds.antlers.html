@@ -13,9 +13,13 @@
 			<div class="classifieds__taxonomies">
 				<p>{{ classifieds_taxonomy_label }}</p>
 				<div class="taxonomies">
-					{{ taxonomy:taxonomy_classifieds }}
-						{{ partial:components/tag primary="true" }}
-					{{ /taxonomy:taxonomy_classifieds }}
+					{{ taxonomy:topics }}
+						{{ 
+							partial:components/tag 
+							primary="true" 
+							link_type="url"
+						}}
+					{{ /taxonomy:topics }}
 				</div>
 			</div>
 

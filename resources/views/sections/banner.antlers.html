@@ -20,11 +20,13 @@
 			}}
 		</div>
 
-		<div class="titles">
-			<h1 class="title">{{ yield:seo_title }}{{ title ?? view:title }}</h1>
-			{{ if intro }}
-				<div class="intro prose">{{ intro }}</div>
-			{{ /if }}
+		<div class="banner__content">
+			<div class="titles">
+				<h1 class="title">{{ yield:seo_title }}{{ title ?? view:title }}</h1>
+				{{ if intro }}
+					<div class="intro prose">{{ intro }}</div>
+				{{ /if }}
+			</div>
 		</div>
 
 	</div>

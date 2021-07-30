@@ -7,12 +7,13 @@
 	<div class="sideblock__title">{{ trans:sideblock.title_classifieds }}</div>
 	<div class="sideblock__content">
 		<div class="taxonomies">
-			{{ taxonomy:taxonomy_classifieds }}
+			{{ taxonomy:topics }}
 				{{ 
 					partial:components/tag
 					primary="true"
+					link_type="url"
 				}}
-			{{ /taxonomy:taxonomy_classifieds }}
+			{{ /taxonomy:topics }}
 		</div>
 	</div>
 </aside>
