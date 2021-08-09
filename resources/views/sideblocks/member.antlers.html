@@ -1,0 +1,20 @@
+<aside 
+	class="sideblock member"
+	x-cloak
+	x-show="!mobile || sideblock_member"
+	@click.away="sideblock_member = false"
+>
+
+	<div class="sideblock__title">{{ trans:sideblock.title_member }}</div>
+
+	<div class="sideblock__content">
+		<div class="details">
+			{{ if {session:user_group} == "members" }}
+				You're a member
+			{{ else }}
+				You're a visitor
+			{{ /if }}
+		</div>
+	</div>
+	
+</aside>

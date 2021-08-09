@@ -6,7 +6,7 @@
 	{{ /if }}
 {{ /user }}
 
-{{ if (clients == 'members') and ({session:user_clients} != 'members') }}
+{{ if (clients == 'members') and ({session:user_group} != 'members') }}
   {{ redirect to="/" }}
 {{ /if }}
 
@@ -40,6 +40,7 @@
 		{{ partial:sideblocks/edit }}
 		{{ partial:sideblocks/back label="{trans:sideblock.back_products}" }}
 		{{ partial:sideblocks/product }}
+		{{ partial:sideblocks/member }}
 	</div>
 
 </div>

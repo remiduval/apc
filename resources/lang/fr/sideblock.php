@@ -11,6 +11,7 @@
 		'title_classified'			=> 'Détails',
 		'title_classifieds'			=> 'Catégories',
 		'title_product'				=> 'Détails',
+		'title_checkout'			=> 'Panier',
 
 
 		'toggle_new'				=> 'Détails',
@@ -19,5 +20,6 @@
 		'toggle_classified'			=> 'Détails & contact',
 		'toggle_classifieds'		=> 'Filtrer',
 		'toggle_product'			=> 'Détails & achat',
+		'toggle_checkout'			=> 'Panier',
 	];
 ?>

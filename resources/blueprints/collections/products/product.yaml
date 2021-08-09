@@ -11,6 +11,8 @@ sections:
       -
         handle: cover
         field: common.cover
+        config:
+          width: 25
       -
         handle: clients
         field: common.clients
@@ -55,17 +57,37 @@ sections:
           if:
             clients: 'equals visitors'
       -
-        handle: extra
+        handle: metadatas
         field:
           fields:
             -
-              handle: name
+              handle: title
               field:
                 input_type: text
                 antlers: false
-                display: Name
+                display: Title
                 type: text
                 icon: text
+                listable: hidden
+                width: 33
+            -
+              handle: hint
+              field:
+                input_type: text
+                antlers: false
+                display: Hint
+                type: text
+                icon: text
+                width: 33
+                listable: hidden
+            -
+              handle: required
+              field:
+                default: false
+                display: Required
+                type: toggle
+                icon: toggle
+                width: 33
                 listable: hidden
           mode: table
           reorderable: true
@@ -73,6 +95,65 @@ sections:
           type: grid
           icon: grid
           listable: hidden
+          localizable: true
+      -
+        handle: membership
+        field:
+          default: false
+          display: Membership
+          type: toggle
+          icon: toggle
+          localizable: true
+          width: 25
+          listable: hidden
+      -
+        handle: membership_until
+        field:
+          mode: single
+          time_enabled: false
+          time_required: false
+          earliest_date: '1900-01-01'
+          full_width: false
+          inline: false
+          columns: 1
+          rows: 1
+          display: 'Extend until'
+          type: date
+          icon: date
+          localizable: true
+          width: 25
+          listable: hidden
+          if:
+            membership: 'equals true'
+      -
+        handle: insurance
+        field:
+          default: false
+          display: Insurance
+          type: toggle
+          icon: toggle
+          localizable: true
+          width: 25
+          listable: hidden
+      -
+        handle: insurance_until
+        field:
+          mode: single
+          time_enabled: false
+          time_required: false
+          earliest_date: '1900-01-01'
+          full_width: false
+          inline: false
+          columns: 1
+          rows: 1
+          display: 'Extend until'
+          type: date
+          icon: date
+          localizable: true
+          width: 25
+          listable: hidden
+          if:
+            insurance: 'equals true'
       -
         handle: intro
         field: common.intro

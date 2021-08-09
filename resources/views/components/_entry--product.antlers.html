@@ -17,68 +17,72 @@
 
 		<div class="entry__content">
 			<h1 class="entry__title">{{ title }}</h1>
-
-
-			{{ if clients == 'all' }}
-
-				<div class="entry__price">
-					<span>
-						{{ if product_variants }}
-							{{ product_variants:options }}{{ if first }}{{ price }}{{ /if }}{{ /product_variants:options }}
-						{{ else }}
-							{{ price }}
-						{{ /if }}
-					</span>
-				</div>
-
-			{{ /if }}
-
-
-			{{ if clients == 'visitors' }}
-
-				<div class="entry__price">
-					<span>
-						{{ if product_variants }}
-							{{ product_variants:options }}{{ if first }}{{ price }}{{ /if }}{{ /product_variants:options }}
-						{{ else }}
-							{{ price }}
-						{{ /if }}
-					</span>
-				</div>
-
-				{{ if price_members }}
-					<div class="entry__price entry__price--inverted">
-						<span>Members</span>
-						<span>{{ price_members }}</span>
-					</div>
-				{{ /if }}
-
-			{{ /if }}
-
-
-
-			{{ if clients == 'members' }}
-
-				{{ if price_visitors }}
-					<div class="entry__price">
-						<span>{{ price_visitors }}</span>
-					</div>
-				{{ /if }}
-
-				<div class="entry__price entry__price--inverted">
-					<span>Members</span>
-					<span>
-						{{ if product_variants }}
-							{{ product_variants:options }}{{ if first }}{{ price }}{{ /if }}{{ /product_variants:options }}
-						{{ else }}
-							{{ price }}
-						{{ /if }}
-					</span>
-				</div>
-
-			{{ /if }}
-
 		</div>
+
+
+		{{ if clients == 'all' }}
+
+			<div class="entry__price">
+				<div>
+					{{ if product_variants }}
+						{{ product_variants:options }}{{ if first }}{{ price }}{{ /if }}{{ /product_variants:options }}
+					{{ else }}
+						{{ price }}
+					{{ /if }}
+				</div>
+			</div>
+
+		{{ /if }}
+
+
+		{{ if clients == 'visitors' }}
+
+			<div class="entry__price">
+				<div>
+					{{ if product_variants }}
+						{{ product_variants:options }}{{ if first }}{{ price }}{{ /if }}{{ /product_variants:options }}
+					{{ else }}
+						{{ price }}
+					{{ /if }}
+				</div>
+			</div>
+
+			{{ if price_members }}
+				<div class="entry__price entry__price--inverted">
+					<div class="entry__stamp">
+						<span>{{ svg src="star" }}</span>
+						<span>Members</span>
+					</div>
+					<div>{{ price_members }}</div>
+				</div>
+			{{ /if }}
+
+		{{ /if }}
+
+
+		{{ if clients == 'members' }}
+
+			{{ if price_visitors }}
+				<div class="entry__price">
+					<div>{{ price_visitors }}</div>
+				</div>
+			{{ /if }}
+
+			<div class="entry__price entry__price--inverted">
+				<div class="entry__stamp">
+					<span>{{ svg src="star" }}</span>
+					<span>Members</span>
+				</div>
+				<div>
+					{{ if product_variants }}
+						{{ product_variants:options }}{{ if first }}{{ price }}{{ /if }}{{ /product_variants:options }}
+					{{ else }}
+						{{ price }}
+					{{ /if }}
+				</div>
+			</div>
+
+		{{ /if }}
 
 	</a>
 </article>

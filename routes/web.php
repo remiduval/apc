@@ -42,10 +42,9 @@ Route::redirect('/fr/topics/{topic}', '/fr/services/petites-annonces/topics/{top
 
 
 
-Route::statamic('/cart', 'cart', ['title' => 'Your Cart']);
-
+Route::statamic('/cart',					'checkout.templates.cart',			['title' => 'Your Cart']);
+Route::statamic('/checkout/information',	'checkout.templates.information',	['title' => 'Checkout - Information']);
+Route::statamic('/checkout/shipping',		'checkout.templates.shipping',		['title' => 'Checkout - Shipping']);
+Route::statamic('/checkout/payment',		'checkout.templates.payment',		['title' => 'Checkout - Payment']);
+Route::statamic('/checkout/complete',		'checkout.templates.complete',		['title' => 'Checkout - Complete']);
 Route::redirect('/checkout', '/checkout/information');
-Route::statamic('/checkout/information',	'checkout.information',		['title' => 'Checkout - Information']);
-Route::statamic('/checkout/shipping',		'checkout.shipping',		['title' => 'Checkout - Shipping']);
-Route::statamic('/checkout/payment',		'checkout.payment',			['title' => 'Checkout - Payment']);
-Route::statamic('/checkout/complete',		'checkout.complete',		['title' => 'Checkout - Complete']);

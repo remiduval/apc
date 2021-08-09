@@ -1,0 +1,24 @@
+{{ if {sc:cart:count} === 0 }}
+	{{ redirect to="/cart" }}
+{{ /if }}
+
+{{ section:toggles }}
+	{{ 
+		partial:components/link
+		shape="button"
+		primary="true"
+		click="sideblock_checkout = !sideblock_checkout" 
+		label="{trans:sideblock.toggle_checkout}"
+		tag="button"
+	}}
+{{ /section:toggles }}
+
+<div class="page">
+	{{ partial:sections/banner }}
+
+	{{ partial:checkout/main/shipping }}
+
+	<div class="sidebar">
+		{{ partial:checkout/sideblocks/checkout }}
+	</div>
+</div>

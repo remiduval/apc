@@ -1,0 +1,42 @@
+main.main--cart
+	.cart
+		display flex
+		flex-direction column
+		gap $px-32
+
+	.cart__items
+		display flex
+		flex-direction column
+		gap $px-8
+
+
+	.cart__item
+		padding $px-12 $px-16
+		border-radius $radius
+		background $malibu-050
+		display grid
+		align-items center
+		gap $px-8
+		grid-template-columns 1fr auto
+		grid-template-rows 1fr auto
+
+	.item__name
+		font-family $font-display
+		font-size $text-20
+
+		&:hover
+			text-decoration underline
+
+	.item__total
+		font-weight 500
+		justify-self end
+
+	.cart__total
+		padding $px-12 $px-16
+		border-radius $radius
+		background $malibu-050
+		display flex
+		align-item center
+		justify-content space-between
+		font-family $font-display
+		font-size $text-20		

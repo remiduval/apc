@@ -12,9 +12,6 @@
 	{{ partial:snippets/trackers }}
 {{# 
 	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> #}}
-
-	
-
 </head>
 
 <body
@@ -22,6 +19,7 @@
 	x-data="{
 		mobile: window.innerWidth < 1024,
 		modal:					false,
+		sideblock_checkout:		false,
 		sideblock_new:			false,
 		sideblock_event:		false,
 		sideblock_events:		false,
@@ -35,6 +33,14 @@
 	}"
 	@resize.window="mobile = window.innerWidth < 1024"
 >
+	{{ user }}
+		{{ if membership_until | is_after:today }}
+			{{ session:set user_group="members" }}
+		{{ else }}
+			{{ session:set user_group="visitors" }}
+		{{ /if }}
+	{{ /user }}
+
 	{{ partial:sections/header }}
 	{{ template_content }}
 	{{ partial:sections/footer }}

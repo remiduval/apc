@@ -30,7 +30,7 @@ sections:
           max_files: 1
           container: assets
       -
-        handle: member_until
+        handle: membership_until
         field:
           mode: single
           time_enabled: false
@@ -40,7 +40,22 @@ sections:
           inline: false
           columns: 1
           rows: 1
-          display: 'Member until'
+          display: 'Membership until'
+          type: date
+          icon: date
+          listable: hidden
+      -
+        handle: insurance_until
+        field:
+          mode: single
+          time_enabled: false
+          time_required: false
+          earliest_date: '1900-01-01'
+          full_width: false
+          inline: false
+          columns: 1
+          rows: 1
+          display: 'Insurance until'
           type: date
           icon: date
           listable: hidden

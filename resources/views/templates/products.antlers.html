@@ -1,11 +1,3 @@
-{{ user }}
-	{{ if member_until > today }}
-		{{ session:set user_clients="members" }}
-	{{ else }}
-		{{ session:set user_clients="visitors" }}
-	{{ /if }}
-{{ /user }}
-
 {{ section:toggles }}
 
 {{ /section:toggles }}
@@ -18,6 +10,8 @@
 	<div class="sidebar">
 		{{ partial:sideblocks/edit }}
 		{{ partial:sideblocks/pagination }}
+		{{ partial:checkout/sideblocks/checkout }}
+		{{ partial:sideblocks/member }}
 	</div>
 
 </div>

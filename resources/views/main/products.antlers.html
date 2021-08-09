@@ -1,5 +1,5 @@
 <main class="main--products">
-	This person is {{ session:user_clients }}.
+	This person is {{ session:user_group }}.
 
 	<div class="products">
 
@@ -9,7 +9,7 @@
 			paginate="true"
 			as="entries"
 			sort="pinned:desc|date:desc"
-			clients:in="all|{session:user_clients}"
+			clients:in="all|{session:user_group}"
 
 		}}
 	

@@ -19,3 +19,35 @@ form
 			outline none
 			box-shadow 0 0 0 3px v(tone-300)
 			border-color v(tone-500)
+
+	select
+		background-image url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e")
+		background-position right .5rem center
+		background-repeat no-repeat
+		background-size 1.5em 1.5em
+		padding-right 2.5rem
+		-webkit-print-color-adjust exact
+		color-adjust exact
+
+	.form__field
+		display flex
+		flex-direction column
+		gap $px-4
+
+		label
+			font-size $text-14
+			font-weight 500
+			text-transform uppercase
+
+		.hint
+			opacity .8
+			font-size $text-12
+			//color $blue-300
+
+	.form__field + .form__field
+		margin-top $px-16
+
+	button
+		margin-top $px-24
+
+

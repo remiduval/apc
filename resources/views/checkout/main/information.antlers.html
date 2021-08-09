@@ -1,0 +1,77 @@
+<main class="main--default">
+
+	<div class="prose">
+		{{ partial:checkout/sections/errors }}
+
+		{{ sc:cart:update redirect="/checkout/shipping" }}
+
+			<div class="">
+
+				<h3>Billing info</h3>
+
+				{{ user }}
+
+					<div class="form__field">
+						<label for="name">Name</label>
+						<input type="text" id="name" name="name" placeholder="Sylvie Melin" value="{{ old:name or name }}" required>
+					</div>
+
+					<div class="form__field">
+						<label for="email">Email</label>
+						<input type="email" id="email" name="email" placeholder="sylvie.melin@example.com" value="{{ old:email or email }}" required>
+					</div>
+
+	
+				<h3>Billing Address</h3>
+
+
+				<div class="form__field">
+					<label for="billing_name">Name</label>
+					<input type="text" id="billing_name" name="billing_name" placeholder="Sylvie Melin" value="{{ old:billing_name or name }}" required>
+				</div>
+
+				{{ /user }}
+
+				<div class="form__field">
+					<label for="billing_address">Address</label>
+					<input type="text" id="billing_address" name="billing_address" placeholder="123 George Square" value="{{ old:billing_address }}" required>
+				</div>
+
+				<div class="form__field">
+					<label for="billing_city">City</label>
+					<input type="text" id="billing_city" name="billing_city" placeholder="London" value="{{ old:billing_city }}" required>
+				</div>
+
+				<div class="form__field">
+					<label for="billing_zip_code" >Postal code</label>
+					<input type="text" id="billing_zip_code" name="billing_zip_code" placeholder="G12 345" value="{{ old:billing_zip_code }}" required>
+				</div>
+
+				<div class="form__field">
+					<label for="billing_country">Country</label>
+					<select name="billing_country" id="billing_country" value="{{ old:billing_country }}">
+						{{ sc:countries }}
+							<option value="{{ iso }}" {{ iso == 'GB' ?= 'selected' }}>{{ name }}</option>
+						{{ /sc:countries }}
+					</select>
+				</div>
+
+			</div>
+
+			<div class="set buttons">
+				{{ 
+					partial:components/link 
+					shape="button"
+					tag="button"
+					icon="right"
+					primary="true"
+					label="Continue to shipping" 
+					attr_aria="Continue to shipping"
+				}}
+			</div>
+
+
+		{{ /sc:cart:update }}
+
+	</div>
+</main>

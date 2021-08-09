@@ -26,12 +26,11 @@ sections:
         field:
           max_items: 1
           mode: default
-          collections:
-            - customers
-          type: entries
-          listable: hidden
           display: Customer
+          type: users
+          icon: users
           width: 50
+          listable: hidden
       -
         handle: coupon
         field:
