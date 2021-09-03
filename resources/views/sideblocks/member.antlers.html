@@ -10,9 +10,9 @@
 	<div class="sideblock__content">
 		<div class="details">
 			{{ if {session:user_group} == "members" }}
-				You're a member
+				{{ trans:sideblock.content_member_member }}
 			{{ else }}
-				You're a visitor
+				{{ trans:sideblock.content_member_visitor }}
 			{{ /if }}
 		</div>
 	</div>

@@ -34,7 +34,7 @@
 	@resize.window="mobile = window.innerWidth < 1024"
 >
 	{{ user }}
-		{{ if membership_until | is_after:today }}
+		{{ if membership_until && membership_until | is_after:today }}
 			{{ session:set user_group="members" }}
 		{{ else }}
 			{{ session:set user_group="visitors" }}

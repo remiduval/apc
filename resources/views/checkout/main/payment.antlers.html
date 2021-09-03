@@ -9,7 +9,7 @@
 					<label for="payment_method">Payment Method</label>
 					<select name="gateway" id="payment_method" value="{{ old:gateway }}" x-model="gateway">
 						{{ sc:gateways }}
-							<option value="{{ class }}" {{ if first }} selected {{ /if }}>{{ display }}</option>
+							<option value="{{ class }}" {{ if first }} selected {{ /if }}>{{ 'Card' or display }}</option>
 						{{ /sc:gateways }}
 					</select>
 				</div>
@@ -21,17 +21,17 @@
 				{{ /sc:gateways }}
 			</div>
 
-			<div class="set buttons">
-				{{ 
-					partial:components/link 
-					shape="button"
-					tag="button"
-					icon="card"
-					primary="true"
-					label="Pay" 
-					attr_aria="Pay"
-				}}
-			</div>
+
+			{{ 
+				partial:components/link 
+				shape="button"
+				tag="button"
+				icon="card"
+				primary="true"
+				label="Pay" 
+				attr_aria="Pay"
+			}}
+
 		{{ /sc:checkout }}
 	</div>
 </main>

@@ -1,11 +1,11 @@
 <main class="main--products">
-	This person is {{ session:user_group }}.
+	<!-- This person is {{ session:user_group }}. -->
 
 	<div class="products">
 
 		{{ collection 
 			from="products"
-			limit="2"
+			limit="20"
 			paginate="true"
 			as="entries"
 			sort="pinned:desc|date:desc"

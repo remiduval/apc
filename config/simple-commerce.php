@@ -55,7 +55,11 @@ return [
     */
 
     'gateways' => [
-        \DoubleThreeDigital\SimpleCommerce\Gateways\Builtin\DummyGateway::class => [],
+        // \DoubleThreeDigital\SimpleCommerce\Gateways\Builtin\DummyGateway::class => [],
+        \DoubleThreeDigital\SimpleCommerce\Gateways\Builtin\StripeGateway::class => [
+            'key' => env('STRIPE_KEY'),
+            'secret' => env('STRIPE_SECRET'),
+        ],
     ],
 
     /*
@@ -76,7 +80,7 @@ return [
                 'to' => 'customer',
             ],
             \DoubleThreeDigital\SimpleCommerce\Notifications\BackOfficeOrderPaid::class => [
-                'to' => 'duncan@example.com',
+                'to' => 'duuval2@gmail.com',
             ],
         ],
         'digital_download_ready' => [

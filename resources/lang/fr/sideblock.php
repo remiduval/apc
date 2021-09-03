@@ -12,6 +12,7 @@
 		'title_classifieds'			=> 'Catégories',
 		'title_product'				=> 'Détails',
 		'title_checkout'			=> 'Panier',
+		'title_member'				=> 'Adhésion',
 
 
 		'toggle_new'				=> 'Détails',
@@ -21,5 +22,9 @@
 		'toggle_classifieds'		=> 'Filtrer',
 		'toggle_product'			=> 'Détails & achat',
 		'toggle_checkout'			=> 'Panier',
+
+		'content_member_member'		=> 'Vous avez une adhésion à jour',
+		'content_member_visitor'	=> 'Identifiez-vous ou achetez une adhésion pour profiter des prix réduits'
+
 	];
 ?>
