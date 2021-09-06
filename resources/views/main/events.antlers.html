@@ -3,7 +3,8 @@
 		{{ collection 
 			from="events"
 			as="entries"
-			sort="pinned:desc|date:desc"
+			sort="pinned:desc|event_date:asc"
+			event_date:gte="{today format='Y-m-d'}"
 		}}
 	
 			{{ if no_results }}

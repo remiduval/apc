@@ -1,4 +1,8 @@
 form
+	display flex
+	flex-direction column
+	gap $px-24
+
 	input:not([type="submit"])
 	textarea
 	select
@@ -44,8 +48,21 @@ form
 			font-size $text-12
 			//color $blue-300
 
-	.form__field + .form__field
-		margin-top $px-16
+	// .form__field + .form__field
+	// 	margin-top $px-16
+
+	.form__section
+		border-radius $radius
+		border solid 2px $malibu-050
+		padding $px-24
+		display flex
+		flex-direction column
+		gap $px-24
+
+	legend
+		font-size $text-16
+		font-weight 500
+		padding 0 $px-24
 
 	button
 		margin-top $px-24

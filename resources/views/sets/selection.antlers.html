@@ -1,0 +1,73 @@
+<div class="set selection" x-data="{ children: 1 }">
+
+	{{ sc:cart:addItem redirect="/cart" }}
+
+		<input type="hidden" name="product" value="{{ id }}">
+
+		{{ if product_variants }}
+			<div class="form__field">
+				<label for="variant">{{ insurance ? 'Children' : 'Variant' }}</label>
+
+				<select id="variant" name="variant" x-model.number="children">
+					{{ product_variants:options }}
+						<option value="{{ key }}">{{ variant }} ({{ price }})</option>
+					{{ /product_variants:options }}
+				</select>
+			</div>
+		{{ /if }}
+
+		{{ if max_quantity > 1 }}
+			<div class="form__field"> 
+				<label for="quantity">Quantity</label>
+
+				<select id="quantity" name="quantity">
+					{{ loop :times="max_quantity" }}
+						<option value="{{ value }}">{{ value }}</option>
+					{{ /loop }}
+				</select>
+			</div>
+		{{ else }}
+			<input type="hidden" name="quantity" value="1">
+		{{ /if }}
+
+		{{ if insurance }}
+			{{ loop times="5" }}
+				<fieldset class="form__section" x-show="children >= {{ value }}">
+					<legend>Child {{ value }}</legend>
+					{{ metadatas }}
+						<div class="form__field">
+							<label for="{{ value }}_{{ title | slugify }}">{{ title }}</label>
+							{{ if hint }}
+								<span class="hint">{{ hint }}</span>
+							{{ /if }}
+							<input type="text" name="{{ value }}_{{ title | slugify }}" id="{{ value }}_{{ title | slugify }}" {{ requireddd ?= 'required' }}>
+						</div>
+					{{ /metadatas }}
+				</fieldset>
+			{{ /loop }}
+		{{ else }}
+			{{ metadatas }}
+				<div class="form__field">
+					<label for="{{ title | slugify }}">{{ title }}</label>
+					{{ if hint }}
+						<span class="hint">{{ hint }}</span>
+					{{ /if }}
+					<input type="text" name="{{ title | slugify }}" id="{{ title | slugify }}" {{ required ?= 'required' }}>
+				</div>
+			{{ /metadatas }}
+		{{ /if }}
+
+		<div class="set buttons">
+			{{ 
+				partial:components/link 
+				shape="button"
+				tag="button"
+				icon="bag"
+				primary="true"
+				label="{ price } Add to cart" 
+				attr_aria="Add to cart"
+			}}
+		</div>
+
+	{{ /sc:cart:addItem }}
+</div>

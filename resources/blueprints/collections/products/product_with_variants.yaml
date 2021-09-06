@@ -1,4 +1,4 @@
-title: Product
+title: 'Product with Variants'
 sections:
   main:
     display: Main
@@ -16,13 +16,13 @@ sections:
       -
         handle: max_quantity
         field:
-          default: '5'
+          default: '1'
           display: 'Max quantity'
           type: integer
           icon: integer
           localizable: true
-          width: 25
           listable: hidden
+          width: 25
           validate:
             - 'gt:0'
       -
@@ -33,15 +33,6 @@ sections:
           width: 33
           validate:
             - required
-      -
-        handle: price
-        field:
-          type: money
-          display: Price
-          read_only: false
-          listable: hidden
-          localizable: true
-          width: 33
       -
         handle: price_visitors
         field:
@@ -166,6 +157,13 @@ sections:
           listable: hidden
           if:
             insurance: 'equals true'
+      -
+        handle: product_variants
+        field:
+          display: 'Product Variants'
+          type: product_variants
+          icon: product_variants
+          listable: hidden
       -
         handle: intro
         field: common.intro

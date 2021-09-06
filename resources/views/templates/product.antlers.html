@@ -1,14 +1,15 @@
-{{ user }}
-	{{ if member_until > today }}
-		{{ session:set user_clients="members" }}
-	{{ else }}
-		{{ session:set user_clients="visitors" }}
-	{{ /if }}
-{{ /user }}
 
-{{ if (clients == 'members') and ({session:user_group} != 'members') }}
-  {{ redirect to="/" }}
-{{ /if }}
+
+{{ user:cant do="edit products entries" }}
+	{{ if
+		(clients == 'members') &&
+		({session:user_group} != 'members')
+	}}
+		{{ redirect to="/" }}
+	{{ /if }}
+{{ /user:cant }}
+
+
 
 
 {{ section:toggles }}
@@ -34,12 +35,11 @@
 <div class="page">
 	{{ partial:sections/banner }}
 
-	{{ partial:main/default }}
+	{{ partial:main/product }}
 	
 	<div class="sidebar">
 		{{ partial:sideblocks/edit }}
 		{{ partial:sideblocks/back label="{trans:sideblock.back_products}" }}
-		{{ partial:sideblocks/product }}
 		{{ partial:sideblocks/member }}
 	</div>
 
