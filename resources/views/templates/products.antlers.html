@@ -5,12 +5,13 @@
 <div class="page">
 	{{ partial:sections/banner }}
 
-	{{ partial:main/products }}
+	{{ if {is_member} }}
+		{{ partial:main/products user_group="members" }}
+	{{ else }}
+		{{ partial:main/products user_group="visitors" }}
+	{{ /if }}
 
 	<div class="sidebar">
-		{{ partial:sideblocks/edit }}
-		{{ partial:sideblocks/pagination }}
-		{{ partial:checkout/sideblocks/checkout }}
 		{{ partial:sideblocks/member }}
 	</div>
 

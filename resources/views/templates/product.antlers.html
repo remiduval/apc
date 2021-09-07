@@ -1,16 +1,11 @@
-
-
 {{ user:cant do="edit products entries" }}
 	{{ if
 		(clients == 'members') &&
-		({session:user_group} != 'members')
+		(!{is_member})
 	}}
 		{{ redirect to="/" }}
 	{{ /if }}
 {{ /user:cant }}
-
-
-
 
 {{ section:toggles }}
 	{{ 
@@ -21,15 +16,6 @@
 		icon="left"
 		inverted="true"
 	}}
-
-	{{ 
-		partial:components/link
-		shape="button"
-		primary="true"
-		click="sideblock_product = !sideblock_product" 
-		label="{trans:sideblock.toggle_product}"
-		tag="button"
-	}}
 {{ /section:toggles }}
 
 <div class="page">
@@ -38,7 +24,6 @@
 	{{ partial:main/product }}
 	
 	<div class="sidebar">
-		{{ partial:sideblocks/edit }}
 		{{ partial:sideblocks/back label="{trans:sideblock.back_products}" }}
 		{{ partial:sideblocks/member }}
 	</div>

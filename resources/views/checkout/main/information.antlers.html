@@ -5,25 +5,26 @@
 
 		{{ sc:cart:update redirect="/checkout/shipping" }}
 
-			<div class="">
 
-				<h3>Billing info</h3>
+
+				<h2 class="group__title">Billing info</h2>
 
 				{{ user }}
 
-					<div class="form__field">
-						<label for="name">Name</label>
-						<input type="text" id="name" name="name" placeholder="Sylvie Melin" value="{{ old:name or name }}" required>
-					</div>
+				<div class="form__field">
+					<label for="name">Full name</label>
+					<input type="text" id="name" name="name" placeholder="Sylvie Melin" value="{{ old:name or name }}" required>
+				</div>
 
-					<div class="form__field">
-						<label for="email">Email</label>
-						<input type="email" id="email" name="email" placeholder="sylvie.melin@example.com" value="{{ old:email or email }}" required>
-					</div>
+				<div class="form__field">
+					<label for="email">Email</label>
+					<input type="email" id="email" name="email" placeholder="sylvie.melin@example.com" value="{{ old:email or email }}" required>
+				</div>
 
-	
-				<h3>Billing Address</h3>
 
+
+
+				<h2 class="group__title">Billing Address</h2>
 
 				<div class="form__field">
 					<label for="billing_name">Name</label>
@@ -56,9 +57,9 @@
 					</select>
 				</div>
 
-			</div>
 
-			<div class="set buttons">
+
+			<div class="buttons">
 				{{ 
 					partial:components/link 
 					shape="button"
@@ -69,7 +70,6 @@
 					attr_aria="Continue to details"
 				}}
 			</div>
-
 
 		{{ /sc:cart:update }}
 

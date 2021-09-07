@@ -1,0 +1,93 @@
+<div class="set cart">
+
+	{{ if {sc:cart:has} === false || {sc:cart:count} === 0 }}
+		<div class="cart__section">
+			<h2>Empty cart</h2>
+			<div>
+				{{ 
+					partial:components/link 
+					shape="button"
+					link_type="url"
+					url="{ link to='shop' }"
+					icon="bag"
+					primary="true"
+					label="Start shopping" 
+					attr_aria="Start shopping"
+				}}
+			</div>
+		</div>
+	{{ else }}
+
+
+
+
+		<div class="cart__items">
+			{{ sc:cart:items }}
+
+				<div class="cart__item">
+
+					<div class="cart__name"><a href="{{ product:url }}">{{ product:title }}</a></div>
+
+					{{ sc:cart:removeItem :item="id" }}
+						{{ 
+							partial:components/link
+							shape="link"
+							tag="button"
+							label="Remove" 
+							attr_aria="Remove"
+						}}
+					{{ /sc:cart:removeItem }}
+
+					<div class="cart__price">
+						{{ quantity }} x
+						{{ if variant }}
+							{{ variant:price }}
+						{{ else }}
+							{{ product:price }}
+						{{ /if }}
+					</div>
+
+					{{# <div class="cart__item_total">{{ total }}</div> #}}
+
+				</div>
+			{{ /sc:cart:items }}
+		</div>
+
+		<div class="cart__totals">
+
+			{{ if {sc:cart:taxTotal} !== 0 }}
+				<div class="cart__tax">
+					<div class="cart__title">Tax (incl.)</div>
+					<div class="cart__price">{{ sc:cart:taxTotal }}</div>
+				</div>
+			{{ /if }}
+
+			<div class="cart__total">
+				<div class="cart__title">Total</div>
+				<div class="cart__price">{{ sc:cart:grandTotal }}</div>
+			</div>
+
+		</div>
+
+
+
+
+		{{ unless {sc:cart:has} === false || {sc:cart:count} === 0 }}
+			<div class="form__field">
+				{{ 
+					partial:components/link 
+					shape="button"
+					link_type="url"
+					url="/checkout"
+					icon="card"
+					primary="true"
+					label="Continue to checkout" 
+					attr_aria="Continue to checkout"
+				}}
+			</div>
+		{{ /unless }}
+
+	{{ /if }}
+
+
+</div>

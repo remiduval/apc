@@ -1,4 +1,8 @@
 <article class="prose">
+	{{ if prepend_selection }}
+		{{ partial:sets/selection }}
+	{{ /if }}
+	
 	{{ prose }}
 		{{ partial src="sets/{type}" }}
 	{{ /prose }}

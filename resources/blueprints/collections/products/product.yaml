@@ -14,6 +14,25 @@ sections:
         config:
           width: 25
       -
+        handle: intro
+        field: common.intro
+      -
+        import: prose
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          required: true
+          localizable: true
+          validate:
+            - required
+  sale:
+    display: Sale
+    fields:
+      -
         handle: max_quantity
         field:
           default: '5'
@@ -21,18 +40,30 @@ sections:
           type: integer
           icon: integer
           localizable: true
-          width: 25
           listable: hidden
           validate:
             - 'gt:0'
+          instructions: 'Maximum quantity of that product that can be added to the basket at once. Should be 1 for insurance (the amount depends on the children variant)'
+      -
+        handle: availability_and_prices
+        field:
+          display: 'Availability and prices'
+          type: section
+          icon: section
+          listable: hidden
       -
         handle: clients
         field: common.clients
         config:
+          options:
+            all: All
+            visitors: Non-members
+            members: Members
           display: 'Available to'
           width: 33
           validate:
             - required
+          instructions: 'Who will see this product in the shop'
       -
         handle: price
         field:
@@ -42,6 +73,7 @@ sections:
           listable: hidden
           localizable: true
           width: 33
+          instructions: 'Actual price when added to basket'
       -
         handle: price_visitors
         field:
@@ -68,6 +100,13 @@ sections:
           listable: hidden
           if:
             clients: 'equals visitors'
+      -
+        handle: extra_fields
+        field:
+          display: 'Extra fields'
+          type: section
+          icon: section
+          listable: hidden
       -
         handle: metadatas
         field:
@@ -108,6 +147,15 @@ sections:
           icon: grid
           listable: hidden
           localizable: true
+          instructions: 'Extra info you need from the user for that sale'
+      -
+        handle: membership_and_insurance
+        field:
+          display: 'Membership & insurance'
+          type: section
+          icon: section
+          instructions: 'Specific fields if the product is a membership and/or an insurance'
+          listable: hidden
       -
         handle: membership
         field:
@@ -135,6 +183,7 @@ sections:
           localizable: true
           width: 25
           listable: hidden
+          instructions: 'If this product is bought, will extend the customer membership until'
           if:
             membership: 'equals true'
       -
@@ -166,19 +215,4 @@ sections:
           listable: hidden
           if:
             insurance: 'equals true'
-      -
-        handle: intro
-        field: common.intro
-      -
-        import: prose
-  sidebar:
-    display: Sidebar
-    fields:
-      -
-        handle: slug
-        field:
-          type: slug
-          required: true
-          localizable: true
-          validate:
-            - required
+          instructions: 'If this product is bought, will extend the customer insurance until'

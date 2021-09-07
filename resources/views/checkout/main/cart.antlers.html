@@ -1,20 +1,5 @@
 <main class="main--default">
-
-	{{ partial:checkout/sections/cart }}
-
-	{{ unless {sc:cart:has} === false || {sc:cart:count} === 0 }}
-		<div class="set buttons">
-			{{ 
-				partial:components/link 
-				shape="button"
-				link_type="url"
-				url="/checkout"
-				icon="card"
-				primary="true"
-				label="Continue to checkout" 
-				attr_aria="Continue to checkout"
-			}}
-		</div>
-	{{ /unless }}
-
+	<article class="prose">
+		{{ partial:checkout/sets/cart }}
+	</article>
 </main>

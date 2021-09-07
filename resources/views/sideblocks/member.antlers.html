@@ -9,7 +9,7 @@
 
 	<div class="sideblock__content">
 		<div class="details">
-			{{ if {session:user_group} == "members" }}
+			{{ if {is_member} }}
 				{{ trans:sideblock.content_member_member }}
 			{{ else }}
 				{{ trans:sideblock.content_member_visitor }}

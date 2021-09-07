@@ -1,0 +1,61 @@
+.cart
+	display flex
+	flex-direction column
+	gap $px-28
+
+
+	.cart__title
+		font-weight 500
+		font-family $font-display
+
+	.cart__price
+		font-weight 500
+		text-align right
+
+	.cart__items
+		display flex
+		flex-direction column
+		gap $px-8
+
+	.cart__item
+		display grid
+		grid-template-columns auto auto
+		grid-template-rows 1fr auto
+		align-items center
+		gap 0 $px-16
+		padding-top $px-12
+		padding-bottom $px-12
+
+		&:not(:last-child)
+			border-bottom solid 1px $malibu-075
+
+		.cart__name
+			grid-column 1 / span 2
+			font-weight 500
+			flex 1
+
+			a:hover
+				text-decoration underline
+		
+	.cart__totals
+		display flex
+		flex-direction column
+		gap $px-12
+		background $blue-600
+		color white
+		padding $px-8 $px-12
+		border-radius $radius
+
+		> *
+			display flex
+
+		.cart__title
+			flex 1
+
+	.cart__tax
+		color $malibu-200
+
+
+
+	//.cart__total
+		//font-size $text-20
