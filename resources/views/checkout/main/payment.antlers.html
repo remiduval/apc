@@ -1,10 +1,10 @@
-<main class="main--default">
+<main class="main--default main--payment">
 
 	<div class="prose">
 		{{ partial:checkout/sections/errors }}
 
 		{{ sc:checkout id="checkout-form" redirect="/checkout/complete" }}
-			<div x-data="{ gateway: '{{ sc:gateways }}{{ if first }}{{ formatted_class }}{{ /if }}{{ /sc:gateways }}' }">
+			<div id="payment-card" class="set payment-card" x-data="{ gateway: '{{ sc:gateways }}{{ if first }}{{ formatted_class }}{{ /if }}{{ /sc:gateways }}' }">
 				<div class="form__field">
 					<label for="payment_method">Payment Method</label>
 					<select name="gateway" id="payment_method" value="{{ old:gateway }}" x-model="gateway">
@@ -15,22 +15,24 @@
 				</div>
 
 				{{ sc:gateways }}
-					<div x-show="gateway === '{{ formatted_class }}'">
+					<div x-show="gateway === '{{ formatted_class }}'" class="form__field">
 						{{ partial src="checkout/gateways/{ handle }" }}
 					</div>
 				{{ /sc:gateways }}
+
+				{{ 
+					partial:components/link 
+					shape="button"
+					tag="button"
+					icon="card_and_loader"
+					primary="true"
+					label="Pay" 
+					attr_aria="Pay"
+				}}
 			</div>
 
 
-			{{ 
-				partial:components/link 
-				shape="button"
-				tag="button"
-				icon="card"
-				primary="true"
-				label="Pay" 
-				attr_aria="Pay"
-			}}
+
 
 		{{ /sc:checkout }}
 	</div>

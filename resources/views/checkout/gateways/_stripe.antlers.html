@@ -25,6 +25,7 @@
         }).then(function (result) {
             if (result.error) {
                 alert(result.error.message);
+                document.getElementById('payment-card').classList.remove('payment-card--processing');
             } else if (result.paymentIntent.status === 'succeeded') {
                 var paymentMethod = document.getElementById('stripePaymentMethod');
                 paymentMethod.value = result.paymentIntent.payment_method;
@@ -35,6 +36,7 @@
 
     document.getElementById('checkout-form').addEventListener('submit', (e) => {
         e.preventDefault()
+        document.getElementById('payment-card').classList.add('payment-card--processing');
 
         const gateway = document.getElementsByName('gateway')[0].value;
 

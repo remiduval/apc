@@ -72,7 +72,7 @@
 
 
 
-		{{ unless {sc:cart:has} === false || {sc:cart:count} === 0 }}
+		{{ unless no_checkout_button == true || {sc:cart:has} === false || {sc:cart:count} === 0 }}
 			<div class="form__field">
 				{{ 
 					partial:components/link 

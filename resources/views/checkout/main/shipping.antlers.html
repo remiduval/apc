@@ -4,7 +4,7 @@
 		{{ partial:checkout/sections/errors }}
 
 		{{ sc:cart:update redirect="/checkout/payment" }}
-			<div class="">
+
 
 				{{# <div class="form__field">
 					<label for="shipping_method">Shipping Method</label>
@@ -15,14 +15,14 @@
 					</select>
 				</div> #}}
 			
-				<div class="form__field">
-					<label for="shipping_note">Note</label>
-					<textarea name="shipping_note" id="shipping_note" cols="30" rows="10">{{ old:shipping_note }}</textarea>
-				</div>
-
+			<div class="form__field">
+				<label for="shipping_note">Additional information (optional)</label>
+				<textarea name="shipping_note" id="shipping_note" cols="30" rows="10">{{ old:shipping_note }}</textarea>
 			</div>
+
+
 		
-			<div class="set buttons">
+			<div class="buttons">
 				{{ 
 					partial:components/link 
 					shape="button"

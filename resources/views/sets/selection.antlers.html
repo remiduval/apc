@@ -14,6 +14,12 @@
 					{{ /product_variants:options }}
 				</select>
 			</div>
+		{{ else }}
+			<div class="form__field"> 
+				<label for="price">Price</label>
+
+				<input type="text" readonly value="{{ price }}">
+			</div>			
 		{{ /if }}
 
 		{{ if max_quantity > 1 }}
@@ -57,7 +63,7 @@
 			{{ /metadatas }}
 		{{ /if }}
 
-		<div class="set buttons">
+		<div class="buttons">
 			{{ 
 				partial:components/link 
 				shape="button"
