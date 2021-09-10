@@ -47,7 +47,7 @@
 				</div>
 			</div>
 
-			{{ if price_members != "£0.00" }}
+			{{ if (price_members != "£0.00") && (price_members != "0.00 £GB") }}
 				<div class="entry__price entry__price--inverted">
 					<div class="entry__stamp">
 						<span>{{ svg src="star" }}</span>
@@ -62,7 +62,7 @@
 
 		{{ if clients == 'members' }}
 
-			{{ if price_visitors != "£0.00" }}
+			{{ if (price_visitors != "£0.00") && (price_visitors != "0.00 £GB") }}
 				<div class="entry__price">
 					<div>{{ price_visitors }}</div>
 				</div>
