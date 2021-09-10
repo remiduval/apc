@@ -1,10 +1,20 @@
 <main class="main--events">
 	<div class="events">
+		{{# now format='Y-10-31' }}
+		{{ now modify_date='+1 year' format='Y-07-31' #}}
+
+		{{# get:from ?? school_year:start #}}
+
+
+		{{# school_year:start }}
+		{{ school_year:end #}}
+
 		{{ collection 
 			from="events"
 			as="entries"
 			sort="pinned:desc|event_date:asc"
-			event_date:gte="{today format='Y-m-d'}"
+			
+			event_date:gte="{ now format='Y-m-d' }"
 		}}
 	
 			{{ if no_results }}
@@ -34,3 +44,6 @@
 		{{ /collection }}
 	</div>
 </main>
+
+
+<!-- event_date:gte="{today format='Y-m-d'}" -->

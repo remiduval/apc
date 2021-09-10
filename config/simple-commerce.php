@@ -17,7 +17,7 @@ return [
             'currency' => 'GBP',
 
             'tax' => [
-                'rate'               => 20,
+                'rate'               => 0,
                 'included_in_prices' => true,
             ],
 
@@ -32,7 +32,7 @@ return [
             'currency' => 'GBP',
 
             'tax' => [
-                'rate'               => 20,
+                'rate'               => 0,
                 'included_in_prices' => true,
             ],
 
@@ -80,7 +80,7 @@ return [
                 'to' => 'customer',
             ],
             \DoubleThreeDigital\SimpleCommerce\Notifications\BackOfficeOrderPaid::class => [
-                'to' => 'duuval2@gmail.com',
+                'to' => 'contactcfblp@gmail.com',
             ],
         ],
         'digital_download_ready' => [
