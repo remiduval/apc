@@ -45,24 +45,26 @@
 		<nav class="modal__menu">
 			<ul>
 				{{ nav_excluding_hidden }}
-					<li>
-						{{ 
-							partial:components/nav
-							primary="true"
-							inverted="true"
-						}}
-	
-						{{ if children }}
-							<ul	class="children">
-								{{ children }}
-									<li>
-										{{ partial:components/nav }}
-									</li>
-								{{ /children }}  
-							</ul>
-						{{ /if }}
-	
-					</li>
+					{{ unless only_logged && !logged_in }}
+						<li>
+							{{ 
+								partial:components/nav
+								primary="true"
+								inverted="true"
+							}}
+		
+							{{ if children }}
+								<ul	class="children">
+									{{ children }}
+										<li>
+											{{ partial:components/nav }}
+										</li>
+									{{ /children }}  
+								</ul>
+							{{ /if }}
+		
+						</li>
+					{{ /unless }}
 				{{ /nav_excluding_hidden }}
 			</ul>
 		</nav>

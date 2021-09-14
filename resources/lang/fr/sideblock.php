@@ -12,7 +12,7 @@
 		'title_classifieds'			=> 'Catégories',
 		'title_product'				=> 'Détails',
 		'title_checkout'			=> 'Panier',
-		'title_member'				=> 'Adhésion',
+		'title_member'				=> 'Statut compte',
 
 
 		'toggle_new'				=> 'Détails',

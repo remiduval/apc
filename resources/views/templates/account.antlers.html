@@ -1,0 +1,13 @@
+{{ if !logged_in }}
+	{{ redirect to="/en/login" }}
+{{ /if }}
+
+<div class="page">
+	{{ partial:sections/banner }}
+
+	{{ partial:main/account }}
+	
+	<div class="sidebar">
+	</div>
+
+</div>

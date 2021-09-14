@@ -7,6 +7,8 @@ sections:
       -
         handle: title
         field: common.title
+        config:
+          required: true
       -
         handle: cover
         field: common.cover
@@ -26,6 +28,26 @@ sections:
       -
         handle: is_hidden
         field: common.is_hidden
+      -
+        handle: only_logged
+        field:
+          default: false
+          display: 'Only for logged in users'
+          type: toggle
+          icon: toggle
+          localizable: true
+          listable: hidden
+          instructions_position: above
+      -
+        handle: only_members
+        field:
+          default: false
+          display: 'Only for active members'
+          type: toggle
+          icon: toggle
+          localizable: true
+          listable: hidden
+          instructions_position: above
       -
         handle: menu_label
         field: common.menu_label

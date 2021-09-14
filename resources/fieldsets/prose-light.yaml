@@ -5,6 +5,11 @@ fields:
     field:
       always_show_set_button: true
       sets:
+        account:
+          display: Account
+          fields:
+            -
+              import: account
         buttons:
           display: Buttons
           fields:

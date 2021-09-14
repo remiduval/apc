@@ -1,0 +1,39 @@
+title: Account
+fields:
+  -
+    handle: unit
+    field:
+      options:
+        status: 'Account status'
+        login: 'Login form'
+        forgot: 'Forgotten password form'
+        reset: 'Reset password form'
+      multiple: false
+      max_items: 1
+      clearable: false
+      searchable: false
+      taggable: false
+      push_tags: false
+      cast_booleans: false
+      display: Unit
+      type: select
+      icon: select
+      listable: hidden
+      instructions_position: above
+      localizable: true
+  -
+    handle: redirect_to
+    field:
+      max_items: 1
+      mode: default
+      create: false
+      collections:
+        - pages
+      display: Redirect
+      type: entries
+      icon: entries
+      localizable: true
+      listable: hidden
+      instructions_position: above
+      if_any:
+        unit: 'not status'

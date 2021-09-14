@@ -48,3 +48,5 @@ Route::statamic('/checkout/shipping',		'checkout.templates.shipping',		['title' 
 Route::statamic('/checkout/payment',		'checkout.templates.payment',		['title' => 'Checkout - Payment']);
 Route::statamic('/checkout/complete',		'checkout.templates.complete',		['title' => 'Checkout - Complete']);
 Route::redirect('/checkout', '/checkout/information');
+
+Route::statamic('/reset-password',		'templates.reset',		['title' => 'Password reset']);

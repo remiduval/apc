@@ -40,7 +40,7 @@
 				link_type="url"
 				label="Account"
 				icon="person"
-				url="/admin"
+				url="/en/account"
 				inverted="true"
 			}}
 
@@ -49,48 +49,51 @@
 		<div class="header__menu">
 			<ul>
 				{{ nav_excluding_hidden include_home="false" }}
-					<li x-data="{ active: false }">
-						{{ 
-							partial:components/nav
-							main="true"
-	
-							{{ if (children | count) > 0 }}
-								click="active = !active"
-								icon="down"
-							{{ /if }}
-						}}
-	
-						{{ if children }}
-							<ul
-								class="header__dropdown"
-								x-cloak 
-								x-show="active"
-								@click.away="active = false"
-								x-transition:enter="slide-up-enter"
-								x-transition:enter-start="slide-up-enter-start"
-								x-transition:enter-end="slide-up-enter-end"
-								x-transition:leave="slide-up-leave"
-								x-transition:leave-end="slide-up-leave-end"
-							>
-								{{ if blueprint == "pages" }} {{# If parent is a real page, show it in submenu as href is disabled to allow dropdown #}}
-									<li>
-										{{ 
-											partial:components/nav
-											primary="true" 
-											inverted="true"
-										}}
-									</li>
+					{{ unless only_logged && !logged_in }}
+						<li x-data="{ active: false }">
+							{{ 
+								partial:components/nav
+								main="true"
+		
+								{{ if (children | count) > 0 }}
+									click="active = !active"
+									icon="down"
 								{{ /if }}
-								{{ children }}
-									<li>
-										{{ partial:components/nav }}
-									</li>
-								{{ /children }}
-							</ul>
-						{{ /if }}
-	
-					</li>
+							}}
+		
+							{{ if children }}
+								<ul
+									class="header__dropdown"
+									x-cloak 
+									x-show="active"
+									@click.away="active = false"
+									x-transition:enter="slide-up-enter"
+									x-transition:enter-start="slide-up-enter-start"
+									x-transition:enter-end="slide-up-enter-end"
+									x-transition:leave="slide-up-leave"
+									x-transition:leave-end="slide-up-leave-end"
+								>
+									{{ if blueprint == "pages" }} {{# If parent is a real page, show it in submenu as href is disabled to allow dropdown #}}
+										<li>
+											{{ 
+												partial:components/nav
+												primary="true" 
+												inverted="true"
+											}}
+										</li>
+									{{ /if }}
+									{{ children }}
+										<li>
+											{{ partial:components/nav }}
+										</li>
+									{{ /children }}
+								</ul>
+							{{ /if }}
+		
+						</li>
+					{{ /unless }}
 				{{ /nav_excluding_hidden }}
+
 			</ul>
 		</div>
 	</div>	

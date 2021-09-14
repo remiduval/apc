@@ -8,13 +8,110 @@
 	<div class="sideblock__title">{{ trans:sideblock.title_member }}</div>
 
 	<div class="sideblock__content">
-		<div class="details">
-			{{ if {is_member} }}
-				{{ trans:sideblock.content_member_member }}
-			{{ else }}
-				{{ trans:sideblock.content_member_visitor }}
-			{{ /if }}
-		</div>
+
+		{{ if logged_in }}
+			<div class="details">
+				{{ user }}
+	
+					{{ 
+						partial:components/link
+						tag="div"
+						shape="detail"
+						icon="person" 
+						:label="name"
+						primary="true"
+					}}
+	
+					{{ 
+						partial:components/link
+						tag="div"
+						shape="detail"
+						icon="mail" 
+						:label="email"
+						primary="true"
+					}}
+	
+					{{ if {is_member} }}
+						{{ 
+							partial:components/link
+							tag="div"
+							shape="detail"
+							icon="star" 
+							label="Member until {membership_until format='d/m/Y'}"
+							primary="true"
+						}}
+					{{ else }}
+						{{ 
+							partial:components/link
+							tag="div"
+							shape="detail"
+							icon="star" 
+							label="No active membership"
+							primary="true"
+						}}
+					{{ /if }}
+	
+					{{ if {is_insured} }}
+						{{ 
+							partial:components/link
+							tag="div"
+							shape="detail"
+							icon="health" 
+							label="Insurance until {insurance_until format='d/m/Y'}"
+							primary="true"
+						}}
+					{{ else }}
+						{{ 
+							partial:components/link
+							tag="div"
+							shape="detail"
+							icon="health" 
+							label="No active insurance"
+							primary="true"
+						}}
+					{{ /if }}
+				{{ /user }}
+			</div>
+	
+			<div class="buttons">
+				{{ 
+					partial:components/link 
+					shape="button"
+					icon="cross"
+					primary="true"
+					label="{ trans:account.log_out }" 
+					attr_aria="{ trans:account.log_out }"
+					link_type='url' 
+					url="{user:logout_url}"
+				}}
+			</div>
+		{{ else }}
+			{{ trans:sideblock.content_member_visitor }}
+
+			<div class="buttons">
+				{{ 
+					partial:components/link 
+					shape="button"
+					icon="person"
+					label="{ trans:account.log_in }" 
+					attr_aria="{ trans:account.log_in }"
+					link_type='url' 
+					url="/en/login"
+				}}
+
+				{{ 
+					partial:components/link 
+					shape="button"
+					icon="cart"
+					primary="true"
+					label="{ trans:account.buy_membership }" 
+					attr_aria="{ trans:account.buy_membership }"
+					link_type='url' 
+					url="/en/shop/membership"
+				}}
+			</div>
+		{{ /if }}
+
 	</div>
 	
 </aside>

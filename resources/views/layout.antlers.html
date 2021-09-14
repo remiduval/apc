@@ -1,3 +1,14 @@
+
+
+{{ if only_logged && !logged_in }}
+	oui
+	{{ redirect to="en/login" }}
+{{ /if }}
+
+{{ if only_members && !{is_member} }}
+	{{ redirect to="en/shop/membership" }}
+{{ /if }}
+
 <!doctype html>
 <html lang="{{ site:short_locale }}">
 
@@ -33,13 +44,7 @@
 	}"
 	@resize.window="mobile = window.innerWidth < 1024"
 >
-	{{ user }}
-		{{ if membership_until && membership_until | is_after:today }}
-			{{ session:set user_group="members" }}
-		{{ else }}
-			{{ session:set user_group="visitors" }}
-		{{ /if }}
-	{{ /user }}
+
 
 	{{ partial:sections/header }}
 	{{ template_content }}

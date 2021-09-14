@@ -12,7 +12,7 @@
 		'title_classifieds'			=> 'Categories',
 		'title_product'				=> 'Item details',
 		'title_checkout'			=> 'Cart',
-		'title_member'				=> 'Membership status',
+		'title_member'				=> 'Account status',
 
 
 		'toggle_new'				=> 'Details',
