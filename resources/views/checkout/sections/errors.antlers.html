@@ -1,15 +1,7 @@
 {{ if {sc:hasErrors} === true }}
-
-	<div class="prose">
-
-		<p>There were some errors with your submission</p>
-
-		<ul>
-			{{ sc:errors }}
-				<li>{{ value }}</li>
-			{{ /sc:errors }}
-		</ul>
-
+	<div class="alert alert--error">
+		{{ sc:errors }}
+			{{ value }}<br>
+		{{ /sc:errors }}
 	</div>
-
 {{ /if }}

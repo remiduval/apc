@@ -3,8 +3,7 @@
 	<div class="prose">
 		{{ partial:checkout/sections/errors }}
 
-		{{ sc:cart:update redirect="/checkout/shipping" }}
-
+		{{ sc:cart:update redirect="/checkout/payment" }}
 
 
 				<h2 class="group__title">Billing info</h2>
@@ -58,6 +57,14 @@
 					</select>
 				</div>
 
+				<h2 class="group__title">Note</h2>
+
+				<div class="form__field">
+					<label for="note">Note</label>
+					<div class="hint">Additional information we should know</div>
+					<input type="text" name="note" id="note" value="{{ old:note }}">
+				</div>
+
 
 
 			<div class="buttons">
@@ -67,8 +74,8 @@
 					tag="button"
 					icon="right"
 					primary="true"
-					label="Continue to details" 
-					attr_aria="Continue to details"
+					label="Continue to payment" 
+					attr_aria="Continue to payment"
 				}}
 			</div>
 

@@ -14,13 +14,16 @@ sections:
           listable: hidden
           input_type: text
           antlers: false
+          width: 75
       -
         handle: is_paid
         field:
           type: toggle
           listable: false
-          display: 'Is Paid?'
-          width: 50
+          display: Paid
+          width: 25
+          instructions_position: above
+          default: false
       -
         handle: customer
         field:
@@ -104,64 +107,31 @@ sections:
           display: 'Line Items'
           min_rows: 1
           add_row: 'Add Line Item'
-  addresses:
-    display: Addresses
+  note_billing:
+    display: 'Note & billing'
     fields:
       -
-        handle: shipping_section
+        handle: note_section
         field:
           type: section
           listable: false
-          display: Shipping
+          display: Note
+          instructions_position: above
       -
-        handle: shipping_name
+        handle: note
         field:
           input_type: text
           type: text
           listable: false
-          display: 'Shipping Name'
-      -
-        handle: shipping_address
-        field:
-          input_type: text
-          type: text
-          listable: false
-          display: 'Shipping Address'
-      -
-        handle: shipping_city
-        field:
-          input_type: text
-          type: text
-          listable: false
-          display: 'Shipping City'
-      -
-        handle: shipping_country
-        field:
-          input_type: text
-          type: text
-          width: 50
-          listable: false
-          display: 'Shipping Country'
-      -
-        handle: shipping_postal_code
-        field:
-          input_type: text
-          type: text
-          width: 50
-          listable: false
-          display: 'Shipping Postal Code'
+          display: Note
+          instructions_position: above
+          antlers: false
       -
         handle: billing_section
         field:
           type: section
           listable: false
           display: Billing
-      -
-        handle: use_shipping_address_for_billing
-        field:
-          type: toggle
-          listable: false
-          display: 'Same Shipping Address?'
       -
         handle: billing_name
         field:
@@ -239,37 +209,10 @@ sections:
           display: 'Paid Date'
           validate: required
       -
-        handle: items_total
-        field:
-          type: money
-          display: 'Items Total'
-          read_only: true
-          validate: required
-          width: 33
-          listable: hidden
-      -
         handle: coupon_total
         field:
           type: money
           display: 'Coupon Total'
-          read_only: true
-          validate: required
-          width: 33
-          listable: false
-      -
-        handle: tax_total
-        field:
-          type: money
-          display: 'Tax Total'
-          read_only: true
-          validate: required
-          width: 33
-          listable: false
-      -
-        handle: shipping_total
-        field:
-          type: money
-          display: 'Shipping Total'
           read_only: true
           validate: required
           width: 33
@@ -283,3 +226,27 @@ sections:
           validate: required
           width: 33
           listable: hidden
+  other_totals:
+    display: 'Other totals'
+    fields:
+      -
+        handle: items_total
+        field:
+          type: money
+          display: 'Items Total'
+          read_only: true
+          validate: required
+      -
+        handle: shipping_total
+        field:
+          type: money
+          display: 'Shipping Total'
+          read_only: true
+          validate: required
+      -
+        handle: tax_total
+        field:
+          type: money
+          display: 'Tax Total'
+          read_only: true
+          validate: required
