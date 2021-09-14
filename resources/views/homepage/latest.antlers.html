@@ -35,7 +35,7 @@
 				<div class="latest__entries">
 					{{ collection 
 						from="events"
-						limit="4"
+						limit="3"
 						sort="pinned:desc|event_date:asc"
 						event_date:gte="{today format='Y-m-d'}"
 					}}
