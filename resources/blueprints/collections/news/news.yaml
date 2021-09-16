@@ -6,6 +6,8 @@ sections:
       -
         handle: title
         field: common.title
+        config:
+          required: true
       -
         handle: cover
         field: common.cover
@@ -18,10 +20,12 @@ sections:
     display: Sidebar
     fields:
       -
-        handle: date
+        handle: publish_date
         field: common.date
         config:
           listable: true
+          validate:
+            - required
       -
         handle: pinned
         field: common.pinned

@@ -14,7 +14,8 @@
 					{{ collection 
 						from="news"
 						limit="4"
-						sort="pinned:desc|date:desc"
+						sort="pinned:desc|publish_date:desc"
+						publish_date:lte="{ now format='Y-m-d' }"
 					}}
 						{{ 
 							partial:components/entry--new
