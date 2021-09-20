@@ -3,7 +3,11 @@
 		{{ partial:sets/selection }}
 	{{ /if }}
 	
-	{{ prose }}
-		{{ partial src="sets/{type}" }}
-	{{ /prose }}
+	{{ if prose:0 }}
+		{{ prose }}
+			{{ partial src="sets/{type}" }}
+		{{ /prose }}
+	{{ else }}
+		{{ prose }}
+	{{ /if }}
 </article>

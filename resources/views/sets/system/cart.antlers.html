@@ -3,22 +3,8 @@
 	{{ if {sc:cart:has} === false || {sc:cart:count} === 0 }}
 		<div class="cart__section">
 			<h2>Empty cart</h2>
-			<div>
-				{{ 
-					partial:components/link 
-					shape="button"
-					link_type="url"
-					url="{ link to='shop' }"
-					icon="bag"
-					primary="true"
-					label="Start shopping" 
-					attr_aria="Start shopping"
-				}}
-			</div>
 		</div>
 	{{ else }}
-
-
 
 
 		<div class="cart__items">
@@ -78,7 +64,7 @@
 					partial:components/link 
 					shape="button"
 					link_type="url"
-					url="/checkout"
+					url="{ redirect_to | url }"
 					icon="card"
 					primary="true"
 					label="Continue to checkout" 

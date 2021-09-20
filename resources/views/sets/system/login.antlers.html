@@ -1,0 +1,39 @@
+<div class="set login">
+	{{ user:login_form redirect="{ redirect_to | url }" }}
+
+		{{ if errors }}
+			<div class="alert alert--error">
+				{{ errors }}
+					{{ value }}<br>
+				{{ /errors }}
+			</div>
+		{{ /if }}
+
+		{{ if success }}
+			<div class="alert alert--success">
+				{{ success }}<br>
+			</div>
+		{{ /if }}
+
+		<div class="form__field">
+			<label for="email">Email</label>
+			<input type="text" name="email" value="{{ old:email }}" required />
+		</div>
+
+		<div class="form__field">
+			<label for="password">{{ trans:account.password }}</label>
+			<input type="password" name="password" value="{{ old:password }}" required />
+		</div>
+
+		{{ 
+			partial:components/link 
+			shape="button"
+			tag="button"
+			icon="person"
+			primary="true"
+			label="{ trans:account.log_in }" 
+			attr_aria="{ trans:account.log_in }"
+		}}
+
+	{{ /user:login_form }}
+</div>

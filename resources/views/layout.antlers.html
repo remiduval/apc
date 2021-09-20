@@ -1,12 +1,11 @@
 
 
 {{ if only_logged && !logged_in }}
-	oui
-	{{ redirect to="en/login" }}
+	{{ redirect to="{ system:login | url }" }}
 {{ /if }}
 
 {{ if only_members && !{is_member} }}
-	{{ redirect to="en/shop/membership" }}
+	{{ redirect to="{ system:login | url }" }}
 {{ /if }}
 
 <!doctype html>
@@ -38,6 +37,7 @@
 		sideblock_classifieds:	false,
 		sideblock_product:		false,
 		sideblock_products:		false,
+		sideblock_status:		false,
 	}"
 	:class="{ 
 		'body--modal': modal

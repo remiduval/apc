@@ -6,6 +6,8 @@ fields:
       options:
         left: Left
         right: Right
+        bag: Bag
+        person: Person
       multiple: false
       max_items: 1
       clearable: true
@@ -19,6 +21,7 @@ fields:
       listable: hidden
       width: 25
       localizable: true
+      instructions_position: above
   -
     handle: color
     field:

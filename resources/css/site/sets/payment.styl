@@ -1,0 +1,22 @@
+.set.payment
+	#card-element
+		margin-top $px-16
+		background-color white
+		border solid $neutral-050 1px
+		border-radius $radius
+		padding $px-10 $px-12
+		font-size $px-16
+		line-height 1.5rem
+
+		&:focus
+			outline none
+			box-shadow 0 0 0 3px v(tone-300)
+			border-color v(tone-500)
+
+	#payment-card:not(.payment-card--processing)
+		.svg-loader
+			display none
+
+	#payment-card.payment-card--processing
+		.svg-card
+			display none

@@ -1,0 +1,102 @@
+<div class="set export">
+	<div class="set buttons">
+		{{ 
+			partial:components/link 
+			shape="button"
+			tag="button"
+			icon="down"
+			primary="true"
+			label="Export orders" 
+			attr_aria="Export orders"
+			click="export_orders()"
+		}}
+
+		{{ 
+			partial:components/link 
+			shape="button"
+			tag="button"
+			icon="down"
+			primary="true"
+			label="Export users" 
+			attr_aria="Export users"
+			click="export_users()"
+		}}
+	</div>
+
+
+	<table id="table_orders" style="opacity: 0">
+		<tr>
+			<th>Order number</th>
+			<th>Customer</th>
+			<th>Address</th>
+			<th>Postcode</th>
+			<th>City</th>
+			<th>Country</th>
+			<th>Note</th>
+			<th>Product ID</th>
+			<th>Name</th>
+			<th>Variant</th>
+			<th>Quantity</th>
+			<th>Product total</th>
+		</tr>
+	
+		{{ collection 
+			from="orders"
+			is_paid:is="true"
+			sort="paid_date:desc"
+		}}
+			{{ items }}
+				<tr>
+					<td>{{ title }}</td>
+					<td>{{ billing_name }}</td>
+					<td>{{ billing_address }}</td>
+					<td>{{ billing_zip_code }}</td>
+					<td>{{ billing_address }}</td>
+					<td>{{ billing_country }}</td>
+					<td>{{ note }}</td>
+					<td>{{ product:id }}</td>
+					<td>{{ product:title }}</td>
+					<td>{{ variant:variant }}</td>
+					<td>{{ quantity }}</td>
+					<td>{{ total }}</td>
+				</tr>
+			{{ /items }}
+		{{ /collection }}
+	</table>
+
+	<table id="table_users" style="opacity: 0">
+		<tr>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Member until</th>
+			<th>Insurance until</th>
+		</tr>
+	
+		{{ users }}
+			<tr>
+				<td>{{ name }}</td>
+				<td>{{ email }}</td>
+				<td>{{ if membership_until }}{{ membership_until format="Y-m-d" }}{{ /if }}</td>
+				<td>{{ if insurance_until }}{{ insurance_until format="Y-m-d" }}{{ /if }}</td>
+			</tr>
+		{{ /users }}
+	</table>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="{{ mix src='/js/table2csv.min.js' }}" defer></script>
+
+	<script>
+		function export_orders() {
+			$("#table_orders").table2csv({
+				filename: 'apc_orders.csv'
+			});
+		}
+
+		function export_users() {
+			$("#table_users").table2csv({
+				filename: 'apc_users.csv'
+			});
+		}
+	</script>
+
+</div>

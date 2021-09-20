@@ -37,8 +37,8 @@ Route::statamic('/sitemap.xml', 'sitemap/sitemap', [
 
 // Route::statamic('/en/services/classifieds/topics/{topic}',		'templates.classifieds');
 // Route::statamic('/fr/services/petites-annonces/topics/{topic}',	'templates.classifieds');
-Route::redirect('/en/topics/{topic}', '/en/services/classifieds/topics/{topic}');
-Route::redirect('/fr/topics/{topic}', '/fr/services/petites-annonces/topics/{topic}');
+Route::redirect('/en/topics/{topic}', '/en/our-actions/classifieds/topics/{topic}');
+Route::redirect('/fr/topics/{topic}', '/fr/nos-actions/petites-annonces/topics/{topic}');
 
 
 

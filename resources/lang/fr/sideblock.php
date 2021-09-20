@@ -12,7 +12,7 @@
 		'title_classifieds'			=> 'Catégories',
 		'title_product'				=> 'Détails',
 		'title_checkout'			=> 'Panier',
-		'title_member'				=> 'Statut compte',
+		'title_status'				=> 'Statut compte',
 
 
 		'toggle_new'				=> 'Détails',
@@ -22,6 +22,7 @@
 		'toggle_classifieds'		=> 'Filtrer',
 		'toggle_product'			=> 'Détails & achat',
 		'toggle_checkout'			=> 'Panier',
+		'toggle_status'				=> 'Statut compte',
 
 		'content_member_member'		=> 'Vous avez une adhésion à jour',
 		'content_member_visitor'	=> 'Identifiez-vous ou achetez une adhésion pour profiter des prix réduits'

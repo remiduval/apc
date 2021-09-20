@@ -10,11 +10,6 @@ fields:
           fields:
             -
               import: accordion
-        account:
-          display: Account
-          fields:
-            -
-              import: account
         buttons:
           display: Buttons
           fields:
@@ -55,6 +50,11 @@ fields:
           fields:
             -
               import: person
+        system:
+          display: System
+          fields:
+            -
+              import: system
         video:
           display: Video
           fields:

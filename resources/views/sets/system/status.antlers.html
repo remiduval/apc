@@ -1,0 +1,71 @@
+<div class="set status">
+    <div class="details">
+        {{ user }}
+    
+            {{ 
+                partial:components/link
+                tag="div"
+                shape="detail"
+                icon="person" 
+                :label="name"
+            }}
+    
+            {{ 
+                partial:components/link
+                tag="div"
+                shape="detail"
+                icon="mail" 
+                :label="email"
+            }}
+    
+            {{ if {is_member} }}
+                {{ 
+                    partial:components/link
+                    tag="div"
+                    shape="detail"
+                    icon="star" 
+                    label="Member until {membership_until format='d/m/Y'}"
+                }}
+            {{ else }}
+                {{ 
+                    partial:components/link
+                    tag="div"
+                    shape="detail"
+                    icon="star" 
+                    label="No active membership"
+                }}
+            {{ /if }}
+    
+            {{ if {is_insured} }}
+                {{ 
+                    partial:components/link
+                    tag="div"
+                    shape="detail"
+                    icon="health" 
+                    label="Insurance until {insurance_until format='d/m/Y'}"
+                }}
+            {{ else }}
+                {{ 
+                    partial:components/link
+                    tag="div"
+                    shape="detail"
+                    icon="health" 
+                    label="No active insurance"
+                }}
+            {{ /if }}
+        {{ /user }}
+    </div>
+    
+    <div class="buttons">
+        {{ 
+            partial:components/link 
+            shape="button"
+            icon="cross"
+            primary="true"
+            label="{ trans:account.log_out }" 
+            attr_aria="{ trans:account.log_out }"
+            link_type='url' 
+            url="{user:logout_url}"
+        }}
+    </div>
+</div>

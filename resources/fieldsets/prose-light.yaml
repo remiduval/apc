@@ -5,11 +5,6 @@ fields:
     field:
       always_show_set_button: true
       sets:
-        account:
-          display: Account
-          fields:
-            -
-              import: account
         buttons:
           display: Buttons
           fields:
@@ -50,6 +45,11 @@ fields:
           fields:
             -
               import: person
+        system:
+          display: System
+          fields:
+            -
+              import: system
         video:
           display: Video
           fields:

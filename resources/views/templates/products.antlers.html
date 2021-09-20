@@ -1,5 +1,12 @@
 {{ section:toggles }}
-
+	{{ 
+		partial:components/link
+		shape="button"
+		primary="true"
+		click="sideblock_status = !sideblock_status" 
+		label="{trans:sideblock.toggle_status}"
+		tag="button"
+	}}
 {{ /section:toggles }}
 
 <div class="page">
@@ -12,7 +19,7 @@
 	{{ /if }}
 
 	<div class="sidebar">
-		{{ partial:sideblocks/member }}
+		{{ partial:sideblocks/status }}
 	</div>
 
 </div>

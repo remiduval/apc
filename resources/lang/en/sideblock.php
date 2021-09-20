@@ -12,7 +12,7 @@
 		'title_classifieds'			=> 'Categories',
 		'title_product'				=> 'Item details',
 		'title_checkout'			=> 'Cart',
-		'title_member'				=> 'Account status',
+		'title_status'				=> 'Account status',
 
 
 		'toggle_new'				=> 'Details',
@@ -22,6 +22,7 @@
 		'toggle_classifieds'		=> 'Filter',
 		'toggle_product'			=> 'Details & buy',
 		'toggle_checkout'			=> 'Cart',
+		'toggle_status'				=> 'Account status',
 
 		'content_member_member'		=> 'You have an active membership',
 		'content_member_visitor'	=> 'Log in or buy a membership to qualify for reduced prices'

@@ -1,4 +1,4 @@
-.prose form
+form
 
 	input:not([type="submit"])
 	textarea
@@ -37,12 +37,14 @@
 
 		label
 			font-size $text-14
+			line-height $leading-snug
 			font-weight 500
 			text-transform uppercase
 
 		.hint
 			opacity .8
 			font-size $text-12
+			line-height $leading-tight
 			//color $blue-300
 
 		&:not(:last-child)
@@ -53,11 +55,11 @@
 
 	.form__section
 		border-radius $radius
-		border solid 2px $malibu-050
+		border solid 2px $malibu-100
 		padding $px-24
-		display flex
-		flex-direction column
-		gap $px-24
+
+		&:not(:last-child)
+			margin-bottom $px-20
 
 	legend
 		font-size $text-16

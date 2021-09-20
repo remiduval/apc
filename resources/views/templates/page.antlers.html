@@ -4,6 +4,8 @@
 	{{ partial:main/default }}
 
 	<div class="sidebar">
-		{{ partial:sideblocks/submenu }}
+		{{ unless is_hidden }}
+			{{ partial:sideblocks/submenu }}
+		{{ /unless }}
 	</div>
 </div>

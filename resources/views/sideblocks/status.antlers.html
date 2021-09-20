@@ -1,11 +1,11 @@
 <aside 
-	class="sideblock member"
+	class="sideblock status"
 	x-cloak
-	x-show="!mobile || sideblock_member"
-	@click.away="sideblock_member = false"
+	x-show="!mobile || sideblock_status"
+	@click.away="sideblock_status = false"
 >
 
-	<div class="sideblock__title">{{ trans:sideblock.title_member }}</div>
+	<div class="sideblock__title">{{ trans:sideblock.title_status }}</div>
 
 	<div class="sideblock__content">
 
@@ -96,7 +96,7 @@
 					label="{ trans:account.log_in }" 
 					attr_aria="{ trans:account.log_in }"
 					link_type='url' 
-					url="/en/login"
+					url="{ system:login | url }"
 				}}
 
 				{{ 
@@ -107,7 +107,7 @@
 					label="{ trans:account.buy_membership }" 
 					attr_aria="{ trans:account.buy_membership }"
 					link_type='url' 
-					url="/en/shop/membership"
+					url="{ system:membership | url }"
 				}}
 			</div>
 		{{ /if }}

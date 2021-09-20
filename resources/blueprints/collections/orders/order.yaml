@@ -170,7 +170,7 @@ sections:
           unless:
             use_shipping_address_for_billing: 'equals true'
       -
-        handle: billing_postal_code
+        handle: billing_zip_code
         field:
           input_type: text
           type: text

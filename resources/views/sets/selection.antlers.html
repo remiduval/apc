@@ -1,6 +1,6 @@
 <div class="set selection" x-data="{ children: 1 }">
 
-	{{ sc:cart:addItem redirect="/cart" }}
+	{{ sc:cart:addItem redirect="{ system:cart | url }" }}
 
 		<input type="hidden" name="product" value="{{ id }}">
 

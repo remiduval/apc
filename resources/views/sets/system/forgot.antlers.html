@@ -1,0 +1,34 @@
+<div class="set forgot">
+	{{ user:forgot_password_form reset_url="{ redirect_to | url }" }}
+
+		{{ if errors }}
+			<div class="alert alert--error">
+				{{ errors }}
+					{{ value }}<br>
+				{{ /errors }}
+			</div>
+		{{ /if }}
+
+		{{ if success }}
+			<div class="alert alert--success">
+				{{ success }}<br>
+			</div>
+		{{ /if }}
+
+		<div class="form__field">
+			<label for="email">Email</label>
+			<input type="text" name="email" value="{{ old:email }}" required />
+		</div>
+
+		{{ 
+			partial:components/link 
+			shape="button"
+			tag="button"
+			icon="mail"
+			primary="true"
+			label="{ trans:account.send_reset_email }" 
+			attr_aria="{ trans:account.send_reset_email }"
+		}}
+
+	{{ /user:forgot_password_form }}
+</div>

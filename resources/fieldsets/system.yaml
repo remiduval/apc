@@ -1,12 +1,16 @@
-title: Account
+title: System
 fields:
   -
     handle: unit
     field:
       options:
         status: 'Account status'
-        login: 'Login form'
+        cart: Cart
+        identity: 'Customer''s identity'
+        export: 'Export orders & users'
         forgot: 'Forgotten password form'
+        login: 'Login form'
+        payment: Payment
         reset: 'Reset password form'
       multiple: false
       max_items: 1

@@ -1,0 +1,77 @@
+{{ if {sc:cart:count} === 0 }}
+	{{ redirect to="{ system:cart | url }" }}
+{{ /if }}
+
+<div class="set identity" x-data="{ customer_name: '' }">
+
+	{{ if {sc:hasErrors} === true }}
+		<div class="alert alert--error">
+			{{ sc:errors }}
+				{{ value }}<br>
+			{{ /sc:errors }}
+		</div>
+	{{ /if }}
+
+	{{ sc:cart:update redirect="{ redirect_to | url }" }}
+
+			<div class="form__field">
+				<label for="name">Full name</label>
+				<input type="text" id="name" name="name" placeholder="Sylvie Melin" value="{{ user }}{{ old:name or name }}{{ /user }}" required x-model="customer_name">
+			</div>
+
+			<input type="hidden" name="billing_name" value="{{ user }}{{ old:name or name }}{{ /user }}" x-model="customer_name">
+	
+			<div class="form__field">
+				<label for="email">Email</label>
+				<div class="hint">You'll then be able to login to our website using this email</div>
+				<input type="email" id="email" name="email" placeholder="sylvie.melin@example.com" value="{{ user }}{{ old:email or email }}{{ /user }}" required>
+			</div>
+
+			<div class="form__field">
+				<label for="billing_address">Address</label>
+				<input type="text" id="billing_address" name="billing_address" placeholder="123 George Square" value="{{ old:billing_address }}" required>
+			</div>
+	
+			<div class="form__field">
+				<label for="billing_city">City</label>
+				<input type="text" id="billing_city" name="billing_city" placeholder="London" value="{{ old:billing_city }}" required>
+			</div>
+	
+			<div class="form__field">
+				<label for="billing_zip_code" >Postal code</label>
+				<input type="text" id="billing_zip_code" name="billing_zip_code" placeholder="SW8 5TR" value="{{ old:billing_zip_code }}" required>
+			</div>
+	
+			<div class="form__field">
+				<label for="billing_country">Country</label>
+				<select name="billing_country" id="billing_country" value="{{ old:billing_country }}">
+					{{ sc:countries }}
+						<option value="{{ iso }}" {{ iso == 'GB' ?= 'selected' }}>{{ name }}</option>
+					{{ /sc:countries }}
+				</select>
+			</div>
+	
+			<h2 class="group__title">Note</h2>
+	
+			<div class="form__field">
+				<label for="note">Note</label>
+				<div class="hint">Additional information we should know</div>
+				<input type="text" name="note" id="note" value="{{ old:note }}">
+			</div>
+	
+	
+	
+		<div class="buttons">
+			{{ 
+				partial:components/link 
+				shape="button"
+				tag="button"
+				icon="card"
+				primary="true"
+				label="Continue to payment" 
+				attr_aria="Continue to payment"
+			}}
+		</div>
+	
+	{{ /sc:cart:update }}
+</div>

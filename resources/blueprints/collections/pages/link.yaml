@@ -23,6 +23,9 @@ sections:
     display: Sidebar
     fields:
       -
+        handle: is_hidden
+        field: common.is_hidden
+      -
         handle: slug
         field:
           type: slug

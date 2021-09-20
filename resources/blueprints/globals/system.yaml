@@ -1,0 +1,46 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: cart
+        field:
+          max_items: 1
+          mode: default
+          create: false
+          collections:
+            - pages
+          display: Cart
+          type: entries
+          icon: entries
+          localizable: true
+          listable: hidden
+          instructions_position: above
+      -
+        handle: login
+        field:
+          max_items: 1
+          mode: default
+          create: false
+          collections:
+            - pages
+          display: Login
+          type: entries
+          icon: entries
+          localizable: true
+          listable: hidden
+          instructions_position: above
+      -
+        handle: membership
+        field:
+          max_items: 1
+          mode: default
+          create: false
+          collections:
+            - products
+          display: Membership
+          type: entries
+          icon: entries
+          localizable: true
+          listable: hidden
+          instructions_position: above
