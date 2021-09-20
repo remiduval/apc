@@ -11,7 +11,7 @@
 		'title_classified'			=> 'Classified details',
 		'title_classifieds'			=> 'Categories',
 		'title_product'				=> 'Item details',
-		'title_checkout'			=> 'Cart',
+		'title_cart'				=> 'Cart',
 		'title_status'				=> 'Account status',
 
 
@@ -21,7 +21,7 @@
 		'toggle_classified'			=> 'Details & contact',
 		'toggle_classifieds'		=> 'Filter',
 		'toggle_product'			=> 'Details & buy',
-		'toggle_checkout'			=> 'Cart',
+		'toggle_cart'				=> 'Cart',
 		'toggle_status'				=> 'Account status',
 
 		'content_member_member'		=> 'You have an active membership',

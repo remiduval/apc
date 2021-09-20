@@ -1,5 +1,5 @@
 {{ if {sc:cart:count} === 0 }}
-	{{ redirect to="/cart" }}
+	{{ redirect to="{{ system:cart | url }}" }}
 {{ /if }}
 
 {{ section:toggles }}
@@ -7,8 +7,8 @@
 		partial:components/link
 		shape="button"
 		primary="true"
-		click="sideblock_checkout = !sideblock_checkout" 
-		label="{trans:sideblock.toggle_checkout}"
+		click="sideblock_cart = !sideblock_cart" 
+		label="{trans:sideblock.toggle_cart}"
 		tag="button"
 	}}
 {{ /section:toggles }}
@@ -16,9 +16,9 @@
 <div class="page">
 	{{ partial:sections/banner }}
 
-	{{ partial:checkout/main/payment }}
+	{{ partial:main/default }}
 
 	<div class="sidebar">
-		{{ partial:checkout/sideblocks/checkout }}
+		{{ partial:sideblocks/cart }}
 	</div>
 </div>

@@ -69,24 +69,3 @@ sections:
           max_items: 1
           listable: false
           localizable: true
-  sideblocks:
-    display: Sideblocks
-    fields:
-      -
-        handle: sideblocks
-        field:
-          options:
-            status: 'Account status'
-            cart: Cart
-          multiple: true
-          clearable: false
-          searchable: false
-          taggable: false
-          push_tags: false
-          cast_booleans: false
-          display: Sideblocks
-          type: select
-          icon: select
-          localizable: true
-          listable: hidden
-          instructions_position: above

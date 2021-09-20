@@ -1,0 +1,14 @@
+<aside
+	class="sideblock cart"
+	x-cloak
+	x-show="!mobile || sideblock_cart"
+	@click.away="sideblock_cart = false"
+>
+	<div class="sideblock__title">{{ trans:sideblock.title_cart }}</div>
+
+	<div class="sideblock__content">
+
+		{{ partial:sets/system/cart no_checkout_button="true" }}
+
+	</div>
+</aside>

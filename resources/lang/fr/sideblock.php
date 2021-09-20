@@ -11,7 +11,7 @@
 		'title_classified'			=> 'Détails',
 		'title_classifieds'			=> 'Catégories',
 		'title_product'				=> 'Détails',
-		'title_checkout'			=> 'Panier',
+		'title_cart'				=> 'Panier',
 		'title_status'				=> 'Statut compte',
 
 
@@ -21,7 +21,7 @@
 		'toggle_classified'			=> 'Détails & contact',
 		'toggle_classifieds'		=> 'Filtrer',
 		'toggle_product'			=> 'Détails & achat',
-		'toggle_checkout'			=> 'Panier',
+		'toggle_cart'				=> 'Panier',
 		'toggle_status'				=> 'Statut compte',
 
 		'content_member_member'		=> 'Vous avez une adhésion à jour',
