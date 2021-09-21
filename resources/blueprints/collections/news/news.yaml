@@ -20,7 +20,7 @@ sections:
     display: Sidebar
     fields:
       -
-        handle: publish_date
+        handle: issue_date
         field: common.date
         config:
           listable: true
