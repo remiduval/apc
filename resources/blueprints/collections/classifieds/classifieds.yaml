@@ -62,6 +62,7 @@ sections:
             - unorderedlist
             - orderedlist
             - removeformat
+            - anchor
           save_html: false
           toolbar_mode: fixed
           link_noopener: false
@@ -80,6 +81,9 @@ sections:
           validate:
             - required
             - 'max:1000'
+          instructions_position: above
+          link_collections:
+            - classifieds
   sidebar:
     display: Sidebar
     fields:
