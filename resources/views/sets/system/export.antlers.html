@@ -38,6 +38,7 @@
 			<th>Variant</th>
 			<th>Quantity</th>
 			<th>Product total</th>
+			<th>Metadatas</th>
 		</tr>
 	
 		{{ collection 
@@ -47,6 +48,9 @@
 			site="*"
 			site:in="english|french"
 		}}
+
+
+		
 			{{ items }}
 				<tr>
 					<td>{{ title }}</td>
@@ -61,8 +65,12 @@
 					<td>{{ variant:variant }}</td>
 					<td>{{ quantity }}</td>
 					<td>{{ total }}</td>
+					<td>{{ metadata|list|explode:,|ul }}</td>
 				</tr>
+
 			{{ /items }}
+
+
 		{{ /collection }}
 	</table>
 
