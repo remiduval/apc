@@ -9,9 +9,13 @@
 
 		<div class="support__actions">
 			{{ actions }}
-				<div class="action">
-					<div class="action__title">{{ title }}</div>	
-					<div class="action__description prose">{{ description }}</div>
+				<div class="action prose">
+					<h3 class="action__title">
+						{{ if link }}<a href="{{ link }}">{{ /if }}
+							{{ title }}
+						{{ if link }}</a>{{ /if }}
+					</h3>	
+					<div class="action__description">{{ description }}</div>
 				</div>		
 			{{ /actions }}
 		</div>

@@ -107,6 +107,16 @@ sections:
                   - removeformat
                   - anchor
                 display: Description
+            -
+              handle: link
+              field:
+                collections:
+                  - pages
+                display: Link
+                type: link
+                icon: link
+                listable: hidden
+                instructions_position: above
           mode: table
           max_rows: 3
           min_rows: 1
@@ -116,6 +126,7 @@ sections:
           icon: grid
           localizable: true
           listable: hidden
+          instructions_position: above
   newsletter:
     display: Newsletter
     fields:
