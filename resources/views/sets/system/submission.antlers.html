@@ -1,0 +1,97 @@
+<div class="set submission">
+
+	{{ guest-entries:errors }}
+		<div class="alert alert--error">
+			{{ value }}
+		</div>
+	{{ /guest-entries:errors }}
+
+	{{ 
+		guest-entries:create 
+		collection="classifieds" 
+		redirect="{redirect_to | url}" 
+	}}
+
+		<fieldset class="form__section">
+			<legend>{{ trans:form.classified_in }} 🇬🇧</legend>
+		
+			<div class="form__field">
+				<label for="title">{{ trans:form.title }}</label>
+				<input type="text" name="title" id="title" minlength="3" maxlength="50" required>
+			</div>
+
+			<div class="form__field">
+				<label for="prose">{{ trans:form.content }}</label>
+				<div class="hint">{{ trans:form.max_char max="500" }}</div>
+				<textarea name="prose" id="prose" minlength="20" maxlength="500" required></textarea>
+			</div>
+		</fieldset>
+		
+		<fieldset class="form__section">
+			<legend>{{ trans:form.classified_in }} 🇫🇷</legend>
+		
+			<div class="form__field">
+				<label for="title_fr">{{ trans:form.title }}</label>
+				<input type="text" name="title_fr" id="title_fr" minlength="3" maxlength="50" required>
+			</div>
+
+			<div class="form__field">
+				<label for="prose_fr">{{ trans:form.content }}</label>
+				<div class="hint">{{ trans:form.max_char max="500" }}</div>
+				<textarea name="prose_fr" id="prose_fr" minlength="20" maxlength="500" required></textarea>
+			</div>
+		</fieldset>
+
+		<fieldset class="form__section">
+			<legend>{{ trans:form.details }}</legend>
+
+			<div class="form__field">
+				<label for="topics">{{ trans:form.category }}</label>
+				<select name="topics" id="topics">
+					{{ taxonomy:topics }}
+						<option value="{{ slug }}">{{ title }}</option>
+					{{ /taxonomy:topics }}
+				</select>
+			</div>
+
+			<div class="form__field">
+				<label for="expiration">{{ trans:form.display_until }}</label>
+				<div class="hint">{{ trans:form.max_months max="10" }}</div>
+				<input type="date" name="expiration" id="expiration" max="{{ now modify_date='+10 months' format='Y-m-d' }}" required>
+			</div>
+		</fieldset>
+
+		<fieldset class="form__section">
+			<legend>{{ trans:form.author }}</legend>		
+
+			<div class="form__field">
+				<label for="author">{{ trans:form.full_name }}</label>
+				<input type="text" name="author" id="author" minlength = "3" maxlength = "50" required>
+			</div>
+
+			<div class="form__field">
+				<label for="email">Email</label>
+				<div class="hint">{{ trans:form.optional }}</div>
+				<input type="email" name="email" id="email">
+			</div>
+
+			<div class="form__field">
+				<label for="tel">{{ trans:form.phone }}</label>
+				<div class="hint">{{ trans:form.optional }}</div>
+				<input type="tel" name="tel" id="tel">
+			</div>
+		</fieldset>
+
+		<input type="hidden" name="winnie" value="">
+
+		{{ 
+			partial:components/link 
+			shape="button"
+			tag="button"
+			icon="right"
+			primary="true"
+			label="{trans:form.submit}" 
+			attr_aria="{trans:form.submit}"
+		}}
+	{{ /guest-entries:create }}
+</div>

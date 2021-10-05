@@ -7,11 +7,14 @@ use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 
 use Statamic\Events\EntrySaved;
 use App\Listeners\UpdateExpirationDates;
+use App\Listeners\CreateLocalizedEntry;
+use App\Listeners\SendNotificationEmailNewSubmission;
 
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Event;
 
 use DoubleThreeDigital\SimpleCommerce\Events\OrderPaid;
+use DoubleThreeDigital\GuestEntries\Events\GuestEntryCreated;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -26,6 +29,10 @@ class EventServiceProvider extends ServiceProvider
         ],
         OrderPaid::class => [
             UpdateExpirationDates::class,
+        ],
+        GuestEntryCreated::class => [
+            CreateLocalizedEntry::class,
+            SendNotificationEmailNewSubmission::class,
         ],
     ];
 

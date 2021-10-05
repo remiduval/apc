@@ -12,6 +12,7 @@ fields:
         login: 'Login form'
         payment: Payment
         reset: 'Reset password form'
+        submission: 'Submission to classifieds'
       multiple: false
       max_items: 1
       clearable: false

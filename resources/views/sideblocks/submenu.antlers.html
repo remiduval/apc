@@ -21,9 +21,11 @@
 
 					{{# actual nav #}}
 					{{ mynav }}
-						<li>
-							{{ partial:components/nav }}
-						</li>
+						{{ unless is_hidden }}
+							<li>
+								{{ partial:components/nav }}
+							</li>
+						{{ /unless }}
 
 						{{# anchors #}}
 						{{ if is_current }}{{ yield:anchors }}{{ /if }}
