@@ -13,7 +13,6 @@ sections:
         field: common.cover
         config:
           width: 25
-
       -
         handle: intro
         field: common.intro
@@ -87,6 +86,16 @@ sections:
           type: product_variants
           icon: product_variants
           listable: hidden
+          instructions_position: above
+          option_fields:
+            -
+              handle: stock
+              field:
+                display: Stock
+                type: integer
+                icon: integer
+                listable: hidden
+                instructions_position: above
       -
         handle: extra_fields
         field:

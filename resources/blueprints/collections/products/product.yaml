@@ -44,6 +44,17 @@ sections:
           validate:
             - 'gt:0'
           instructions: 'Maximum quantity of that product that can be added to the basket at once. Should be 1 for insurance (the amount depends on the children variant)'
+          width: 50
+      -
+        handle: stock
+        field:
+          display: Stock
+          type: integer
+          icon: integer
+          localizable: true
+          width: 50
+          listable: hidden
+          instructions_position: above
       -
         handle: availability_and_prices
         field:

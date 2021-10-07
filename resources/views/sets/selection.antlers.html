@@ -6,25 +6,30 @@
 
 		{{ if product_variants }}
 			<div class="form__field">
-				<label for="variant">{{ insurance ? 'Children' : 'Variant' }}</label>
+				{{# <label for="variant">{{ insurance ? 'Children' : 'Variant' }}</label> #}}
+				<label for="variant">{{ product_variants:variants:0:name }}</label>
 
 				<select id="variant" name="variant" x-model.number="children">
+					
 					{{ product_variants:options }}
-						<option value="{{ key }}">{{ variant }} ({{ price }})</option>
+						{{ if stock === 0 }}
+							<option disabled>{{ variant }} ({{ trans:commerce.out_of_stock }})</option>
+						{{ else }}
+							<option value="{{ key }}">{{ variant }} ({{ price }})</option>						
+						{{ /if }}
 					{{ /product_variants:options }}
 				</select>
 			</div>
 		{{ else }}
 			<div class="form__field"> 
-				<label for="price">Price</label>
-
-				<input type="text" readonly value="{{ price }}">
+				<label for="price">{{ trans:commerce.price }}</label>
+				<input type="text" readonly value="{{ if stock === 0 }}{{ trans:commerce.out_of_stock }}{{ else }}{{ price }}{{ /if }}">
 			</div>			
 		{{ /if }}
 
 		{{ if max_quantity > 1 }}
 			<div class="form__field"> 
-				<label for="quantity">Quantity</label>
+				<label for="quantity">{{ trans:commerce.quantity }}</label>
 
 				<select id="quantity" name="quantity">
 					{{ loop :times="max_quantity" }}
@@ -39,7 +44,7 @@
 		{{ if insurance }}
 			{{ loop times="5" }}
 				<fieldset class="form__section" x-show="children >= {{ value }}">
-					<legend>Child {{ value }}</legend>
+					<legend>{{ trans:apc.child }} {{ value }}</legend>
 					{{ metadatas }}
 						<div class="form__field">
 							<label for="{{ value }}_{{ title | slugify }}">{{ title }}</label>
@@ -70,8 +75,8 @@
 				tag="button"
 				icon="bag"
 				primary="true"
-				label="Add to cart" 
-				attr_aria="Add to cart"
+				label="{ trans:commerce.add_to_cart }" 
+				attr_aria="{ trans:commerce.add_to_cart }"
 			}}
 		</div>
 
