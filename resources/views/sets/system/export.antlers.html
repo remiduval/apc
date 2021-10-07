@@ -40,9 +40,7 @@
 			<th>Variant</th>
 			<th>Quantity</th>
 			<th>Product total</th>
-			<template x-for="i in 30">
-				<th x-text="'Metadata ' + i"></th>
-			</template>
+			<th>Metadatas</th>
 		</tr>
 	
 		{{ collection 
@@ -54,7 +52,7 @@
 		}}
 		
 			{{ items }}
-				<tr x-data="{ countMetadatas: {{ metadata | count }} }">
+				<tr>
 					<td>{{ title }}</td>
 					<td>{{ paid_date format="Y-m-d" }}</td>
 					<td>{{ billing_name }}</td>
@@ -69,15 +67,7 @@
 					<td>{{ variant:variant }}</td>
 					<td>{{ quantity }}</td>
 					<td>{{ total }}</td>
-					{{ if metadata }}
-						{{ metadata|list|explode:, }}
-							<td>{{ value }}</td>
-						{{ /metadata|list|explode:, }}
-					{{ /if }}
-
-					<template x-for="i in (30 - countMetadatas)">
-						<td></td>
-					</template>
+					<td>{{ metadata|list|explode:,|ul }}</td>
 				</tr>
 
 			{{ /items }}
