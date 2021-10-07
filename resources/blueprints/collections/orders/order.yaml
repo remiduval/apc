@@ -11,7 +11,7 @@ sections:
           validate:
             - required
           display: 'Order Number'
-          listable: hidden
+          listable: true
           input_type: text
           antlers: false
           width: 75
@@ -19,7 +19,7 @@ sections:
         handle: is_paid
         field:
           type: toggle
-          listable: false
+          listable: true
           display: Paid
           width: 25
           instructions_position: above
@@ -33,7 +33,7 @@ sections:
           type: users
           icon: users
           width: 50
-          listable: hidden
+          listable: true
       -
         handle: coupon
         field:
@@ -205,7 +205,7 @@ sections:
           columns: 1
           rows: 1
           type: date
-          listable: hidden
+          listable: true
           display: 'Paid Date'
           validate: required
       -
@@ -225,7 +225,7 @@ sections:
           read_only: true
           validate: required
           width: 33
-          listable: hidden
+          listable: true
   other_totals:
     display: 'Other totals'
     fields:

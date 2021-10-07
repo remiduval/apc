@@ -80,7 +80,7 @@ return [
                 'to' => 'customer',
             ],
             \DoubleThreeDigital\SimpleCommerce\Notifications\BackOfficeOrderPaid::class => [
-                'to' => 'contactcfblp@gmail.com',
+                'to' => env("DEFAULT_EDITOR_EMAIL"),
             ],
         ],
         'digital_download_ready' => [
