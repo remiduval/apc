@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4ef1509e104e5cf85bac34923b2c364e",
+    "content-hash": "8cffddf1609842bc025b8f0d648bbcc3",
     "packages": [
         {
             "name": "4rn0/statamic-v3-image-optimizer",
@@ -5476,16 +5476,16 @@
         },
         {
             "name": "rias/statamic-redirect",
-            "version": "1.6.0",
+            "version": "1.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/riasvdv/statamic-redirect.git",
-                "reference": "2c0255e64f411747cc2b6851e6989ab7566c236c"
+                "reference": "da57016bf08fd7976ba0944dfb4b7f4a0f7e366c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/riasvdv/statamic-redirect/zipball/2c0255e64f411747cc2b6851e6989ab7566c236c",
-                "reference": "2c0255e64f411747cc2b6851e6989ab7566c236c",
+                "url": "https://api.github.com/repos/riasvdv/statamic-redirect/zipball/da57016bf08fd7976ba0944dfb4b7f4a0f7e366c",
+                "reference": "da57016bf08fd7976ba0944dfb4b7f4a0f7e366c",
                 "shasum": ""
             },
             "require": {
@@ -5518,9 +5518,9 @@
             "notification-url": "https://packagist.org/downloads/",
             "support": {
                 "issues": "https://github.com/riasvdv/statamic-redirect/issues",
-                "source": "https://github.com/riasvdv/statamic-redirect/tree/1.6.0"
+                "source": "https://github.com/riasvdv/statamic-redirect/tree/1.6.1"
             },
-            "time": "2021-09-18T11:21:34+00:00"
+            "time": "2021-09-20T12:56:26+00:00"
         },
         {
             "name": "roorda-ict/statamic-entries-export",
