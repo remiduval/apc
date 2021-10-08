@@ -5,6 +5,7 @@ namespace App\Listeners;
 use DoubleThreeDigital\GuestEntries\Events\GuestEntryCreated;
 use Statamic\Facades\Entry;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
 
 class CreateLocalizedEntry
 {
@@ -41,10 +42,17 @@ class CreateLocalizedEntry
 			])
 			->save();
 
+		// Converting date input to Y-m-d format
+		$expiration_date = Carbon::parse($entry_en->expiration)->format('Y-m-d');
+		$entry_en
+			->set('expiration', $expiration_date)
+			->save();
+
 		// Clearing French data on origin entry
 		$entry_en
 			->set('title_fr', '')
 			->set('prose_fr', '')
+
 			->save();
 	}
 
