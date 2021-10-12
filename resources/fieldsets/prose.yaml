@@ -65,11 +65,13 @@ fields:
         - h3
         - bold
         - italic
+        - underline
         - unorderedlist
         - orderedlist
         - removeformat
         - anchor
         - table
+        - horizontalrule
       save_html: false
       toolbar_mode: fixed
       link_noopener: false
@@ -84,3 +86,4 @@ fields:
       localizable: true
       enable_input_rules: true
       enable_paste_rules: true
+      instructions_position: above
