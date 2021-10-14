@@ -7,6 +7,7 @@ use Statamic\Facades\Entry;
 use App\Mail\NewSubmission;
 
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Config;
 
 class SendNotificationEmailNewSubmission
 {
@@ -30,7 +31,7 @@ class SendNotificationEmailNewSubmission
 	{
 		$entry_en = $event->entry;
 
-		Mail::to( env("DEFAULT_EDITOR_EMAIL") )
+		Mail::to(config(Config::get('mail.editor.address')))
 			->send(new NewSubmission($entry_en));
 	}
 }

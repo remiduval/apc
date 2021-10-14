@@ -110,4 +110,13 @@ return [
         ],
     ],
 
+
+
+
+    
+    'editor' => [
+        'address' => env('EDITOR_EMAIL', 'contact@remiduval.com'),
+        'name' => env('APP_NAME', 'Example'),
+    ],
+
 ];
