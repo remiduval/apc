@@ -31,7 +31,7 @@ class SendNotificationEmailNewSubmission
 	{
 		$entry_en = $event->entry;
 
-		Mail::to(config(Config::get('mail.editor.address')))
+		Mail::to( config('mail.editor') )
 			->send(new NewSubmission($entry_en));
 	}
 }
