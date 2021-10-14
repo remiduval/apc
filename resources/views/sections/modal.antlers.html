@@ -23,22 +23,11 @@
 				{{ /unless}}
 			{{ /locales }}
 
-			{{ 
-				partial:components/control
-				link_type="url"
-				label="Shopping cart"
-				icon="bag"
-				url="/cart"
-			}}
-
-			{{ 
-				partial:components/control
-				link_type="url"
-				label="Account"
-				icon="person"
-				url="/admin"
-				inverted="true"
-			}}
+			{{ topbar:buttons }}
+				{{ 
+					partial:components/control
+				}}
+			{{ /topbar:buttons }}
 
 		</div>
 	
