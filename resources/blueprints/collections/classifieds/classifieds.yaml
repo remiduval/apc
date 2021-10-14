@@ -88,7 +88,7 @@ sections:
     display: Sidebar
     fields:
       -
-        handle: date
+        handle: publish_date
         field: common.date
         config:
           listable: true

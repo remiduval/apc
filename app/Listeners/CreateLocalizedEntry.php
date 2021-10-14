@@ -45,6 +45,7 @@ class CreateLocalizedEntry
 		// Converting date input to Y-m-d format
 		$expiration_date = Carbon::parse($entry_en->expiration)->format('Y-m-d');
 		$entry_en
+			->set('publish_date', Carbon::now()->format('Y-m-d'))
 			->set('expiration', $expiration_date)
 			->save();
 
