@@ -10,6 +10,10 @@
 		'submit' => 'Submit',
 		'optional' => 'Optional',
 		'max_char' => 'Up to :max characters',
+		'address' => 'Address',
+		'city' => 'City',
+		'zip' => 'Postal code',
+		'country' => 'Country',
 
 
 		// Classified submission

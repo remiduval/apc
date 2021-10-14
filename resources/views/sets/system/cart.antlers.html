@@ -27,8 +27,8 @@
 							partial:components/link
 							shape="link"
 							tag="button"
-							label="Remove" 
-							attr_aria="Remove"
+							label="{trans:commerce.remove}" 
+							attr_aria="{trans:commerce.remove}"
 						}}
 					{{ /sc:cart:removeItem }}
 
@@ -73,10 +73,10 @@
 					shape="button"
 					link_type="url"
 					url="{ redirect_to | url }"
-					icon="card"
+					icon="cart"
 					primary="true"
-					label="Continue to checkout" 
-					attr_aria="Continue to checkout"
+					label="{trans:commerce.continue_to_checkout}" 
+					attr_aria="{trans:commerce.continue_to_checkout}"
 				}}
 			</div>
 		{{ /unless }}

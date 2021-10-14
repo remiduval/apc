@@ -10,6 +10,10 @@
 		'submit' => 'Envoi',
 		'optional' => 'Optionel',
 		'max_char' => "Jusqu'à :max caractères",
+		'address' => 'Adresse',
+		'city' => 'Ville',
+		'zip' => 'Code postal',
+		'country' => 'Pays',
 
 
 		// Classified submission
