@@ -3,3 +3,4 @@ sites:
   - english
   - french
 revisions: false
+sort_dir: desc

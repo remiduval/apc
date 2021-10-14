@@ -7,7 +7,8 @@ layout: layout
 mount: 94cb977d-e2df-4f67-850d-f706fa0c75c5
 revisions: false
 route: '{mount}/{slug}'
-sort_dir: asc
+sort_by: event_date
+sort_dir: desc
 date_behavior:
   past: public
   future: private
