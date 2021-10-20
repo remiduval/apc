@@ -2,7 +2,17 @@
 
 	{{ if {sc:cart:has} === false || {sc:cart:count} === 0 }}
 		<div class="cart__section">
-			<h2>Empty cart</h2>
+			<h2>{{ trans:commerce.empty_cart }}</h2>
+			{{ 
+				partial:components/link 
+				shape="button"
+				link_type="entry"
+				:entry="system:shop"
+				icon="bag"
+				primary="true"
+				label="{trans:commerce.start_shopping}" 
+				attr_aria="{trans:commerce.start_shopping}"
+			}}
 		</div>
 	{{ else }}
 
