@@ -25,21 +25,8 @@ body > header
 				position relative
 				display flex
 
-	.header__dropdown
-		position absolute
-		z-index $zindex-popover
-		left 0
-		top calc(100% + 1rem)
-		overflow hidden
-		width $px-240
-		background-color $malibu-050
-		border solid 2px $malibu-075
-		border-radius $radius
-
-	.header__controls
+	.topbar
 		display none
-		align-self flex-start
-		gap $px-12
 
 	@media md
 		backdrop-filter blur(30px)
@@ -68,9 +55,10 @@ body > header
 			display flex
 			justify-self center
 
-		.header__controls
-			display flex
+		.topbar
+			display block
 			justify-self flex-end
+			align-self flex-start
 			
 	@media xl
 		> .wrapper
@@ -86,5 +74,5 @@ body > header
 			order 2
 			margin-top $px-14
 
-		.header__controls
+		.topbar
 			order 3

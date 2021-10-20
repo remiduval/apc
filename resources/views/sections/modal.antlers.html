@@ -10,26 +10,7 @@
 	x-transition:leave-end="slide-up-leave-end"
 >
 	<div class="wrapper">
-		<div class="modal__controls">
-					
-			{{ locales }}
-				{{ unless locale.key == current }}
-					{{ 
-						partial:components/control
-						link_type="url"
-						label="{locale:name}"
-						icon="{locale:short}"
-					}}
-				{{ /unless}}
-			{{ /locales }}
-
-			{{ topbar:buttons }}
-				{{ 
-					partial:components/control
-				}}
-			{{ /topbar:buttons }}
-
-		</div>
+		{{ partial:sections/topbar }}
 	
 		<nav class="modal__menu">
 			<ul>

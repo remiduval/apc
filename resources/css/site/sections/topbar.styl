@@ -1,0 +1,34 @@
+.topbar
+
+	> ul
+		display flex
+		align-self flex-start
+		gap $px-12
+
+		> li
+			position relative
+
+	.dropdown
+		left initial
+		right 0
+
+	.icon
+		order 0
+
+	.link--cart
+		position relative
+
+		.cart_count
+			position absolute
+			top -8px
+			right -8px
+			display grid
+			place-items center
+			width $px-20
+			height $px-20
+			border-radius $radius-full
+			background $blue-600
+			line-height $leading-none
+			font-size $text-12
+			color white
+			font-weight 500

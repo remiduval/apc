@@ -44,3 +44,31 @@ sections:
           localizable: true
           listable: hidden
           instructions_position: above
+      -
+        handle: account
+        field:
+          max_items: 1
+          mode: default
+          create: false
+          collections:
+            - pages
+          display: Account
+          type: entries
+          icon: entries
+          localizable: true
+          listable: hidden
+          instructions_position: above
+      -
+        handle: shop
+        field:
+          max_items: 1
+          mode: default
+          create: false
+          collections:
+            - pages
+          display: Shop
+          type: entries
+          icon: entries
+          localizable: true
+          listable: hidden
+          instructions_position: above

@@ -14,26 +14,7 @@
 			</a>
 		</div>
 
-		<div class="header__controls">
-					
-			{{ locales }}
-				{{ unless locale.key == current }}
-					{{ 
-						partial:components/control
-						link_type="url"
-						label="{locale:name}"
-						icon="{locale:short}"
-					}}
-				{{ /unless}}
-			{{ /locales }}
-
-			{{ topbar:buttons }}
-				{{ 
-					partial:components/control
-				}}
-			{{ /topbar:buttons }}
-
-		</div>
+		{{ partial:sections/topbar }}
 
 		<div class="header__menu">
 			<ul>
@@ -52,7 +33,7 @@
 		
 							{{ if children }}
 								<ul
-									class="header__dropdown"
+									class="dropdown"
 									x-cloak 
 									x-show="active"
 									@click.away="active = false"

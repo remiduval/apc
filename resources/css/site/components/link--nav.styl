@@ -1,18 +1,21 @@
 .link--nav
 	display flex
 	align-items center
-	gap $px-4
+	gap $px-8
 	padding $px-12 $px-20
 	line-height $leading-tight
 
 	&.link--primary
 		font-weight 500
-		font-size $text-18
+		//font-size $text-18
 
 	&.link--main
 		color $blue-600
-		padding $px-8 $px-20
 		font-weight 500
+
+	&.link--icon
+		padding-top $px-10
+		padding-bottom $px-10
 
 	&.link--inverted
 		color white
@@ -38,5 +41,5 @@
 		&.link--inverted
 			background-color $blue-700
 
-	@media lg
-		padding $px-12 $px-24
+	// @media lg
+	// 	padding $px-12 $px-24

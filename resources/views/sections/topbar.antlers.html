@@ -1,0 +1,84 @@
+<div class="topbar">
+	<ul>
+	
+		{{ locales }}
+			{{ unless locale.key == current }}
+				<li>
+					{{ 
+						partial:components/control
+						link_type="url"
+						label="{locale:name}"
+						icon="{locale:short}"
+					}}
+				</li>
+			{{ /unless}}
+		{{ /locales }}
+
+
+		{{ topbar:buttons }}
+			
+				{{ if 
+					logged_in && 
+					(link_type == 'entry') &&
+					(entry:url == system:account:url)
+				}}
+					<li x-data="{ active: false }">
+						{{
+							partial:components/control
+							active="true"
+							click="active = !active"
+						}}
+
+						<ul
+							class="dropdown"
+							x-cloak
+							x-show="active"
+							@click.away="active = false"
+							x-transition:enter="slide-up-enter"
+							x-transition:enter-start="slide-up-enter-start"
+							x-transition:enter-end="slide-up-enter-end"
+							x-transition:leave="slide-up-leave"
+							x-transition:leave-end="slide-up-leave-end"
+						>
+							<li>
+								{{ get_content :from="system:account:id" }}
+									{{ user }}
+										{{ 
+											partial:components/nav
+											primary="false"
+											main="true"
+											icon="person"
+											:menu_label="name"
+											inverted="true"
+										}}
+									{{ /user }}
+								{{ /get_content }}
+							</li>
+
+							{{ nav from="{ system:account:slug }" }}
+								<li>
+									{{ 
+										partial:components/nav 
+										primary="false"
+										icon="false"
+									}}
+								</li>
+							{{ /nav }}
+						</ul>
+					</li>
+				{{ elseif icon == 'bag' }}
+					<li class="link--cart">
+						{{ partial:components/control }}
+						<span class="cart_count">{{ sc:cart:quantityTotal }}</span>
+					</li>
+				{{ else }}
+					<li>
+						{{ partial:components/control }}
+					</li>
+				{{ /if }}
+
+		{{ /topbar:buttons }}
+
+	</ul>
+
+</div>

@@ -1,4 +1,4 @@
-<div class="set selection" x-data="{ children: 1 }">
+<div class="set selection" id="set-selection" x-data="{ children: 1 }">
 
 	{{ sc:cart:addItem redirect="{ system:cart | url }" }}
 
@@ -74,9 +74,19 @@
 				shape="button"
 				tag="button"
 				icon="bag"
-				primary="true"
 				label="{ trans:commerce.add_to_cart }" 
 				attr_aria="{ trans:commerce.add_to_cart }"
+				click="document.getElementsByName('_redirect')[0].value='{current_uri}'; document.querySelector('#set-selection > form').submit();"
+			}}
+
+			{{ 
+				partial:components/link 
+				shape="button"
+				tag="button"
+				icon="flash"
+				primary="true"
+				label="{ trans:commerce.buy_now }" 
+				attr_aria="{ trans:commerce.buy_now }"
 			}}
 		</div>
 
