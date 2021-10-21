@@ -34,6 +34,12 @@ space-y(space)
 	& > * + *
 		margin-top space
 
+blob($width, $height, $shape, $color)
+	width $width
+	height $height
+	background-color $color
+	clip-path "url(#%s)" % $shape
+
 background-blob($width, $height, $shape, $color)
 	content ""
 	position absolute

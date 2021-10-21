@@ -1,9 +1,54 @@
 .homepage__classifieds
+	overflow hidden
 
 	.wrapper
 		wrapper-x()
 		space-y($px-64)
 		max-width 1040px
+		position relative
+
+
+
+		.blob
+			position absolute
+			z-index -1
+
+			&:nth-of-type(1)
+				blob(50px, 51px, triangle-sm, $blue-400)
+				top 10%
+				left 0
+
+			&:nth-of-type(2)
+				blob(42px, 38px, square-sm, $yellow-400)
+				top 50%
+				left 3%
+
+			&:nth-of-type(3)
+				blob(72px, 84px, circle-lg, $green-400)
+				top 80%
+				left -15%
+
+			&:nth-of-type(4)
+				blob(64px, 65px, square-lg, $red-400)
+				top 14%
+				right 5%
+
+			&:nth-of-type(5)
+				blob(50px, 44px, circle-sm, $purple-400)
+				top 45%
+				right -15%
+
+			&:nth-of-type(6)
+				blob(96px, 96px, triangle-lg, $orange-400)
+				top 86%
+				right 0
+
+			&:nth-of-type(-n+3)
+				transform translateX(-50%)
+
+			&:nth-of-type(n+4)
+				transform translateX(50%)			
+
 
 	.titles
 		text-align center
