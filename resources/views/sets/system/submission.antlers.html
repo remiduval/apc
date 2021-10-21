@@ -13,40 +13,40 @@
 	}}
 
 		<fieldset class="form__section">
-			<legend>{{ trans:forms.classified_in }} 🇬🇧</legend>
+			<legend>{{ trans:input.classified_in }} 🇬🇧</legend>
 		
 			<div class="form__field">
-				<label for="title">{{ trans:forms.title }}</label>
+				<label for="title">{{ trans:input.title }}</label>
 				<input type="text" name="title" id="title" minlength="3" maxlength="50" required>
 			</div>
 
 			<div class="form__field">
-				<label for="prose">{{ trans:forms.content }}</label>
-				<div class="hint">{{ trans:forms.max_char max="500" }}</div>
+				<label for="prose">{{ trans:input.content }}</label>
+				<div class="hint">{{ trans:input.max_char max="500" }}</div>
 				<textarea name="prose" id="prose" minlength="20" maxlength="500" required></textarea>
 			</div>
 		</fieldset>
 		
 		<fieldset class="form__section">
-			<legend>{{ trans:forms.classified_in }} 🇫🇷</legend>
+			<legend>{{ trans:input.classified_in }} 🇫🇷</legend>
 		
 			<div class="form__field">
-				<label for="title_fr">{{ trans:forms.title }}</label>
+				<label for="title_fr">{{ trans:input.title }}</label>
 				<input type="text" name="title_fr" id="title_fr" minlength="3" maxlength="50" required>
 			</div>
 
 			<div class="form__field">
-				<label for="prose_fr">{{ trans:forms.content }}</label>
-				<div class="hint">{{ trans:forms.max_char max="500" }}</div>
+				<label for="prose_fr">{{ trans:input.content }}</label>
+				<div class="hint">{{ trans:input.max_char max="500" }}</div>
 				<textarea name="prose_fr" id="prose_fr" minlength="20" maxlength="500" required></textarea>
 			</div>
 		</fieldset>
 
 		<fieldset class="form__section">
-			<legend>{{ trans:forms.details }}</legend>
+			<legend>{{ trans:input.details }}</legend>
 
 			<div class="form__field">
-				<label for="topics">{{ trans:forms.category }}</label>
+				<label for="topics">{{ trans:input.category }}</label>
 				<select name="topics" id="topics">
 					{{ taxonomy:topics }}
 						<option value="{{ slug }}">{{ title }}</option>
@@ -55,29 +55,29 @@
 			</div>
 
 			<div class="form__field">
-				<label for="expiration">{{ trans:forms.display_until }}</label>
-				<div class="hint">{{ trans:forms.max_months max="10" }}</div>
+				<label for="expiration">{{ trans:input.display_until }}</label>
+				<div class="hint">{{ trans:input.max_months max="10" }}</div>
 				<input type="date" name="expiration" id="expiration" max="{{ now modify_date='+10 months' format='Y-m-d' }}" required>
 			</div>
 		</fieldset>
 
 		<fieldset class="form__section">
-			<legend>{{ trans:forms.author }}</legend>		
+			<legend>{{ trans:input.author }}</legend>		
 
 			<div class="form__field">
-				<label for="author">{{ trans:forms.full_name }}</label>
+				<label for="author">{{ trans:input.full_name }}</label>
 				<input type="text" name="author" id="author" minlength = "3" maxlength = "50" required>
 			</div>
 
 			<div class="form__field">
 				<label for="email">Email</label>
-				<div class="hint">{{ trans:forms.optional }}</div>
+				<div class="hint">{{ trans:input.optional }}</div>
 				<input type="email" name="email" id="email">
 			</div>
 
 			<div class="form__field">
-				<label for="tel">{{ trans:forms.phone }}</label>
-				<div class="hint">{{ trans:forms.optional }}</div>
+				<label for="tel">{{ trans:input.phone }}</label>
+				<div class="hint">{{ trans:input.optional }}</div>
 				<input type="tel" name="tel" id="tel">
 			</div>
 		</fieldset>
@@ -91,8 +91,8 @@
 			tag="button"
 			icon="right"
 			primary="true"
-			label="{trans:forms.submit}" 
-			attr_aria="{trans:forms.submit}"
+			label="{trans:input.submit}" 
+			attr_aria="{trans:input.submit}"
 		}}
 	{{ /guest-entries:create }}
 </div>
