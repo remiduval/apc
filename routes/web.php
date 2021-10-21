@@ -50,3 +50,21 @@ Route::redirect('/fr/topics/{topic}', '/fr/nos-actions/petites-annonces/topics/{
 // Route::redirect('/checkout', '/checkout/information');
 
 Route::statamic('/reset-password',		'templates.reset',		['title' => 'Password reset']);
+
+
+
+
+// use DoubleThreeDigital\SimpleCommerce\Facades\Order;
+// use DoubleThreeDigital\SimpleCommerce\Facades\Currency;
+// use Illuminate\Bus\Queueable;
+// use Illuminate\Notifications\Messages\MailMessage;
+// use App\Notifications\CustomerOrderPaid;
+// use Statamic\Facades\Site;
+
+// Route::get('/notification', function () {
+//     $order = Order::find('72b4ec79-65db-467e-a009-637721b7b993');
+
+//     return (new CustomerOrderPaid($order))
+//                 ->toMail($order);
+
+// });

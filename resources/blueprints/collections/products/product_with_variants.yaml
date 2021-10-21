@@ -212,6 +212,27 @@ sections:
           if:
             insurance: 'equals true'
           instructions: 'If this product is bought, will extend the customer insurance until'
+      -
+        handle: confirmation_email
+        field:
+          display: 'Confirmation email'
+          type: section
+          icon: section
+          localizable: true
+          listable: hidden
+          instructions_position: above
+      -
+        handle: instructions
+        field:
+          antlers: false
+          display: Instructions
+          type: textarea
+          icon: textarea
+          instructions: 'Will appear in confirmation email if this product is bought'
+          localizable: true
+          listable: hidden
+          instructions_position: above
+
   sidebar:
     display: Sidebar
     fields:
