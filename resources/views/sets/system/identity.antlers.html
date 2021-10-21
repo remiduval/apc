@@ -15,7 +15,7 @@
 	{{ sc:cart:update redirect="{ redirect_to | url }" }}
 
 			<div class="form__field">
-				<label for="name">{{ trans:form.full_name }}</label>
+				<label for="name">{{ trans:forms.full_name }}</label>
 				<input type="text" id="name" name="name" placeholder="Sylvie Melin" value="{{ user }}{{ old:name or name }}{{ /user }}" required x-model="customer_name">
 			</div>
 
@@ -28,22 +28,22 @@
 			</div>
 
 			<div class="form__field">
-				<label for="billing_address">{{ trans:form.address }}</label>
+				<label for="billing_address">{{ trans:forms.address }}</label>
 				<input type="text" id="billing_address" name="billing_address" placeholder="123 George Square" value="{{ old:billing_address }}" required>
 			</div>
 	
 			<div class="form__field">
-				<label for="billing_city">{{ trans:form.city }}</label>
+				<label for="billing_city">{{ trans:forms.city }}</label>
 				<input type="text" id="billing_city" name="billing_city" placeholder="London" value="{{ old:billing_city }}" required>
 			</div>
 	
 			<div class="form__field">
-				<label for="billing_zip_code" >{{ trans:form.zip }}</label>
+				<label for="billing_zip_code" >{{ trans:forms.zip }}</label>
 				<input type="text" id="billing_zip_code" name="billing_zip_code" placeholder="SW8 5TR" value="{{ old:billing_zip_code }}" required>
 			</div>
 	
 			<div class="form__field">
-				<label for="billing_country">{{ trans:form.country }}</label>
+				<label for="billing_country">{{ trans:forms.country }}</label>
 				<select name="billing_country" id="billing_country" value="{{ old:billing_country }}">
 					{{ sc:countries }}
 						<option value="{{ iso }}" {{ iso == 'GB' ?= 'selected' }}>{{ name }}</option>
