@@ -14,7 +14,9 @@
 				attr_aria="{trans:commerce.start_shopping}"
 			}}
 		</div>
-	{{ else }}
+	{{ /if }}
+		
+	{{ sc:cart }}
 
 		{{ if {sc:hasErrors} === true }}
 			<div class="alert alert--error">
@@ -24,9 +26,9 @@
 			</div>
 		{{ /if }}
 
-
+		
 		<div class="cart__items">
-			{{ sc:cart:items }}
+			{{ items }}
 
 				<div class="cart__item">
 
@@ -43,18 +45,19 @@
 					{{ /sc:cart:removeItem }}
 
 					<div class="cart__price">
-						{{ quantity }} x
-						{{ if variant }}
-							{{ variant:price }}
+						{{ if product:open_price }}
+							{{ quantity | multiply:100 | currency }}
+						{{ elseif variant | raw }}
+							{{ total }}
 						{{ else }}
-							{{ product:price }}
+							{{ quantity }} x {{ product:price }}
 						{{ /if }}
 					</div>
 
 					{{# <div class="cart__item_total">{{ total }}</div> #}}
 
 				</div>
-			{{ /sc:cart:items }}
+			{{ /items }}
 		</div>
 
 		<div class="cart__totals">
@@ -91,7 +94,7 @@
 			</div>
 		{{ /unless }}
 
-	{{ /if }}
+	{{ /sc:cart }}
 
 
 </div>

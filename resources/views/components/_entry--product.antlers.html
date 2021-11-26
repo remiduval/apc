@@ -19,69 +19,70 @@
 			<h1 class="entry__title">{{ title }}</h1>
 		</div>
 
+		{{ unless open_price }}
+			{{ if clients == 'all' }}
 
-		{{ if clients == 'all' }}
-
-			<div class="entry__price">
-				<div>
-					{{ if product_variants }}
-						{{ product_variants:options }}{{ if first }}{{ price }}{{ /if }}{{ /product_variants:options }}
-					{{ else }}
-						{{ price }}
-					{{ /if }}
+				<div class="entry__price">
+					<div>
+						{{ if product_variants }}
+							{{ product_variants:options }}{{ if first }}{{ price }}{{ /if }}{{ /product_variants:options }}
+						{{ else }}
+							{{ price }}
+						{{ /if }}
+					</div>
 				</div>
-			</div>
 
-		{{ /if }}
+			{{ /if }}
 
 
-		{{ if clients == 'visitors' }}
+			{{ if clients == 'visitors' }}
 
-			<div class="entry__price">
-				<div>
-					{{ if product_variants }}
-						{{ product_variants:options }}{{ if first }}{{ price }}{{ /if }}{{ /product_variants:options }}
-					{{ else }}
-						{{ price }}
-					{{ /if }}
+				<div class="entry__price">
+					<div>
+						{{ if product_variants }}
+							{{ product_variants:options }}{{ if first }}{{ price }}{{ /if }}{{ /product_variants:options }}
+						{{ else }}
+							{{ price }}
+						{{ /if }}
+					</div>
 				</div>
-			</div>
 
-			{{ if price_members }}
+				{{ if price_members }}
+					<div class="entry__price entry__price--inverted">
+						<div class="entry__stamp">
+							<span>{{ svg src="star" }}</span>
+							<span>Members</span>
+						</div>
+						<div>{{ price_members }}</div>
+					</div>
+				{{ /if }}
+
+			{{ /if }}
+
+
+			{{ if clients == 'members' }}
+				{{ if price_visitors }}
+					<div class="entry__price">
+						<div>{{ price_visitors }}</div>
+					</div>
+				{{ /if }}
+
 				<div class="entry__price entry__price--inverted">
 					<div class="entry__stamp">
 						<span>{{ svg src="star" }}</span>
-						<span>Members</span>
+						<span>Members {{ price_visitors | raw }}</span>
 					</div>
-					<div>{{ price_members }}</div>
+					<div>
+						{{ if product_variants }}
+							{{ product_variants:options }}{{ if first }}{{ price }}{{ /if }}{{ /product_variants:options }}
+						{{ else }}
+							{{ price }}
+						{{ /if }}
+					</div>
 				</div>
+
 			{{ /if }}
-
-		{{ /if }}
-
-
-		{{ if clients == 'members' }}
-			{{ if price_visitors }}
-				<div class="entry__price">
-					<div>{{ price_visitors }}</div>
-				</div>
-			{{ /if }}
-
-			<div class="entry__price entry__price--inverted">
-				<div class="entry__stamp">
-					<span>{{ svg src="star" }}</span>
-					<span>Members {{ price_visitors | raw }}</span>
-				</div>
-				<div>
-					{{ if product_variants }}
-						{{ product_variants:options }}{{ if first }}{{ price }}{{ /if }}{{ /product_variants:options }}
-					{{ else }}
-						{{ price }}
-					{{ /if }}
-				</div>
-			</div>
-
-		{{ /if }}
+		{{ /unless }}
 
 	</a>
 </article>

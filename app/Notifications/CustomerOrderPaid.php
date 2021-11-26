@@ -59,7 +59,10 @@ class CustomerOrderPaid extends Notification
 			$product = Product::find($item['product']);
 
 			$message->line("## {$product->title}");
-			$message->line("Quantity: {$item['quantity']}");
+			
+			if ( !isset($product->data['open_price']) ) {
+				$message->line("Quantity: {$item['quantity']}");
+			}
 
 			if ( isset($product->data['instructions']) ) {
 				$message->line("⚠️ {$product->data['instructions']}");

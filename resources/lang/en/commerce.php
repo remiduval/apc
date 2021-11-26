@@ -5,6 +5,7 @@
 		'add_to_cart'               => 'Add to cart',
 		'buy_now'					=> 'Buy now',
 		'price'						=> 'Price',
+		'amount'					=> 'Amount (£)',
 		'remove'					=> 'Remove',
 		'continue_to_checkout'		=> 'Continue to checkout',
 		'continue_to_payment'		=> 'Continue to payment',

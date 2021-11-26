@@ -61,8 +61,8 @@
             {{ items }}
                 <tr>
                     <td>{{ product:title }}</td>
-                    <td style="width: 100px; text-align: right;">{{ quantity }}</td>
-                    <td style="width: 100px; text-align: right;">{{ if variant }}{{ variant:price }}{{ else }}{{ product:price }}{{ /if }}</td>
+                    <td style="width: 100px; text-align: right;">{{ !product:open_price ?= quantity }}</td>
+                    <td style="width: 100px; text-align: right;">{{ if product:open_price }}£{{ quantity }}{{ elseif variant }}{{ variant:price }}{{ else }}{{ product:price }}{{ /if }}</td>
                 </tr>
             {{ /items }}
 

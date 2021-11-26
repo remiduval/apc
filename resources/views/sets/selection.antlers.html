@@ -4,42 +4,61 @@
 
 		<input type="hidden" name="product" value="{{ id }}">
 
-		{{ if product_variants }}
-			<div class="form__field">
-				{{# <label for="variant">{{ insurance ? 'Children' : 'Variant' }}</label> #}}
-				<label for="variant">{{ product_variants:variants:0:name }}</label>
 
-				<select id="variant" name="variant" x-model.number="children">
-					
-					{{ product_variants:options }}
-						{{ if stock === 0 }}
-							<option disabled>{{ variant }} ({{ trans:commerce.out_of_stock }})</option>
-						{{ else }}
-							<option value="{{ key }}">{{ variant }} ({{ price }})</option>						
-						{{ /if }}
-					{{ /product_variants:options }}
-				</select>
+		{{ unless open_price }}
+
+			{{ if product_variants }}
+				<div class="form__field">
+					{{# <label for="variant">{{ insurance ? 'Children' : 'Variant' }}</label> #}}
+					<label for="variant">{{ product_variants:variants:0:name }}</label>
+
+					<select id="variant" name="variant" x-model.number="children">
+						
+						{{ product_variants:options }}
+							{{ if stock === 0 }}
+								<option disabled>{{ variant }} ({{ trans:commerce.out_of_stock }})</option>
+							{{ else }}
+								<option value="{{ key }}">{{ variant }} ({{ price }})</option>						
+							{{ /if }}
+						{{ /product_variants:options }}
+					</select>
+				</div>
+			{{ else }}
+				<div class="form__field"> 
+					<label for="price">{{ trans:commerce.price }}</label>
+					<input type="text" readonly value="{{ if stock === 0 }}{{ trans:commerce.out_of_stock }}{{ else }}{{ price }}{{ /if }}">
+				</div>			
+			{{ /if }}
+
+		{{ /unless }}
+
+
+		{{ if open_price }}
+			<div class="form__field"> 
+				<label for="quantity">{{ trans:commerce.amount }}</label>
+				<input name="quantity" type="number" min="1" step="1" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
 			</div>
 		{{ else }}
-			<div class="form__field"> 
-				<label for="price">{{ trans:commerce.price }}</label>
-				<input type="text" readonly value="{{ if stock === 0 }}{{ trans:commerce.out_of_stock }}{{ else }}{{ price }}{{ /if }}">
-			</div>			
+			{{ if max_quantity > 1 }}
+				<div class="form__field"> 
+					<label for="quantity">{{ trans:commerce.quantity }}</label>
+
+					<select id="quantity" name="quantity">
+						{{ loop :times="max_quantity" }}
+							<option value="{{ value }}">{{ value }}</option>
+						{{ /loop }}
+					</select>
+				</div>
+			{{ else }}
+				<input type="hidden" name="quantity" value="1">
+			{{ /if }}
 		{{ /if }}
 
-		{{ if max_quantity > 1 }}
-			<div class="form__field"> 
-				<label for="quantity">{{ trans:commerce.quantity }}</label>
 
-				<select id="quantity" name="quantity">
-					{{ loop :times="max_quantity" }}
-						<option value="{{ value }}">{{ value }}</option>
-					{{ /loop }}
-				</select>
-			</div>
-		{{ else }}
-			<input type="hidden" name="quantity" value="1">
-		{{ /if }}
+
+
+
+
 
 		{{ if insurance }}
 			{{ loop times="5" }}

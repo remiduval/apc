@@ -112,6 +112,17 @@ sections:
           if:
             clients: 'equals visitors'
       -
+        handle: open_price
+        field:
+          default: false
+          display: 'Open pricing'
+          type: toggle
+          icon: toggle
+          localizable: true
+          listable: hidden
+          instructions_position: above
+          instructions: 'Remember to set the price to 1. The quantity will define the amount'
+      -
         handle: extra_fields
         field:
           display: 'Extra fields'
