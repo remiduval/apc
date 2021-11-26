@@ -9,7 +9,7 @@
         "aryehraber/statamic-logbook": "^2.0",
         "doublethreedigital/duplicator": "^2.0",
         "doublethreedigital/guest-entries": "^1.0",
-        "doublethreedigital/simple-commerce": "2.3.*",
+        "doublethreedigital/simple-commerce": "2.3.52",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^6.2",
