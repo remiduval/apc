@@ -112,6 +112,7 @@ sections:
               field:
                 collections:
                   - pages
+                  - products
                 display: Link
                 type: link
                 icon: link
