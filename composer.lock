@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3c48dd58f01545b32fbb67523bacf978",
+    "content-hash": "b3327268740422f8f9b0c558c4d5795f",
     "packages": [
         {
             "name": "4rn0/statamic-v3-image-optimizer",
@@ -2510,6 +2510,89 @@
             "time": "2021-10-03T14:17:12+00:00"
         },
         {
+            "name": "jacksleight/statamic-bard-mutator",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jacksleight/statamic-bard-mutator.git",
+                "reference": "2860426cdd91f7e5cece7a519caedbf72567448c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jacksleight/statamic-bard-mutator/zipball/2860426cdd91f7e5cece7a519caedbf72567448c",
+                "reference": "2860426cdd91f7e5cece7a519caedbf72567448c",
+                "shasum": ""
+            },
+            "require": {
+                "statamic/cms": "^3.1.14"
+            },
+            "type": "library",
+            "extra": {
+                "statamic": {
+                    "name": "Bard Mutator",
+                    "description": "This Statamic addon allows you to modify the tags rendered by the Bard fieldtype, giving you full control over the final HTML."
+                },
+                "laravel": {
+                    "providers": [
+                        "JackSleight\\StatamicBardMutator\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "JackSleight\\StatamicBardMutator\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "support": {
+                "issues": "https://github.com/jacksleight/statamic-bard-mutator/issues",
+                "source": "https://github.com/jacksleight/statamic-bard-mutator/tree/1.0.3"
+            },
+            "time": "2021-12-03T12:14:46+00:00"
+        },
+        {
+            "name": "jacksleight/statamic-bard-texstyle",
+            "version": "0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jacksleight/statamic-bard-texstyle.git",
+                "reference": "44b75aabff26923774e1dfc51af93c4924cc0373"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jacksleight/statamic-bard-texstyle/zipball/44b75aabff26923774e1dfc51af93c4924cc0373",
+                "reference": "44b75aabff26923774e1dfc51af93c4924cc0373",
+                "shasum": ""
+            },
+            "require": {
+                "jacksleight/statamic-bard-mutator": "^1.0.3",
+                "statamic/cms": "^3.2.24"
+            },
+            "type": "library",
+            "extra": {
+                "statamic": {
+                    "name": "Statamic Bard Texstyle",
+                    "description": "This Statamic addon gives you the ability to add custom heading, paragraph and inline (span) text styles to the Bard fieldtype."
+                },
+                "laravel": {
+                    "providers": [
+                        "JackSleight\\StatamicBardTexstyle\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "JackSleight\\StatamicBardTexstyle\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "support": {
+                "issues": "https://github.com/jacksleight/statamic-bard-texstyle/issues",
+                "source": "https://github.com/jacksleight/statamic-bard-texstyle/tree/0.1.1"
+            },
+            "time": "2021-12-03T12:54:59+00:00"
+        },
+        {
             "name": "justinrainbow/json-schema",
             "version": "5.2.11",
             "source": {
@@ -4195,6 +4278,75 @@
                 "source": "https://github.com/opis/closure/tree/3.6.2"
             },
             "time": "2021-04-09T13:42:10+00:00"
+        },
+        {
+            "name": "optimoapps/statamic-bard-text-align",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/OptimoApps/statamic-bard-text-align.git",
+                "reference": "20b1773abc109cc9d1f8b0a9e517bb35245c7dca"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/OptimoApps/statamic-bard-text-align/zipball/20b1773abc109cc9d1f8b0a9e517bb35245c7dca",
+                "reference": "20b1773abc109cc9d1f8b0a9e517bb35245c7dca",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4|^8.0",
+                "statamic/cms": "^3.0.14"
+            },
+            "require-dev": {
+                "orchestra/testbench": "4.*|5.*",
+                "phpunit/phpunit": "^8.4|^9.0"
+            },
+            "type": "statamic-addon",
+            "extra": {
+                "statamic": {
+                    "name": "Statamic Bard Text Align",
+                    "description": "Text align command for bard"
+                },
+                "laravel": {
+                    "providers": [
+                        "OptimoApps\\BardTextAlign\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "OptimoApps\\BardTextAlign\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "sathish.thi@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Statamic Bard text align",
+            "homepage": "https://optimoapps.com",
+            "keywords": [
+                "bard",
+                "statamic",
+                "text-align"
+            ],
+            "support": {
+                "email": "info@optimoapps.com",
+                "issues": "https://github.com/OptimoApps/statamic-bard-text-align/issues",
+                "source": "https://github.com/OptimoApps/statamic-bard-text-align/tree/v1.0.2"
+            },
+            "funding": [
+                {
+                    "url": "https://paypal.me/satzkumar",
+                    "type": "custom"
+                }
+            ],
+            "time": "2021-03-16T07:17:42+00:00"
         },
         {
             "name": "paypal/paypal-checkout-sdk",
