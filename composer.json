@@ -16,6 +16,7 @@
         "laravel/framework": "^8.0",
         "laravel/tinker": "^2.0",
         "maatwebsite/excel": "^3.1",
+        "optimoapps/statamic-bard-text-align": "^1.0",
         "rias/statamic-redirect": "1.6.1",
         "roorda-ict/statamic-entries-export": "^1.0",
         "statamic/cms": "^3.1",
