@@ -12,6 +12,10 @@
 					:picture="cover"
 				{{ elseif collection == 'news' }}
 					:picture="covers:news"
+				{{ elseif collection == 'events' }}
+					:picture="covers:events"
+				{{ elseif collection == 'classifieds' }}
+					:picture="covers:classifieds"
 				{{ elseif response_code == '404' }}
 					:picture="covers:not_found"
 				{{ else }}
