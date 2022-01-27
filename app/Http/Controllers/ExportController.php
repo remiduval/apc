@@ -25,6 +25,8 @@ class ExportController
         $from = $request->input('from');
         $until = $request->input('until');
 
-        return Excel::download(new SalesExport($from, $until), 'sales.csv');
+        return Excel::download(new SalesExport($from, $until), 'orders.csv');
+        //return (new SalesExport($from, $until))->download('invoices.html', \Maatwebsite\Excel\Excel::HTML);
+
     }
 }

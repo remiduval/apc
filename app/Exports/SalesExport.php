@@ -13,6 +13,8 @@ use Carbon\Carbon;
 // use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 // use Illuminate\Http\Request;
 
+use DoubleThreeDigital\SimpleCommerce\Facades\Currency;
+
 class SalesExport implements FromCollection, WithMapping, WithHeadings
 {
 	//use AuthorizesRequests;
@@ -41,15 +43,17 @@ class SalesExport implements FromCollection, WithMapping, WithHeadings
 				$lineItems = Order::find($order->id())->lineItems();
 
 				return $lineItems->map(function ($lineItem) use ($order) {
+					$order = $order->fresh();
+
 					foreach ($lineItem as $key => $value) {
-						$order->set($key, $value);
+						$order->data()->put($key, $value);
 					}
 
-					if (isset($lineItem['metadata'])) {
-						foreach ($lineItem['metadata'] as $key => $value) {
-							$this->metadataKeys[] = $key;
-						}
-					}
+					// if (isset($lineItem['metadata'])) {
+					// 	foreach ($lineItem['metadata'] as $key => $value) {
+					// 		$this->metadataKeys[] = $key;
+					// 	}
+					// }
 
 					return $order;
 				});
@@ -64,71 +68,59 @@ class SalesExport implements FromCollection, WithMapping, WithHeadings
 		if ($product->purchasableType() === 'variants' && $order->has('variant')) {
 			//$productVariant = '';
 			$productVariant = $product->variant(is_array($order->get('variant')) ? $order->get('variant')['variant'] : $order->get('variant'));
+			$productPrice = optional($productVariant)->price();
+		} else {
+			$productPrice = $product->get('price');
 		}
 
 		$row = [
 			$order->get('title'),
 			$order->get('paid_date'),
 			optional($order->augmentedValue('customer')->value())->get('name'),
-			optional($order->augmentedValue('customer')->value())->get('email'),
+			optional($order->augmentedValue('customer')->value())->email(),
 			$order->get('billing_name'),
 			$order->get('billing_address') ?? $order->get('billing_address_line1'),
-			$order->get('billing_address_line2'),
-			$order->get('billing_city'),
-			$order->get('billing_region'),
-			$order->get('billing_country'),
 			$order->get('billing_zip_code') ?? $order->get('billing_postal_code'),
-			$order->get('shipping_name'),
-			$order->get('shipping_address') ?? $order->get('shipping_address_line1'),
-			$order->get('shipping_address_line2'),
-			$order->get('shipping_city'),
-			$order->get('shipping_country'),
-			$order->get('shipping_zip_code') ?? $order->get('shipping_postal_code'),
-			$order->get('shipping_region'),
+			$order->get('billing_city'),
+			$order->get('billing_country'),
+			$order->get('note'),
 			$order->get('product'),
 			$product->title(),
 			optional($productVariant)->name() ?? '',
 			$order->get('quantity'),
-			$order->get('total'),
+			(float) Currency::toDecimal( ($productPrice ?? 0) * $order->get('quantity') )
 		];
 
-		$rowMetadata = collect($this->metadataKeys)
-			->map(function ($key) use ($order) {
-				if (isset($order->get('metadata')[$key])) {
-					return $order->get('metadata')[$key];
-				}
 
-				return '';
-			})
-			->toArray();
 
-		return array_merge($row, $rowMetadata);
+// 		$rowMetadata = collect($this->metadataKeys)
+// 			->map(function ($key) use ($order) {
+// 				if (isset($order->get('metadata')[$key])) {
+// 					return $order->get('metadata')[$key];
+// 				}
+// 				return '';
+// 			})
+// 			->toArray();
+
+		return array_merge( $row, $order->get('metadata'));		
 	}
 
 	public function headings(): array
 	{
 		return [
-			'Order Number',
-			'Paid Date',
-			'Customer Name',
-			'Customer Email',
+			'ID',
+			'Date',
+			'Name',
+			'Email',
 			'Billing Name',
-			'Billing Address Line 1',
-			'Billing Address Line 2',
-			'Billing City',
-			'Billing Region',
-			'Billing Country',
-			'Billing Postal Code',
-			'Shipping Name',
-			'Shipping Address Line 1',
-			'Shipping Address Line 2',
-			'Shipping City',
-			'Shipping Region',
-			'Shipping Country',
-			'Shipping Postal Code',
+			'Address',
+			'Postcode',
+			'City',
+			'Country',
+			'Note',
 			'Product ID',
 			'Product Name',
-			'Variant Name',
+			'Variant',
 			'Quantity',
 			'Total',
 		];
