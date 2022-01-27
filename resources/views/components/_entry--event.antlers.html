@@ -2,9 +2,9 @@
 	<a href="{{ url }}" title="{{ alt ?= alt }}">
 
 		<div class="entry__event_date">
-			<span class="weekday">{{ event_date format='D' }}</span>
-			<span class="day">{{ event_date format='j' }}</span>
-			<span class="month">{{ event_date format='M' }}</span>
+			<span class="weekday">{{ event_date format_localized='%a' }}</span>
+			<span class="day">{{ event_date format_localized='%e' }}</span>
+			<span class="month">{{ event_date format_localized='%b' }}</span>
 		</div>
 
 		<div class="entry__content">
