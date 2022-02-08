@@ -1,35 +1,34 @@
----
-schoolyears:
-    -
-        label: 2020/2021
-        start: 2020-08-01
-        end: 2021-07-31
-    -
-        label: 2021/2022
-        start: 2021-08-01
-        end: 2022-07-31
-    -
-        label: 2022/2023
-        start: 2022-08-01
-        end: 2023-07-31
----
-
 <aside 
 	class="sideblock events"
 	x-cloak
 	x-show="!mobile || sideblock_events"
 	@click.away="sideblock_events = false"
 >
-    <div class="sideblock__title">{{ trans:sideblock.title_events }}</div>
+	<div class="sideblock__title">{{ trans:sideblock.title_events }}</div>
 
-    <ul>
-        {{ view:schoolyears }}
-            <li>
-                {{ 
-                    partial:components/nav
-                    :menu_label="label"
-                }}
-            </li>
-        {{ /view:schoolyears }}
-    </ul>
+	<ul>
+		<li>
+			{{ 
+				partial:components/nav
+				menu_label="{trans:sideblock.upcoming}"
+
+				{{ unless (get:from) }}
+					is_current="true"
+				{{ /if }}
+			}}
+		</li>
+		{{ loop from="2021" to="{now format='Y'}" }}
+			<li>
+				{{ 
+					partial:components/nav
+					menu_label="{value} / {value | add:1}"
+					url="?from={value}-08-01&until={value | add:1}-07-31"
+
+					{{ if ((get:from | first:4) == value ) }}
+						is_current="true"
+					{{ /if }}
+				}}
+			</li>
+		{{ /loop }}   
+	</ul>
 </aside>

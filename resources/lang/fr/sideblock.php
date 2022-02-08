@@ -7,7 +7,7 @@
 
 		'title_new'					=> 'Informations',
 		'title_event'				=> 'Détails',
-		'title_events'				=> 'Année scolaire',
+		'title_events'				=> 'Dates',
 		'title_classified'			=> 'Détails',
 		'title_classifieds'			=> 'Catégories',
 		'title_product'				=> 'Détails',
@@ -17,7 +17,7 @@
 
 		'toggle_new'				=> 'Détails',
 		'toggle_event'				=> 'Détails & réservation',
-		'toggle_events'				=> 'Année scolaire',
+		'toggle_events'				=> 'Dates',
 		'toggle_classified'			=> 'Détails & contact',
 		'toggle_classifieds'		=> 'Filtrer',
 		'toggle_product'			=> 'Détails & achat',
@@ -25,7 +25,8 @@
 		'toggle_status'				=> 'Statut compte',
 
 		'content_member_member'		=> 'Vous avez une adhésion à jour',
-		'content_member_visitor'	=> 'Identifiez-vous ou achetez une adhésion pour profiter des prix réduits'
+		'content_member_visitor'	=> 'Identifiez-vous ou achetez une adhésion pour profiter des prix réduits',
+		'upcoming'					=> 'Prochainement'
 
 	];
 ?>

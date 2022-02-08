@@ -1,41 +1,46 @@
-		{{ collection 
-			from="events"
-			as="entries"
-			sort="pinned:desc|event_date:asc"
-			
-			event_date:gte="{ now format='Y-m-d' }"
-		}}
-	
-			{{ if no_results }}
+{{ collection
+	from="events"
+	as="entries"
+	sort="pinned:desc|event_date:asc"
+	event_date:lte="{get:until ?? '2100-01-01'}"
+
+	{{ if (get:from) }}
+		event_date:gte="{ get:from }"
+	{{ else }}
+		event_date:gte="{ now format='Y-m-d' }"
+	{{ /if }}
+}}
+
+	{{ if no_results }}
 		{{ partial:main/default prose="{trans:apc.no_events}" }}
-		
+
 	{{ else }}
 		<main class="main--events">
 			<div class="events">
-			{{ entries }}
-				{{ partial:components/entry--event	}}
-			{{ /entries }}	
-	
-			{{ if paginate:total_pages > 1 }}
-				{{ section:pagination }}
-	
-					{{ paginate }}
-						<div class="pagination">
-							<a href="{{ prev_page }}" aria-label="Previous" class="arrow arrow--prev">{{ svg src="left" }}</a>
-			
-							<div class="pagination__count">{{ current_page }} / {{ total_pages }}</div>
-			
-							<a href="{{ next_page }}" aria-label="Next" class="arrow arrow--next">{{ svg src="right" }}</a>
-						</div>
-					{{ /paginate }}
-	
-				{{ /section:pagination }}
-			{{ /if }}
+				{{ entries }}
+					{{ partial:components/entry--event	}}
+				{{ /entries }}	
+
+				{{ if paginate:total_pages > 1 }}
+					{{ section:pagination }}
+
+						{{ paginate }}
+							<div class="pagination">
+								<a href="{{ prev_page }}" aria-label="Previous" class="arrow arrow--prev">{{ svg src="left" }}</a>
+				
+								<div class="pagination__count">{{ current_page }} / {{ total_pages }}</div>
+				
+								<a href="{{ next_page }}" aria-label="Next" class="arrow arrow--next">{{ svg src="right" }}</a>
+							</div>
+						{{ /paginate }}
+
+					{{ /section:pagination }}
+				{{ /if }}
 			</div>
 		</main>
 	{{ /if }}
-		
-		{{ /collection }}
+
+{{ /collection }}
 
 
 
