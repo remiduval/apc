@@ -36,13 +36,21 @@
 				<div class="latest__entries">
 					{{ collection 
 						from="events"
+						as="entries"
 						limit="3"
 						sort="pinned:desc|event_date:asc"
 						event_date:gte="{today format='Y-m-d'}"
 					}}
-						{{ 
-							partial:components/entry--event
-						}}
+
+						{{ if no_results }}
+							{{ partial:main/default prose="{trans:apc.no_events}" }}
+			
+						{{ else }}
+							{{ entries }}
+								{{ partial:components/entry--event }}
+							{{ /entries }}
+						{{ /if }}
+
 					{{ /collection }}
 				</div>
 			</div>

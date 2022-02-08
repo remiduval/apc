@@ -1,5 +1,3 @@
-<main class="main--classifieds">
-	<div class="classifieds">
 		{{ collection 
 			from="classifieds"
 			paginate="20"
@@ -8,9 +6,11 @@
 		}}
 	
 			{{ if no_results }}
-				<p>No results</p>
-			{{ /if }}
+		{{ partial:main/default prose="{trans:apc.no_classifieds}" }}
 	
+	{{ else }}
+		<main class="main--classifieds">
+			<div class="classifieds">
 			{{ entries }}
 				{{ 
 					partial:components/entry--classified 
@@ -33,7 +33,8 @@
 	
 				{{ /section:pagination }}
 			{{ /if }}
+			</div>
+		</main>
+	{{ /if }}
 	
 		{{ /collection }}
-	</div>
-</main>

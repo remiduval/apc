@@ -1,41 +1,40 @@
-<main class="main--products">
-	<div class="products">
+{{ collection 
+	from="products"
+	limit="20"
+	paginate="true"
+	as="entries"
+	sort="pinned:desc|date:desc"
+	clients:in="all|{user_group}"
+}}
 
-		{{ collection 
-			from="products"
-			limit="20"
-			paginate="true"
-			as="entries"
-			sort="pinned:desc|date:desc"
-			clients:in="all|{user_group}"
-		}}
-	
-			{{ if no_results }}
-				<p>No results</p>
-			{{ /if }}
-	
-			{{ entries }}
-				{{ partial:components/entry--product }}
-			{{ /entries }}	
-	
-			{{ if paginate:total_pages > 1 }}
-				{{ section:pagination }}
-	
-					{{ paginate }}
-						<div class="pagination">
-							<a href="{{ prev_page }}" aria-label="Previous" class="arrow arrow--prev">{{ svg src="left" }}</a>
-			
-							<div class="pagination__count">{{ current_page }} / {{ total_pages }}</div>
-			
-							<a href="{{ next_page }}" aria-label="Next" class="arrow arrow--next">{{ svg src="right" }}</a>
-						</div>
-					{{ /paginate }}
-	
-				{{ /section:pagination }}
-			{{ /if }}
-	
-		{{ /collection }}
+	{{ if no_results }}
+		{{ partial:main/default prose="{trans:apc.no_products}" }}
 
+	{{ else }}
+		<main class="main--products">
+			<div class="products">
+		
+				{{ entries }}
+					{{ partial:components/entry--product }}
+				{{ /entries }}	
 
-	</div>
-</main>
+				{{ if paginate:total_pages > 1 }}
+					{{ section:pagination }}
+
+						{{ paginate }}
+							<div class="pagination">
+								<a href="{{ prev_page }}" aria-label="Previous" class="arrow arrow--prev">{{ svg src="left" }}</a>
+				
+								<div class="pagination__count">{{ current_page }} / {{ total_pages }}</div>
+				
+								<a href="{{ next_page }}" aria-label="Next" class="arrow arrow--next">{{ svg src="right" }}</a>
+							</div>
+						{{ /paginate }}
+
+					{{ /section:pagination }}
+				{{ /if }}
+			</div>
+		</main>
+	{{ /if }}
+
+{{ /collection }}
