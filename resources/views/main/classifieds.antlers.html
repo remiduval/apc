@@ -1,40 +1,41 @@
-		{{ collection 
-			from="classifieds"
-			paginate="20"
-			as="entries"
-			sort="pinned:desc|publish_date:desc"
-		}}
-	
-			{{ if no_results }}
+{{ collection
+	from="classifieds"
+	paginate="20"
+	as="entries"
+	sort="pinned:desc|publish_date:desc"
+	expiration:gte="{ now format='Y-m-d' }"
+}}
+
+	{{ if no_results }}
 		{{ partial:main/default prose="{trans:apc.no_classifieds}" }}
-	
+
 	{{ else }}
 		<main class="main--classifieds">
 			<div class="classifieds">
-			{{ entries }}
-				{{ 
-					partial:components/entry--classified 
-					extended="true"
-				}}
-			{{ /entries }}
-	
-			{{ if paginate:total_pages > 1 }}
-				{{ section:pagination }}
-	
-					{{ paginate }}
-						<div class="pagination">
-							<a href="{{ prev_page }}" aria-label="Previous" class="arrow arrow--prev">{{ svg src="left" }}</a>
-			
-							<div class="pagination__count">{{ current_page }} / {{ total_pages }}</div>
-			
-							<a href="{{ next_page }}" aria-label="Next" class="arrow arrow--next">{{ svg src="right" }}</a>
-						</div>
-					{{ /paginate }}
-	
-				{{ /section:pagination }}
-			{{ /if }}
+				{{ entries }}
+					{{
+						partial:components/entry--classified 
+						extended="true"
+					}}
+				{{ /entries }}
+
+				{{ if paginate:total_pages > 1 }}
+					{{ section:pagination }}
+
+						{{ paginate }}
+							<div class="pagination">
+								<a href="{{ prev_page }}" aria-label="Previous" class="arrow arrow--prev">{{ svg src="left" }}</a>
+				
+								<div class="pagination__count">{{ current_page }} / {{ total_pages }}</div>
+				
+								<a href="{{ next_page }}" aria-label="Next" class="arrow arrow--next">{{ svg src="right" }}</a>
+							</div>
+						{{ /paginate }}
+
+					{{ /section:pagination }}
+				{{ /if }}
 			</div>
 		</main>
 	{{ /if }}
-	
-		{{ /collection }}
+
+{{ /collection }}
