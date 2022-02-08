@@ -200,12 +200,27 @@ sections:
       -
         import: buttons
         prefix: classifieds_
-  ad:
-    display: Ad
+  advert:
+    display: Advert
     fields:
       -
-        handle: advert
+        handle: advert_image
         field: common.advert
+        config:
+          width: 50
+          validate:
+            - required
+      -
+        handle: advert_url
+        field:
+          input_type: url
+          antlers: false
+          display: URL
+          type: text
+          icon: text
+          width: 50
+          listable: hidden
+          localizable: true
   network:
     display: Network
     fields:
@@ -283,7 +298,6 @@ sections:
         handle: slug
         field:
           type: slug
-          required: true
           localizable: true
           validate:
             - required
