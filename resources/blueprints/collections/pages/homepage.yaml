@@ -208,8 +208,6 @@ sections:
         field: common.advert
         config:
           width: 50
-          validate:
-            - required
       -
         handle: advert_url
         field:
