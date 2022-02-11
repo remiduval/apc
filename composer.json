@@ -1,32 +1,31 @@
 {
-    "name": "doublethreedigital/sc-starter-kit",
-    "description": "Simple Commerce - Starter Kit",
-    "keywords": ["statamic", "starter kit", "simple commerce"],
+    "name": "statamic/statamic",
+    "description": "Statamic",
+    "keywords": ["statamic", "cms", "flat file", "laravel"],
     "type": "project",
     "require": {
         "php": "^7.3 || ^8.0",
         "4rn0/statamic-v3-image-optimizer": "^1.0",
         "aryehraber/statamic-logbook": "^2.0",
-        "doublethreedigital/duplicator": "^2.0",
-        "doublethreedigital/guest-entries": "^1.0",
-        "doublethreedigital/simple-commerce": "^2.3",
+        "doublethreedigital/duplicator": "^2.1",
+        "doublethreedigital/guest-entries": "^1.1",
+        "doublethreedigital/simple-commerce": "2.3.*",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
-        "guzzlehttp/guzzle": "^6.2",
+        "guzzlehttp/guzzle": "^7.4",
         "laravel/framework": "^8.0",
         "laravel/tinker": "^2.0",
         "maatwebsite/excel": "^3.1",
         "optimoapps/statamic-bard-text-align": "^1.0",
         "rias/statamic-redirect": "^2.0",
-        "statamic/cms": "^3.1",
-        "webup/laravel-sendinblue": "^3.1",
-        "wildbit/swiftmailer-postmark": "^3.3",
+        "statamic/cms": "3.2.32",
+        "webup/laravel-sendinblue": "^3.3",
         "xndbogdan/statamic-bard-text-color": "^2.2"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.5",
         "facade/ignition": "^2.3.6",
-        "fakerphp/faker": "^1.14",
+        "fakerphp/faker": "^1.9.1",
         "mockery/mockery": "^1.3.1",
         "nunomaduro/collision": "^5.0",
         "phpunit/phpunit": "^9.3"
@@ -34,7 +33,11 @@
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "composer/package-versions-deprecated": true,
+            "pixelfear/composer-dist-plugin": true
+        }
     },
     "extra": {
         "laravel": {
