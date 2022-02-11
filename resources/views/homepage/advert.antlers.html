@@ -1,10 +1,16 @@
 {{ if advert_image }}
-	{{ if advert_url }}<a href="{{ advert_url }}">{{ /if }}
-		{{ 
-			partial:components/picture 
-			:picture="advert_image"
-			sizes="(min-width: 1440px) 832px, 95vw"
-			alt="Advert"
-		}}
-	{{ if advert_url }}</a>{{ /if }}
+	<div class="homepage__advert">
+		<div class="wrapper">
+
+			{{ if advert_url }}<a href="{{ advert_url }}">{{ /if }}
+				{{ 
+					partial:components/picture 
+					:picture="advert_image"
+					sizes="(min-width: 1440px) 1280px, 95vw"
+					alt="Advert"
+				}}
+			{{ if advert_url }}</a>{{ /if }}
+
+		</div>
+	</div>
 {{ /if }}
