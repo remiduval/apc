@@ -3,17 +3,7 @@
 {{ /section:seo_title }}
 
 <div class="page">
-	
-	<main class="friend--{{ friend ?? 'dog' }}">
-		{{ partial:sections/prose :prose="seo:404_prose" }}
-	</main>
+	{{ partial:sections/banner :prose="covers:not_found" }}
 
-	<div class="sidebar">
-		{{ partial:sideblocks/edit }}
-
-		{{ sideblocks }}
-			{{ partial:sideblocks/default }}
-		{{ /sideblocks }}
-	</div>
-
+	{{ partial:main/default :prose="seo:404_prose" }}
 </div>
