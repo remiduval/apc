@@ -29,6 +29,9 @@
 					<label for="field_label" class="publish-field-label">
 						<span>End date (not included)</span>
 					</label>
+					<div class="help-block -t-1">
+						<p>Try reducing the range if the export fails</p>
+					</div>
 				</div>
 
 				<div class="flex items-center">
