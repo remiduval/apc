@@ -99,16 +99,18 @@
 					url="{ system:login | url }"
 				}}
 
-				{{ 
-					partial:components/link 
-					shape="button"
-					icon="cart"
-					primary="true"
-					label="{ trans:account.buy_membership }" 
-					attr_aria="{ trans:account.buy_membership }"
-					link_type='url' 
-					url="{ system:membership | url }"
-				}}
+				{{ if system:membership }}
+					{{ 
+						partial:components/link 
+						shape="button"
+						icon="cart"
+						primary="true"
+						label="{ trans:account.buy_membership }" 
+						attr_aria="{ trans:account.buy_membership }"
+						link_type='url' 
+						url="{ system:membership | url }"
+					}}
+				{{ /if }}
 			</div>
 		{{ /if }}
 
