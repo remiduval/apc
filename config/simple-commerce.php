@@ -195,4 +195,6 @@ return [
 
 	'low_stock_threshold' => 25,
 
+    'disable_form_parameter_validation' => true,
+
 ];
