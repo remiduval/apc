@@ -9,7 +9,7 @@
         "aryehraber/statamic-logbook": "^2.0",
         "doublethreedigital/duplicator": "^2.1",
         "doublethreedigital/guest-entries": "^1.1",
-        "doublethreedigital/simple-commerce": "2.3.*",
+        "doublethreedigital/simple-commerce": "3.2.*",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.4",
@@ -18,7 +18,7 @@
         "maatwebsite/excel": "^3.1",
         "optimoapps/statamic-bard-text-align": "^1.0",
         "rias/statamic-redirect": "^2.0",
-        "statamic/cms": "3.2.32",
+        "statamic/cms": "3.3.*",
         "webup/laravel-sendinblue": "^3.3",
         "xndbogdan/statamic-bard-text-color": "^2.2"
     },

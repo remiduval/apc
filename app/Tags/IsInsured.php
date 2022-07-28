@@ -18,7 +18,9 @@ class IsInsured extends Tags
 		$user = Auth::user();
 
 		if ($user && $user->insurance_until) {
-			return Carbon::createFromFormat('Y-m-d', $user->insurance_until)->isFuture();
+			$carbon_insurance_until = new Carbon($user->insurance_until);
+			return $carbon_insurance_until->isFuture();
+			//return Carbon::createFromFormat('Y-m-d', $user->insurance_until)->isFuture();
 		} else {
 			return false;
 		}

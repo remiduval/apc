@@ -18,7 +18,9 @@ class IsMember extends Tags
 		$user = Auth::user();
 
 		if ($user && $user->membership_until) {
-			return Carbon::createFromFormat('Y-m-d', $user->membership_until)->isFuture();
+			$carbon_membership_until = new Carbon($user->membership_until);
+			return $carbon_membership_until->isFuture();
+			//return Carbon::createFromFormat('Y-m-d', $user->membership_until)->isFuture();
 		} else {
 			return false;
 		}

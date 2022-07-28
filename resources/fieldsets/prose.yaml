@@ -63,6 +63,7 @@ fields:
       buttons:
         - h2
         - h3
+        - color
         - bold
         - italic
         - underline
@@ -87,3 +88,6 @@ fields:
       enable_input_rules: true
       enable_paste_rules: true
       instructions_position: above
+      visibility: visible
+      previews: true
+      antlers: false

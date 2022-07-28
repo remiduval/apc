@@ -32,13 +32,13 @@ class AppServiceProvider extends ServiceProvider
 		// Statamic::script('app', 'cp');
 		// Statamic::style('app', 'cp');
 
-		Nav::extend(function ($nav) {
-			$nav->content('Collections')    ->name('Entries');
-			$nav->content('Navigation')     ->name('Menus');
-			$nav->content('Taxonomies')     ->name('Categories');
-			$nav->content('Assets')         ->name('Uploads');
-			$nav->content('Globals')        ->name('Settings');
-		});
+		// Nav::extend(function ($nav) {
+		// 	$nav->content('Collections')    ->name('Entries');
+		// 	$nav->content('Navigation')     ->name('Menus');
+		// 	$nav->content('Taxonomies')     ->name('Categories');
+		// 	$nav->content('Assets')         ->name('Uploads');
+		// 	$nav->content('Globals')        ->name('Settings');
+		// });
 
 		 
 		// SimpleCommerce::productPriceHook(function (Order $order, Product $product) {
