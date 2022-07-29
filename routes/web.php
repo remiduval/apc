@@ -53,18 +53,18 @@ Route::statamic('/reset-password',		'templates.reset',		['title' => 'Password re
 
 
 
-
+// UNCOMMENT TO TEST EMAIL
 // use DoubleThreeDigital\SimpleCommerce\Facades\Order;
 // use DoubleThreeDigital\SimpleCommerce\Facades\Currency;
 // use Illuminate\Bus\Queueable;
 // use Illuminate\Notifications\Messages\MailMessage;
-// use App\Notifications\CustomerOrderPaid;
+// use App\Notifications\CustomerOrderPaidCustom;
 // use Statamic\Facades\Site;
 
 // Route::get('/notification', function () {
-//     $order = Order::find('72b4ec79-65db-467e-a009-637721b7b993');
+//     $order = Order::find('ac13c3e8-dde9-44b1-b972-577f518368a7');
 
-//     return (new CustomerOrderPaid($order))
+//     return (new CustomerOrderPaidCustom($order))
 //                 ->toMail($order);
 
 // });
