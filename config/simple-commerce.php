@@ -76,19 +76,22 @@ return [
 
 	'notifications' => [
 		'order_paid' => [
-			\App\Notifications\CustomerOrderPaid::class => [
+			\App\Notifications\CustomerOrderPaidCustom::class => [
 				'to' => 'customer',
 			],
-			// \DoubleThreeDigital\SimpleCommerce\Notifications\CustomerOrderPaid::class => [
-			// 	'to' => 'customer',
-			// ],
-			\App\Notifications\BackOfficeOrderPaid::class => [
-				'to' => env("EDITOR_EMAIL", 'contact@remiduval.com'),
+			\DoubleThreeDigital\SimpleCommerce\Notifications\BackOfficeOrderPaid::class => [
+				'to' => 'duncan@example.com',
 			],
-			// \DoubleThreeDigital\SimpleCommerce\Notifications\BackOfficeOrderPaid::class => [
-			//     'to' => env("EDITOR_EMAIL", 'contact@remiduval.com'),
-			// ],
 		],
+
+		// 'order_paid' => [
+		// 	\App\Notifications\CustomerOrderPaid::class => [
+		// 		'to' => 'customer',
+		// 	],
+		// 	\App\Notifications\BackOfficeOrderPaid::class => [
+		// 		'to' => env("EDITOR_EMAIL", 'contact@remiduval.com'),
+		// 	],
+		// ],
 		'digital_download_ready' => [
 			\DoubleThreeDigital\DigitalProducts\Notifications\DigitalDownloadsNotification::class => [
 				'to' => 'customer',
