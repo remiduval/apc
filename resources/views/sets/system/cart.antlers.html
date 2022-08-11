@@ -32,7 +32,7 @@
 
 				<div class="cart__item">
 
-					<div class="cart__name"><a href="{{ product:url }}">{{ product:title }}</a></div>
+					<div class="cart__name"><a href="{{ product:url }}">{{ product:title }}{{ if variant }} ({{variant:variant}}){{ /if }}</a></div>
 
 					{{ sc:cart:removeItem :item="id" }}
 						{{ 
