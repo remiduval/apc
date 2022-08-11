@@ -47,10 +47,9 @@
 					<div class="cart__price">
 						{{ if product:open_price }}
 							{{ quantity | multiply:100 | currency }}
-						{{ elseif variant | raw }}
-							{{ total }}
+
 						{{ else }}
-							{{ quantity }} x {{ product:price }}
+							{{ quantity }} x {{ variant:price ?? product:price }}
 						{{ /if }}
 					</div>
 
