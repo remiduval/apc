@@ -79,9 +79,12 @@ return [
 			\App\Notifications\CustomerOrderPaidCustom::class => [
 				'to' => 'customer',
 			],
-			\DoubleThreeDigital\SimpleCommerce\Notifications\BackOfficeOrderPaid::class => [
-				'to' => 'duncan@example.com',
+			\App\Notifications\CustomerOrderPaidCustom::class => [
+				env("EDITOR_EMAIL", 'contact@remiduval.com'),
 			],
+			// \DoubleThreeDigital\SimpleCommerce\Notifications\BackOfficeOrderPaid::class => [
+			// 	'to' => env("EDITOR_EMAIL", 'contact@remiduval.com'),
+			// ],
 		],
 
 		// 'order_paid' => [
