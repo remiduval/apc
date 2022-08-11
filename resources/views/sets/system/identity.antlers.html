@@ -2,7 +2,7 @@
 	{{ redirect to="{ system:cart | url }" }}
 {{ /if }}
 
-<div class="set identity" x-data="{ customer_name: '' }">
+<div class="set identity" x-data="{ customer_name: '{{ user }}{{ old:name or name }}{{ /user }}' }">
 
 	{{ if {sc:hasErrors} === true }}
 		<div class="alert alert--error">
@@ -16,10 +16,10 @@
 
 			<div class="form__field">
 				<label for="name">{{ trans:input.full_name }}</label>
-				<input type="text" id="name" name="name" placeholder="Sylvie Melin" value="{{ user }}{{ old:name or name }}{{ /user }}" required x-model="customer_name">
+				<input type="text" id="name" name="name" placeholder="Sylvie Melin" required x-model="customer_name">
 			</div>
 
-			<input type="hidden" name="billing_name" value="{{ user }}{{ old:name or name }}{{ /user }}" x-model="customer_name">
+			<input type="hidden" name="billing_name" x-model="customer_name">
 	
 			<div class="form__field">
 				<label for="email">Email</label>
