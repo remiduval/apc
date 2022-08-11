@@ -120,10 +120,10 @@ return [
             'shipping_name', 'shipping_address', 'shipping_address_line1', 'shipping_address_line2', 'shipping_city',
             'shipping_region', 'shipping_postal_code', 'shipping_country', 'shipping_note', 'shipping_method',
             'use_shipping_address_for_billing', 'billing_name', 'billing_address', 'billing_address_line2',
-            'billing_city', 'billing_region', 'billing_postal_code', 'billing_country',
+            'billing_city', 'billing_region', 'billing_postal_code','billing_zip_code', 'billing_country', 'note'
         ],
 
-        'line_items' => [],
+        'line_items' => ['name-of-the-child-class', 'your-surname', 'your-firstname'],
 
         'customers' => ['name', 'email'],
     ],
