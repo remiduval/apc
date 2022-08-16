@@ -80,7 +80,7 @@ return [
 				'to' => 'customer',
 			],
 			\App\Notifications\CustomerOrderPaidCustom::class => [
-				env("EDITOR_EMAIL", 'contact@remiduval.com'),
+				'to' => env("EDITOR_EMAIL", 'contact@remiduval.com'),
 			],
 			// \DoubleThreeDigital\SimpleCommerce\Notifications\BackOfficeOrderPaid::class => [
 			// 	'to' => env("EDITOR_EMAIL", 'contact@remiduval.com'),
