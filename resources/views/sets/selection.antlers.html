@@ -78,11 +78,11 @@
 		{{ else }}
 			{{ metadatas }}
 				<div class="form__field">
-					<label for="{{ title | slugify }}">{{ title }}</label>
+					<label for="metadata_{{ index }}">{{ title }}</label>
 					{{ if hint }}
 						<span class="hint">{{ hint }}</span>
 					{{ /if }}
-					<input type="text" name="{{ title | slugify }}" id="{{ title | slugify }}" {{ required ?= 'required' }}>
+					<input type="text" name="metadata_{{ index }}" id="metadata_{{ index }}" {{ required ?= 'required' }}>
 				</div>
 			{{ /metadatas }}
 		{{ /if }}
