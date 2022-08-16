@@ -76,10 +76,10 @@ return [
 
 	'notifications' => [
 		'order_paid' => [
-			\App\Notifications\CustomerOrderPaidCustom::class => [
+			\App\Notifications\CustomerOrderPaidBuyer::class => [
 				'to' => 'customer',
 			],
-			\App\Notifications\CustomerOrderPaidCustom::class => [
+			\App\Notifications\CustomerOrderPaidSeller::class => [
 				'to' => env("EDITOR_EMAIL", 'contact@remiduval.com'),
 			],
 			// \DoubleThreeDigital\SimpleCommerce\Notifications\BackOfficeOrderPaid::class => [

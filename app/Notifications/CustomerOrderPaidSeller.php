@@ -8,7 +8,7 @@ use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 use Statamic\Facades\Site;
 
-class CustomerOrderPaidCustom extends Notification
+class CustomerOrderPaidSeller extends Notification
 {
     use Queueable;
 
@@ -46,7 +46,7 @@ class CustomerOrderPaidCustom extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->subject(config('app.name') . ': Order Confirmation')
+            ->subject(config('app.name') . ': New order')
             ->markdown('emails.customer_order_paid', [
                 'order' => $this->order,
                 'site' => Site::current(),
