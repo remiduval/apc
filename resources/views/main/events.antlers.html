@@ -2,12 +2,12 @@
 	from="events"
 	as="entries"
 	sort="pinned:desc|event_date:asc"
-	event_date:lte="{get:until ?? '2100-01-01'}"
+	event_date:is_before="{get:until ?? '2100-01-01'}"
 
 	{{ if (get:from) }}
-		event_date:gte="{ get:from }"
+		event_date:is_after="{ get:from }"
 	{{ else }}
-		event_date:gte="{ now format='Y-m-d' }"
+		event_date:is_after="{ now format='Y-m-d' }"
 	{{ /if }}
 }}
 

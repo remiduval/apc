@@ -3,7 +3,7 @@
 	paginate="20"
 	as="entries"
 	sort="pinned:desc|publish_date:desc"
-	expiration:gte="{ now format='Y-m-d' }"
+	expiration:is_after="{ now format='Y-m-d' }"
 }}
 
 	{{ if no_results }}

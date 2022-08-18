@@ -4,7 +4,7 @@
 	paginate="true"
 	as="entries"
 	sort="pinned:desc|publish_date:desc"
-	publish_date:lte="{ now format='Y-m-d' }"
+	publish_date:is_before="{ now format='Y-m-d' }"
 }}
 
 	{{ if no_results }}

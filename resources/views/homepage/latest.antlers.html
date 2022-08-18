@@ -15,7 +15,7 @@
 						from="news"
 						limit="4"
 						sort="pinned:desc|publish_date:desc"
-						publish_date:lte="{ now format='Y-m-d' }"
+						publish_date:is_before="{ now format='Y-m-d' }"
 					}}
 						{{ 
 							partial:components/entry--new
@@ -39,7 +39,7 @@
 						as="entries"
 						limit="3"
 						sort="pinned:desc|event_date:asc"
-						event_date:gte="{today format='Y-m-d'}"
+						event_date:is_after="{today format='Y-m-d'}"
 					}}
 
 						{{ if no_results }}
