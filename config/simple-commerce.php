@@ -169,7 +169,21 @@ return [
 			'metadata_42',
 			'metadata_43',
 			'metadata_44',
-			'metadata_45'
+			'metadata_45',
+			'metadata_46',
+			'metadata_47',
+			'metadata_48',
+			'metadata_49',
+			'metadata_50',
+			'metadata_51',
+			'metadata_52',
+			'metadata_53',
+			'metadata_54',
+			'metadata_55',
+			'metadata_56',
+			'metadata_57',
+			'metadata_58',
+			'metadata_59'
 		],
 
         'customers' => ['name', 'email'],

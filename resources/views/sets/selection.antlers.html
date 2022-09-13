@@ -66,11 +66,11 @@
 					<legend>{{ trans:apc.child }} {{ value }}</legend>
 					{{ metadatas }}
 						<div class="form__field">
-							<label for="{{ value }}_{{ title | slugify }}">{{ title }}</label>
+							<label>{{ title }}</label>
 							{{ if hint }}
 								<span class="hint">{{ hint }}</span>
 							{{ /if }}
-							<input type="text" name="{{ value }}_{{ title | slugify }}" id="{{ value }}_{{ title | slugify }}" {{ requireddd ?= 'required' }}>
+							<input type="text" name="metadata_{{ increment }}" {{ requireddd ?= 'required' }}>
 						</div>
 					{{ /metadatas }}
 				</fieldset>
