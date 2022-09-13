@@ -26,7 +26,7 @@
 
 		'content_member_member'		=> 'Vous avez une adhésion à jour',
 		'content_member_visitor'	=> 'Identifiez-vous ou achetez une adhésion pour profiter des prix réduits',
-		'upcoming'					=> 'Prochainement'
-
+		'upcoming'					=> 'Prochainement',
+		'posted_on'					=> 'Postée le'
 	];
 ?>

@@ -25,6 +25,7 @@
 
 		'content_member_member'		=> 'You have an active membership',
 		'content_member_visitor'	=> 'Log in or buy a membership to qualify for reduced prices',
-		'upcoming'					=> 'Upcoming'
+		'upcoming'					=> 'Upcoming',
+		'posted_on'					=> 'Posted on'
 	];
 ?>
