@@ -9,8 +9,8 @@
 
 			{{ if product_variants }}
 				<div class="form__field">
-					{{# <label for="variant">{{ insurance ? 'Children' : 'Variant' }}</label> #}}
-					<label for="variant">{{ product_variants:variants:0:name }}</label>
+					{{# <label for="variant">{{ insurance ? trans:apc.children : 'Variant' }}</label> #}}
+					<label for="variant">{{ if insurance }}{{ trans:apc.number_children }}{{ else }}{{ product_variants:variants:0:name }}{{ /if }}</label>
 
 					<select id="variant" name="variant" {{ if insurance }} x-model.number="children" {{ /if }}>
 						

@@ -10,6 +10,10 @@ use Statamic\Statamic;
 // use DoubleThreeDigital\SimpleCommerce\Contracts\Order;
 // use DoubleThreeDigital\SimpleCommerce\Contracts\Product;
 
+use Illuminate\Support\Facades\Mail;
+use Symfony\Component\Mailer\Bridge\Sendinblue\Transport\SendinblueTransportFactory;
+use Symfony\Component\Mailer\Transport\Dsn;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -51,5 +55,16 @@ class AppServiceProvider extends ServiceProvider
         // 		return $product->get('price');
         // 	}
         // });
+
+        Mail::extend('sendinblue', function () {
+            return (new SendinblueTransportFactory)->create(
+                new Dsn(
+                    'sendinblue+api',
+                    'default',
+                    config('services.sendinblue.key')
+                )
+            );
+        });
     }
 }
+

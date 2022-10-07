@@ -72,7 +72,7 @@ class SalesExport implements FromCollection, WithMapping, WithHeadings
         );
         $productVariant = null;
 
-        if ($product->purchasableType() === ProductType::VARIANT() && $order->has('variant')) {
+        if ($product->purchasableType() === ProductType::Variant && $order->has('variant')) {
             //$productVariant = '';
             $productVariant = $product->variant(is_array($order->get('variant')) ? $order->get('variant')['variant'] : $order->get('variant'));
             $productPrice = optional($productVariant)->price();

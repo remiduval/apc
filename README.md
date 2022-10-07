@@ -1,68 +1,40 @@
-<!-- statamic:hide -->
+<p align="center"><img src="https://statamic.com/assets/branding/Statamic-Logo+Wordmark-Rad.svg" width="400" alt="Statamic Logo" /></p>
 
-![Banner](https://raw.githubusercontent.com/doublethreedigital/sc-starter-kit/master/banner.png)
+## About Statamic 3
 
-## Simle Commerce Starter Kit
+Statamic 3 is the flat-first, Laravel + Git powered CMS designed for building beautiful, easy to manage websites.
 
-<!-- /statamic:hide -->
+> **Note:** This repository contains the code for the Statamic application. To contribute to the core package, visit the [Statamic core package repository][cms-repo].
 
-<!-- /statamic:hide -->
 
-This starter kit is the recommended starting place for creating Simple Commerce sites. It includes a minimal, boilerplate design which demonstrates most of the features and functionality Simple Commerce has to offer. You're free to make any changes you want, even redesign the whole front-end to build what you need to build.
+## Learning Statamic
 
-This repository contains the source code for the starter kit. However, to use Simple Commerce in production, please remember to [purchase a Simple Commerce license](https://statamic.com/simple-commerce).
+Statamic 3 has extensive [documentation][docs]. We dedicate a significant amount of time and energy every day to improving them, so if something is unclear, feel free to open issues for anything you find confusing or incomplete. We are happy to consider anything you feel will make the docs and CMS better.
 
-## Features
+## Support
 
-* Minimal design
-* Step by step checkout process
-* Built with TailwindCSS and Alpine.js
-* Demonstrates Simple Commerce functionality
-* Supports both standalone and variant products
-* Includes basic product filtering
+We provide official developer support on [Statamic 3 Pro](https://statamic.com/pricing) projects. Community-driven support is available on the [forum](https://statamic.com/forum) and in [Discord][discord].
 
-## Quick Start
 
-1. Create site & install dependencies
+## Contributing
 
-```
-git clone git@github.com:doublethreedigital/simple-commerce-starter.git bobs-sweet-shop
-cd bobs-sweet-shop
-rm -rf .git
-composer install
-cp .env.example .env && php artisan key:generate
-npm install && npm run dev
-```
+Thank you for considering contributing to Statamic! We simply ask that you review the [contribution guide][contribution] before you open issues or send pull requests.
 
-2. Publish Simple Commerce's vendor assets. This will publish Simple Commerce's Control Panel assets and translations.
 
-```
-php artisan vendor:publish --provider="DoubleThreeDigital\SimpleCommerce\ServiceProvider"
-```
+## Code of Conduct
 
-3. Create your first user
+In order to ensure that the Statamic community is welcoming to all and generally a rad place to belong, please review and abide by the [Code of Conduct](https://github.com/statamic/cms/wiki/Code-of-Conduct).
 
-```
-php please make:user
-```
 
-4. Get Started!
+## Important Links
 
-## Build Process
+- [Statamic Main Site](https://statamic.com)
+- [Statamic 3 Documentation][docs]
+- [Statamic 3 Core Package Repo][cms-repo]
+- [Statamic 3 Migrator](https://github.com/statamic/migrator)
+- [Statamic Discord][discord]
 
-This starter kit uses [Laravel Mix](https://laravel.com/docs/master/mix) to build & compile assets. Out of the box, it ships with one stylesheet and one JavaScript file.
-
-* `resources/css/site.css` -> `public/css/site.css`
-* `resources/js/site.js` -> `public/js/site.js`
-
-There's also a few commands you can run to compile your assets for various environments.
-
-* `npm run dev` - to compile your assets locally
-* `npm run watch` - to compile your assets locally and start a watcher looking out for file changes
-* `npm run production` - to compile and minify your assets, ready for production
-
-You can of course customise this setup however you want.
-
----
-
-For more information on using Simple Commerce, please [review the documentation](https://sc-docs.doublethree.digital).
+[docs]: https://statamic.dev/
+[discord]: https://statamic.com/discord
+[contribution]: https://github.com/statamic/cms/blob/master/CONTRIBUTING.md
+[cms-repo]: https://github.com/statamic/cms
